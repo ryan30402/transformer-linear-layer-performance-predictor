@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "measurement_kind": "profile_capture",
+  "status": "ok",
+  "visit_started_at_utc": "2026-11-01T23:03:13.265951+00:00",
+  "visit_started_monotonic_seconds": 1408.82683498,
+  "session_id": "fp16_s02",
+  "case_id": "x06",
+  "dtype": "float16",
+  "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+  "source_environment_id": "2b678d727cd7e856fa9e6cbfe8b3695f2985cbb73b97fcb37c23ffc5ac938586",
+  "source_measurement_kind": "cuda_measured",
+  "execution_mode": "cuda_graph",
+  "excluded_from_model": true,
+  "timing_excluded_from_model": true,
+  "captured_gemm_calls": 50,
+  "hardware_counters": {
+    "status": "not_collected",
+    "reason": "Torch timeline is not a DRAM-bandwidth/SM-occupancy counter measurement.",
+    "ncu_executable_found": true,
+    "nsys_executable_found": false,
+    "tool_presence_does_not_establish_counter_permissions": true
+  },
+  "notes": [
+    "Profiler activity can perturb timing and replay/cache behavior.",
+    "No profiler duration is substituted for a normal CUDA-event label.",
+    "Graph replay does not fuse captured GEMMs into a single kernel."
+  ],
+  "correctness_before": {
+    "passed": true,
+    "finite": true,
+    "relative_l2_error": 0.00020771709636677044,
+    "max_abs_error": 0.001964092254638672,
+    "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+    "limits": {
+      "relative_l2": 0.002,
+      "absolute_atol": 0.002,
+      "absolute_rtol": 0.002
+    },
+    "reference_max_abs": 5.345396518707275,
+    "max_abs_error_limit": 0.012690793037414551
+  },
+  "memory_guard": {
+    "estimated_peak_bytes": 583008256,
+    "available_bytes_before_case": 41543860224,
+    "safety_fraction": 0.65,
+    "estimate_is_not_measured_peak": true
+  },
+  "warmup": {
+    "policy": "fixed_minimum_duration_and_replay_count",
+    "requested_min_seconds": 0.25,
+    "actual_wall_seconds": 0.253428193000218,
+    "required_min_replays": 5,
+    "max_replays": 4096,
+    "completed_replays": 30,
+    "captured_operations_per_replay": 50,
+    "gemms_per_operation": 1,
+    "gemm_calls": 1500,
+    "total_gemm_flops": 51539607552000,
+    "fixed_reserved_replays": 5,
+    "additional_conditioning_gemm_calls": 1250,
+    "additional_conditioning_flops": 42949672960000,
+    "excluded_from_timing_samples": true,
+    "sample_quality_used_for_stopping": false,
+    "interpretation": "Wall duration of completed target-graph warmup; not proof of stable clocks or GPU busy time."
+  },
+  "conditioning_budget": {
+    "scope": "shared across this benchmark invocation; counters never reset per case or batching variant",
+    "fixed_work_gemm_call_limit": 100000,
+    "fixed_reserved_flops": 26525718020096,
+    "additional_conditioning_gemm_call_limit": 2000000,
+    "additional_conditioning_gemm_calls": 1250,
+    "additional_conditioning_flops": 42949672960000,
+    "total_flop_limit": 20000000000000000,
+    "interpretation": "Conservative operation accounting, not measured hardware counters; extra replays are charged before submission."
+  },
+  "reason": null,
+  "torch_trace_path": "graph_trace.json",
+  "cuda_kernel_event_count": 50,
+  "kernel_names": [
+    "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)"
+  ],
+  "profiler_kind": "torch_profiler_CPU_CUDA_timeline",
+  "correctness_after": {
+    "passed": true,
+    "finite": true,
+    "relative_l2_error": 0.00020771709636677044,
+    "max_abs_error": 0.001964092254638672,
+    "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+    "limits": {
+      "relative_l2": 0.002,
+      "absolute_atol": 0.002,
+      "absolute_rtol": 0.002
+    },
+    "reference_max_abs": 5.345396518707275,
+    "max_abs_error_limit": 0.012690793037414551
+  },
+  "captured_at_utc": "2026-11-01T23:03:13.585567+00:00",
+  "visit_finished_at_utc": "2026-11-01T23:03:13.585588+00:00",
+  "visit_finished_monotonic_seconds": 1409.146479853
+}

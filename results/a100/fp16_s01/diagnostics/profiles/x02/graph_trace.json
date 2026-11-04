@@ -1,0 +1,2813 @@
+{
+  "schemaVersion": 1,
+  "deviceProperties": [
+    {
+      "id": 0,
+      "name": "NVIDIA A100-SXM4-40GB",
+      "totalGlobalMem": 42405855232,
+      "computeMajor": 8,
+      "computeMinor": 0,
+      "maxThreadsPerBlock": 1024,
+      "maxThreadsPerMultiprocessor": 2048,
+      "regsPerBlock": 65536,
+      "warpSize": 32,
+      "sharedMemPerBlock": 49152,
+      "numSms": 108,
+      "regsPerMultiprocessor": 65536,
+      "sharedMemPerBlockOptin": 166912,
+      "sharedMemPerMultiprocessor": 167936
+    }
+  ],
+  "trace_id": "EABF909E758744C4A663930FCFEB552C",
+  "record_shapes": 1,
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 12080,
+  "cupti_version": 26,
+  "displayTimeUnit": "ms",
+  "baseTimeNanoseconds": 1790857026000000000,
+  "traceEvents": [
+    {
+      "ph": "X",
+      "cat": "user_annotation",
+      "name": "linear_perf_graph_replay",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389835305.243,
+      "dur": 2789.432,
+      "args": {
+        "External id": 1,
+        "Record function id": 0,
+        "Ev Idx": 0
+      }
+    },
+    {
+      "ph": "X",
+      "cat": "overhead",
+      "name": "Activity Buffer Request",
+      "pid": -1,
+      "tid": 0,
+      "ts": 2715389835380.99,
+      "dur": 2044.834
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaStreamIsCapturing",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389837426.517,
+      "dur": 7.019,
+      "args": {
+        "cbid": 317,
+        "correlation": 5
+      }
+    },
+    {
+      "ph": "f",
+      "id": 5,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389837426.517,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837547.151,
+      "dur": 10.689,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837547.151,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837557.871,
+      "dur": 9.409,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837557.871,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837567.311,
+      "dur": 9.409,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837567.311,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837576.751,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837576.751,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837586.16,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837586.16,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837595.631,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837595.631,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837605.071,
+      "dur": 9.409,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837605.071,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837614.48,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837614.48,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837623.951,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837623.951,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837633.36,
+      "dur": 9.375,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837633.36,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837642.767,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837642.767,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837652.239,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837652.239,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837661.647,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837661.647,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837671.119,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837671.119,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837680.591,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837680.591,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837689.999,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837689.999,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837699.407,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837699.407,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837708.879,
+      "dur": 9.408,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837708.879,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837718.319,
+      "dur": 9.408,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837718.319,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837727.759,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837727.759,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837737.167,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837737.167,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837746.639,
+      "dur": 9.44,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837746.639,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837756.111,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837756.111,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837765.487,
+      "dur": 9.472,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837765.487,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837774.991,
+      "dur": 9.408,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837774.991,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837784.431,
+      "dur": 9.408,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837784.431,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837793.871,
+      "dur": 9.408,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837793.871,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837803.311,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837803.311,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837812.687,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837812.687,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837822.095,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837822.095,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837831.503,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837831.503,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837840.911,
+      "dur": 9.312,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837840.911,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837850.319,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837850.319,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837859.759,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837859.759,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837869.167,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837869.167,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837878.607,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837878.607,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837888.047,
+      "dur": 9.312,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837888.047,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837897.423,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837897.423,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837906.831,
+      "dur": 9.343,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837906.831,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837916.239,
+      "dur": 9.375,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837916.239,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837925.679,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837925.679,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837935.119,
+      "dur": 9.312,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837935.119,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837944.527,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837944.527,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837953.967,
+      "dur": 9.407,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837953.967,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837963.439,
+      "dur": 9.408,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837963.439,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837972.91,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837972.91,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837982.319,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837982.319,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837991.727,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837991.727,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389838001.167,
+      "dur": 9.376,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389838001.167,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389838010.606,
+      "dur": 9.344,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 7,
+        "registers per thread": 146,
+        "shared memory": 81920,
+        "blocks per SM": 0.148148,
+        "warps per SM": 0.592593,
+        "grid": [
+          16,
+          1,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 7,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389838010.606,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaGraphLaunch",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389837437.1,
+      "dur": 105.168,
+      "args": {
+        "cbid": 311,
+        "correlation": 7
+      }
+    },
+    {
+      "ph": "s",
+      "id": 7,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389837437.1,
+      "cat": "ac2g",
+      "name": "ac2g"
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaDeviceSynchronize",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389837590.34,
+      "dur": 434.928,
+      "args": {
+        "cbid": 165,
+        "correlation": 11
+      }
+    },
+    {
+      "ph": "s",
+      "id": 11,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389837590.34,
+      "cat": "ac2g",
+      "name": "ac2g"
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaDeviceSynchronize",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389838181.505,
+      "dur": 11.179,
+      "args": {
+        "cbid": 165,
+        "correlation": 15
+      }
+    },
+    {
+      "ph": "s",
+      "id": 15,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715389838181.505,
+      "cat": "ac2g",
+      "name": "ac2g"
+    },
+    {
+      "ph": "X",
+      "cat": "gpu_user_annotation",
+      "name": "linear_perf_graph_replay",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715389837547.15,
+      "dur": 472.801,
+      "args": {
+        "External id": 1
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 0,
+      "args": {
+        "labels": "CPU"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 0,
+      "args": {
+        "sort_index": 1013
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 0"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000000
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 1"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000001
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 2,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 2,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 2"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 2,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000002
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 3,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 3,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 3"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 3,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000003
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 4,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 4,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 4"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 4,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000004
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 5,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 5,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 5"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 5,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000005
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 6,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 6,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 6"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 6,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000006
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 7,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 7,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 7"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 7,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000007
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 8,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 8,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 8"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 8,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000008
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 9,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 9,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 9"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 9,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000009
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 10,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 10,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 10"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 10,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000010
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 11,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 11,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 11"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 11,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000011
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 12,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 12,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 12"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 12,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000012
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 13,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 13,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 13"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 13,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000013
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 14,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 14,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 14"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 14,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000014
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 15,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 15,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 15"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 15,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000015
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 0,
+      "tid": 7,
+      "args": {
+        "name": "stream 7 "
+      }
+    },
+    {
+      "name": "thread_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 0,
+      "tid": 7,
+      "args": {
+        "sort_index": 7
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "name": "thread 1013 (python3)"
+      }
+    },
+    {
+      "name": "thread_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "sort_index": 1013
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "name": "thread 1013 (python3)"
+      }
+    },
+    {
+      "name": "thread_sort_index",
+      "ph": "M",
+      "ts": 2715389834810.908,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "sort_index": 1013
+      }
+    },
+    {
+      "ph": "X",
+      "cat": "Trace",
+      "ts": 2715389834751.446,
+      "dur": 3463.802,
+      "pid": "Spans",
+      "tid": "PyTorch Profiler",
+      "name": "PyTorch Profiler (0)",
+      "args": {
+        "Op count": 0
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715389834751.446,
+      "pid": "Spans",
+      "tid": 0,
+      "args": {
+        "sort_index": 536870912
+      }
+    },
+    {
+      "name": "Iteration Start: PyTorch Profiler",
+      "ph": "i",
+      "s": "g",
+      "pid": "Traces",
+      "tid": "Trace PyTorch Profiler",
+      "ts": 2715389834751.446
+    },
+    {
+      "name": "Record Window End",
+      "ph": "i",
+      "s": "g",
+      "pid": "",
+      "tid": "",
+      "ts": 2715389838397.455
+    }
+  ],
+  "traceName": "./diagnostics/profiles/x02/graph_trace.json"
+}

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transformer-linear-layer-performance-predictor"
+version = "1.0.0"
+description = "Auditable GPU linear-layer latency modeling, diagnostics, transfer and measurement selection"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "matplotlib>=3.8,<4"]
+
+[project.scripts]
+linear-perf = "linear_perf.campaign:main"
+
+[tool.setuptools.packages.find]
+include = ["linear_perf*"]

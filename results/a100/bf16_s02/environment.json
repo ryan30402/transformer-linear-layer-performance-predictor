@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-01T23:08:32.302136+00:00",
+  "measurement_kind": "cuda_measured",
+  "environment_id": "6e351d4cd90dd80f8010ff71bd93b0361eb041fea229d9a672ef88a440f10b83",
+  "plan_hash": "774be1d0a40dcb3e2c8187ae87bde36240da62a94e0dd7221053eec0f8198ded",
+  "identity": {
+    "schema_version": 1,
+    "runner_version": "cuda-events",
+    "python_version": "3.12.13",
+    "platform": {
+      "system": "Linux",
+      "machine": "x86_64"
+    },
+    "pytorch_version": "2.11.0+cu128",
+    "cuda_runtime_version": "12.8",
+    "driver_versions": [
+      "580.82.07"
+    ],
+    "device": {
+      "logical_device_index": 0,
+      "name": "NVIDIA A100-SXM4-40GB",
+      "compute_capability": [
+        8,
+        0
+      ],
+      "total_memory_bytes": 42405855232,
+      "multiprocessor_count": 108,
+      "uuid": "bf0b1aa3-d6a9-aa18-a2a8-f731625f9595"
+    },
+    "dtype": "bfloat16",
+    "cache_policy": "warm_reuse",
+    "timing": {
+      "mode": "cuda_graph",
+      "warmup": 20,
+      "iterations": 50,
+      "repeats": 9,
+      "graph_warmup_replays": 5,
+      "graph_warmup_min_seconds": 0.25,
+      "graph_warmup_max_replays": 4096
+    },
+    "collection": {
+      "blocks": 3,
+      "order": "seeded_shuffle_per_block",
+      "aggregation": "median_of_block_medians"
+    },
+    "math_policy": {
+      "fp32_reference_precision": "ieee",
+      "tf32_control_api": "fp32_precision",
+      "fp32_precision": "ieee",
+      "allow_fp16_reduced_precision_reduction": false,
+      "allow_bf16_reduced_precision_reduction": false,
+      "allow_fp16_accumulation": false
+    },
+    "execution": {
+      "operation": "torch.mm(X, W_T, out=Y); W_T=W.t() prepared before timing",
+      "mode": "cuda_graph",
+      "layout": "contiguous_X_MK_weight_NK_Y_MN; transposed_weight_view_KN",
+      "autocast": "disabled",
+      "grad": "inference_mode",
+      "input_distribution": "normal; X scaled by 1/sqrt(K) before dtype cast",
+      "timer": "CUDA_events_one_graph_replay_divided_by_captured_operations",
+      "timer_scope": "graph_replay_elapsed_including_graph_launch_and_inter_kernel_gaps_per_operation",
+      "captured_operations_per_graph": 50,
+      "graph_warmup_replays": 5,
+      "capture_and_warmup_excluded_from_timing": true,
+      "output_poisoned_after_capture_before_replay": true,
+      "setup": "eager warmup and capture on a joined side stream; static input/output addresses",
+      "graph_warmup_min_seconds": 0.25,
+      "graph_warmup_max_replays": 4096,
+      "graph_warmup_stop_rule": "fixed minimum wall duration and minimum replay count; never sample-quality adaptive",
+      "graph_warmup_scope": "target graph before each case visit; batching prepares each variant before every timed sample"
+    }
+  },
+  "limitations": [
+    "Clock, thermal, power, and concurrent-load differences are not controlled by this identity.",
+    "warm_reuse does not flush caches or measure HBM bytes.",
+    "Run one experiment process at a time on an otherwise idle GPU."
+  ],
+  "session_id": "bf16_s02",
+  "session_metadata_is_not_hardware_identity": true
+}

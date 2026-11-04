@@ -1,0 +1,2942 @@
+{
+  "initial": {
+    "criteria": {
+      "within_visit_cv_pct": 10.0,
+      "pass_ratio": 1.2,
+      "control_ratio": 1.2
+    },
+    "per_case": {
+      "c01": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.004513919949531555,
+          0.004489600062370301,
+          0.004509440064430237
+        ],
+        "block_median_sample_cv_pct": 0.28734986578174193,
+        "max_over_min_block_median": 1.005416938440707,
+        "within_block_sample_cv_pct": [
+          0.9355349318423549,
+          0.8642010008080171,
+          1.3450226381242023
+        ],
+        "max_within_block_sample_cv_pct": 1.3450226381242023,
+        "observed_block_median_min_ms": 0.004489600062370301,
+        "observed_block_median_max_ms": 0.004513919949531555,
+        "absolute_block_median_range_us": 0.02431988716125426,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c02": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00657151997089386,
+          0.0065504002571105955,
+          0.0065465599298477175
+        ],
+        "block_median_sample_cv_pct": 0.20499733411655655,
+        "max_over_min_block_median": 1.0038126957231908,
+        "within_block_sample_cv_pct": [
+          0.9657769499016481,
+          0.9222907314307456,
+          0.6255478050596612
+        ],
+        "max_within_block_sample_cv_pct": 0.9657769499016481,
+        "observed_block_median_min_ms": 0.0065465599298477175,
+        "observed_block_median_max_ms": 0.00657151997089386,
+        "absolute_block_median_range_us": 0.024960041046142266,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c03": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.006944000124931336,
+          0.006944000124931336,
+          0.006989439725875854
+        ],
+        "block_median_sample_cv_pct": 0.3769796373646464,
+        "max_over_min_block_median": 1.0065437212164463,
+        "within_block_sample_cv_pct": [
+          0.6396320670066065,
+          0.736726640849449,
+          1.0290744556343678
+        ],
+        "max_within_block_sample_cv_pct": 1.0290744556343678,
+        "observed_block_median_min_ms": 0.006944000124931336,
+        "observed_block_median_max_ms": 0.006989439725875854,
+        "absolute_block_median_range_us": 0.04543960094451852,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c04": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.014825600385665893,
+          0.014793599843978883,
+          0.014809600114822387
+        ],
+        "block_median_sample_cv_pct": 0.10803985738609542,
+        "max_over_min_block_median": 1.0021631341948212,
+        "within_block_sample_cv_pct": [
+          0.32810874629146086,
+          0.2998621548200615,
+          0.357313057978722
+        ],
+        "max_within_block_sample_cv_pct": 0.357313057978722,
+        "observed_block_median_min_ms": 0.014793599843978883,
+        "observed_block_median_max_ms": 0.014825600385665893,
+        "absolute_block_median_range_us": 0.03200054168701026,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c05": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.004926719963550568,
+          0.005018240213394165,
+          0.004949119985103607
+        ],
+        "block_median_sample_cv_pct": 0.9609104847701782,
+        "max_over_min_block_median": 1.0185763044217437,
+        "within_block_sample_cv_pct": [
+          0.757531706401986,
+          1.0368041766609504,
+          1.2533635795556481
+        ],
+        "max_within_block_sample_cv_pct": 1.2533635795556481,
+        "observed_block_median_min_ms": 0.004926719963550568,
+        "observed_block_median_max_ms": 0.005018240213394165,
+        "absolute_block_median_range_us": 0.09152024984359752,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c06": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.007653759717941284,
+          0.007655680179595947,
+          0.007640960216522216
+        ],
+        "block_median_sample_cv_pct": 0.10459957866244735,
+        "max_over_min_block_median": 1.001926454615207,
+        "within_block_sample_cv_pct": [
+          1.0763773979677649,
+          0.7566725132754553,
+          0.46843028240797413
+        ],
+        "max_within_block_sample_cv_pct": 1.0763773979677649,
+        "observed_block_median_min_ms": 0.007640960216522216,
+        "observed_block_median_max_ms": 0.007655680179595947,
+        "absolute_block_median_range_us": 0.01471996307373085,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c07": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00783680021762848,
+          0.007960960268974304,
+          0.007912319898605347
+        ],
+        "block_median_sample_cv_pct": 0.7916008982773854,
+        "max_over_min_block_median": 1.0158432074185755,
+        "within_block_sample_cv_pct": [
+          0.6194098270815219,
+          3.2270235789279553,
+          1.3843580968581222
+        ],
+        "max_within_block_sample_cv_pct": 3.2270235789279553,
+        "observed_block_median_min_ms": 0.00783680021762848,
+        "observed_block_median_max_ms": 0.007960960268974304,
+        "absolute_block_median_range_us": 0.12416005134582506,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c08": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.018336639404296876,
+          0.01830016016960144,
+          0.01836159944534302
+        ],
+        "block_median_sample_cv_pct": 0.16854540057922834,
+        "max_over_min_block_median": 1.003357308087589,
+        "within_block_sample_cv_pct": [
+          0.36748082968628143,
+          0.32174677893321024,
+          0.4222066444517927
+        ],
+        "max_within_block_sample_cv_pct": 0.4222066444517927,
+        "observed_block_median_min_ms": 0.01830016016960144,
+        "observed_block_median_max_ms": 0.01836159944534302,
+        "absolute_block_median_range_us": 0.061439275741578814,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c09": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011210240125656128,
+          0.01122431993484497,
+          0.011214720010757446
+        ],
+        "block_median_sample_cv_pct": 0.06413261254236471,
+        "max_over_min_block_median": 1.0012559774840701,
+        "within_block_sample_cv_pct": [
+          0.29659122739870447,
+          0.38328373967990353,
+          0.4075540413151874
+        ],
+        "max_within_block_sample_cv_pct": 0.4075540413151874,
+        "observed_block_median_min_ms": 0.011210240125656128,
+        "observed_block_median_max_ms": 0.01122431993484497,
+        "absolute_block_median_range_us": 0.014079809188842843,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c10": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011294080018997192,
+          0.011251840591430664,
+          0.011246720552444458
+        ],
+        "block_median_sample_cv_pct": 0.23074273390432612,
+        "max_over_min_block_median": 1.0042109578816236,
+        "within_block_sample_cv_pct": [
+          0.7930049136951711,
+          0.35012822315597375,
+          0.3826601045953762
+        ],
+        "max_within_block_sample_cv_pct": 0.7930049136951711,
+        "observed_block_median_min_ms": 0.011246720552444458,
+        "observed_block_median_max_ms": 0.011294080018997192,
+        "absolute_block_median_range_us": 0.047359466552734236,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c11": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.017287039756774904,
+          0.017246719598770142,
+          0.0173855996131897
+        ],
+        "block_median_sample_cv_pct": 0.4128302443863436,
+        "max_over_min_block_median": 1.0080525466668722,
+        "within_block_sample_cv_pct": [
+          0.27058385297164494,
+          0.22690493035133602,
+          0.33740005369324005
+        ],
+        "max_within_block_sample_cv_pct": 0.33740005369324005,
+        "observed_block_median_min_ms": 0.017246719598770142,
+        "observed_block_median_max_ms": 0.0173855996131897,
+        "absolute_block_median_range_us": 0.13888001441955677,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c12": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.10803903579711914,
+          0.10802176475524902,
+          0.10781951904296876
+        ],
+        "block_median_sample_cv_pct": 0.11305861215330477,
+        "max_over_min_block_median": 1.0020359648800037,
+        "within_block_sample_cv_pct": [
+          0.40517567194771287,
+          0.3274869701925686,
+          0.053297974631911084
+        ],
+        "max_within_block_sample_cv_pct": 0.40517567194771287,
+        "observed_block_median_min_ms": 0.10781951904296876,
+        "observed_block_median_max_ms": 0.10803903579711914,
+        "absolute_block_median_range_us": 0.21951675415038396,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c13": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.07958784103393554,
+          0.07929215908050537,
+          0.0791923189163208
+        ],
+        "block_median_sample_cv_pct": 0.25918585727052385,
+        "max_over_min_block_median": 1.00499445051019,
+        "within_block_sample_cv_pct": [
+          0.12791920270805104,
+          0.1389087246950679,
+          0.19049374965871502
+        ],
+        "max_within_block_sample_cv_pct": 0.19049374965871502,
+        "observed_block_median_min_ms": 0.0791923189163208,
+        "observed_block_median_max_ms": 0.07958784103393554,
+        "absolute_block_median_range_us": 0.39552211761474665,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c14": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08665408134460449,
+          0.08696255683898926,
+          0.08670975685119629
+        ],
+        "block_median_sample_cv_pct": 0.18945480399584588,
+        "max_over_min_block_median": 1.0035598495719784,
+        "within_block_sample_cv_pct": [
+          0.22072593141121133,
+          0.0621094419277936,
+          0.08998668157007542
+        ],
+        "max_within_block_sample_cv_pct": 0.22072593141121133,
+        "observed_block_median_min_ms": 0.08665408134460449,
+        "observed_block_median_max_ms": 0.08696255683898926,
+        "absolute_block_median_range_us": 0.30847549438477173,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c15": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.10095168113708496,
+          0.10114751815795898,
+          0.101146879196167
+        ],
+        "block_median_sample_cv_pct": 0.11167421224229271,
+        "max_over_min_block_median": 1.0019399084657945,
+        "within_block_sample_cv_pct": [
+          0.10801101354902559,
+          0.14143044371758984,
+          0.20249229865508306
+        ],
+        "max_within_block_sample_cv_pct": 0.20249229865508306,
+        "observed_block_median_min_ms": 0.10095168113708496,
+        "observed_block_median_max_ms": 0.10114751815795898,
+        "absolute_block_median_range_us": 0.195837020874029,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c16": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.4637171173095703,
+          0.4637177658081055,
+          0.463570556640625
+        ],
+        "block_median_sample_cv_pct": 0.01828993572476818,
+        "max_over_min_block_median": 1.0003175550417767,
+        "within_block_sample_cv_pct": [
+          0.021958693267667577,
+          0.012765936263701273,
+          0.03607221210363588
+        ],
+        "max_within_block_sample_cv_pct": 0.03607221210363588,
+        "observed_block_median_min_ms": 0.463570556640625,
+        "observed_block_median_max_ms": 0.4637177658081055,
+        "absolute_block_median_range_us": 0.14720916748045543,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c17": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.005296639800071716,
+          0.005286399722099305,
+          0.005290240049362183
+        ],
+        "block_median_sample_cv_pct": 0.0977694596968523,
+        "max_over_min_block_median": 1.0019370608562959,
+        "within_block_sample_cv_pct": [
+          1.1140223427633835,
+          0.9198311996667933,
+          0.5429230204974076
+        ],
+        "max_within_block_sample_cv_pct": 1.1140223427633835,
+        "observed_block_median_min_ms": 0.005286399722099305,
+        "observed_block_median_max_ms": 0.005296639800071716,
+        "absolute_block_median_range_us": 0.010240077972411415,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c18": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.016143360137939454,
+          0.016187520027160646,
+          0.01617792010307312
+        ],
+        "block_median_sample_cv_pct": 0.14363909713151726,
+        "max_over_min_block_median": 1.0027354831239508,
+        "within_block_sample_cv_pct": [
+          0.6289088015024797,
+          1.3873373941973028,
+          0.4977483005596824
+        ],
+        "max_within_block_sample_cv_pct": 1.3873373941973028,
+        "observed_block_median_min_ms": 0.016143360137939454,
+        "observed_block_median_max_ms": 0.016187520027160646,
+        "absolute_block_median_range_us": 0.044159889221191684,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c19": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.02262592077255249,
+          0.022702720165252686,
+          0.02263871908187866
+        ],
+        "block_median_sample_cv_pct": 0.1816147376446972,
+        "max_over_min_block_median": 1.0033943101574616,
+        "within_block_sample_cv_pct": [
+          0.2521763187442748,
+          0.4391316144943041,
+          0.32242437475587554
+        ],
+        "max_within_block_sample_cv_pct": 0.4391316144943041,
+        "observed_block_median_min_ms": 0.02262592077255249,
+        "observed_block_median_max_ms": 0.022702720165252686,
+        "absolute_block_median_range_us": 0.0767993927001942,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c20": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.1021497631072998,
+          0.10233216285705567,
+          0.10213567733764649
+        ],
+        "block_median_sample_cv_pct": 0.10723579520823648,
+        "max_over_min_block_median": 1.0019237696809864,
+        "within_block_sample_cv_pct": [
+          0.0940436324992051,
+          0.049250303633624044,
+          0.07417769016011098
+        ],
+        "max_within_block_sample_cv_pct": 0.0940436324992051,
+        "observed_block_median_min_ms": 0.10213567733764649,
+        "observed_block_median_max_ms": 0.10233216285705567,
+        "absolute_block_median_range_us": 0.19648551940917858,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c21": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.01193600058555603,
+          0.011921919584274292,
+          0.011942399740219116
+        ],
+        "block_median_sample_cv_pct": 0.08779899671365277,
+        "max_over_min_block_median": 1.0017178572460628,
+        "within_block_sample_cv_pct": [
+          0.3924897491086812,
+          0.6226884919212873,
+          0.3922267876918364
+        ],
+        "max_within_block_sample_cv_pct": 0.6226884919212873,
+        "observed_block_median_min_ms": 0.011921919584274292,
+        "observed_block_median_max_ms": 0.011942399740219116,
+        "absolute_block_median_range_us": 0.020480155944824566,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c22": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.03821376085281372,
+          0.03833087921142578,
+          0.03808703899383545
+        ],
+        "block_median_sample_cv_pct": 0.3191568632635874,
+        "max_over_min_block_median": 1.0064021836307568,
+        "within_block_sample_cv_pct": [
+          0.16844635120116866,
+          0.13058812168352102,
+          0.6290445806126216
+        ],
+        "max_within_block_sample_cv_pct": 0.6290445806126216,
+        "observed_block_median_min_ms": 0.03808703899383545,
+        "observed_block_median_max_ms": 0.03833087921142578,
+        "absolute_block_median_range_us": 0.2438402175903298,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c23": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.06124735832214356,
+          0.06090879917144775,
+          0.062243838310241696
+        ],
+        "block_median_sample_cv_pct": 1.1290884014011433,
+        "max_over_min_block_median": 1.0219186580092647,
+        "within_block_sample_cv_pct": [
+          0.2129887669641783,
+          0.19937410998238683,
+          0.2583446470928832
+        ],
+        "max_within_block_sample_cv_pct": 0.2583446470928832,
+        "observed_block_median_min_ms": 0.06090879917144775,
+        "observed_block_median_max_ms": 0.062243838310241696,
+        "absolute_block_median_range_us": 1.3350391387939449,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "c24": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.36004478454589844,
+          0.36313472747802733,
+          0.3627596664428711
+        ],
+        "block_median_sample_cv_pct": 0.4658187175664969,
+        "max_over_min_block_median": 1.0085821071843217,
+        "within_block_sample_cv_pct": [
+          0.07249313102363282,
+          0.14253241718560092,
+          0.09475310704067554
+        ],
+        "max_within_block_sample_cv_pct": 0.14253241718560092,
+        "observed_block_median_min_ms": 0.36004478454589844,
+        "observed_block_median_max_ms": 0.36313472747802733,
+        "absolute_block_median_range_us": 3.0899429321288863,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d01": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.006549760103225708,
+          0.006538239717483521,
+          0.006540799736976624
+        ],
+        "block_median_sample_cv_pct": 0.09245483726867862,
+        "max_over_min_block_median": 1.0017620011256825,
+        "within_block_sample_cv_pct": [
+          1.1692906759014368,
+          0.9738256721229374,
+          0.9859217850287911
+        ],
+        "max_within_block_sample_cv_pct": 1.1692906759014368,
+        "observed_block_median_min_ms": 0.006538239717483521,
+        "observed_block_median_max_ms": 0.006549760103225708,
+        "absolute_block_median_range_us": 0.01152038574218743,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d02": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.007454079985618592,
+          0.007396479845046997,
+          0.007460479736328125
+        ],
+        "block_median_sample_cv_pct": 0.47395975304047994,
+        "max_over_min_block_median": 1.0086527500408164,
+        "within_block_sample_cv_pct": [
+          0.6717586871916446,
+          0.5391750032233408,
+          0.5367159807959317
+        ],
+        "max_within_block_sample_cv_pct": 0.6717586871916446,
+        "observed_block_median_min_ms": 0.007396479845046997,
+        "observed_block_median_max_ms": 0.007460479736328125,
+        "absolute_block_median_range_us": 0.06399989128112823,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d03": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00762112021446228,
+          0.007615360021591186,
+          0.007623680233955384
+        ],
+        "block_median_sample_cv_pct": 0.055924075971247926,
+        "max_over_min_block_median": 1.0010925566671316,
+        "within_block_sample_cv_pct": [
+          0.52085148076417,
+          0.8363855558418639,
+          0.7799035655665503
+        ],
+        "max_within_block_sample_cv_pct": 0.8363855558418639,
+        "observed_block_median_min_ms": 0.007615360021591186,
+        "observed_block_median_max_ms": 0.007623680233955384,
+        "absolute_block_median_range_us": 0.008320212364197437,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d04": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00996288001537323,
+          0.009978880286216735,
+          0.009939200282096862
+        ],
+        "block_median_sample_cv_pct": 0.20043001724479645,
+        "max_over_min_block_median": 1.0039922733211593,
+        "within_block_sample_cv_pct": [
+          0.5631899637029866,
+          0.40222639110976455,
+          0.5706916555101001
+        ],
+        "max_within_block_sample_cv_pct": 0.5706916555101001,
+        "observed_block_median_min_ms": 0.009939200282096862,
+        "observed_block_median_max_ms": 0.009978880286216735,
+        "absolute_block_median_range_us": 0.039680004119873116,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d05": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011232000589370728,
+          0.01123263955116272,
+          0.011244159936904908
+        ],
+        "block_median_sample_cv_pct": 0.06090289647263325,
+        "max_over_min_block_median": 1.0010825629359106,
+        "within_block_sample_cv_pct": [
+          0.4272587895697556,
+          0.4547978335892708,
+          0.9074639179611201
+        ],
+        "max_within_block_sample_cv_pct": 0.9074639179611201,
+        "observed_block_median_min_ms": 0.011232000589370728,
+        "observed_block_median_max_ms": 0.011244159936904908,
+        "absolute_block_median_range_us": 0.012159347534179688,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d06": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.029989120960235597,
+          0.0298636794090271,
+          0.029839999675750732
+        ],
+        "block_median_sample_cv_pct": 0.26804462777526344,
+        "max_over_min_block_median": 1.0049973621348947,
+        "within_block_sample_cv_pct": [
+          0.1764206446848389,
+          0.2835623129704007,
+          0.24099112741251713
+        ],
+        "max_within_block_sample_cv_pct": 0.2835623129704007,
+        "observed_block_median_min_ms": 0.029839999675750732,
+        "observed_block_median_max_ms": 0.029989120960235597,
+        "absolute_block_median_range_us": 0.1491212844848648,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d07": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08448191642761231,
+          0.08409472465515137,
+          0.0841324806213379
+        ],
+        "block_median_sample_cv_pct": 0.2534325399305745,
+        "max_over_min_block_median": 1.0046042337857541,
+        "within_block_sample_cv_pct": [
+          0.11321115199082318,
+          0.08625999791754135,
+          0.09058061760530393
+        ],
+        "max_within_block_sample_cv_pct": 0.11321115199082318,
+        "observed_block_median_min_ms": 0.08409472465515137,
+        "observed_block_median_max_ms": 0.08448191642761231,
+        "absolute_block_median_range_us": 0.3871917724609375,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d08": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.1511564826965332,
+          0.15141823768615723,
+          0.15126272201538085
+        ],
+        "block_median_sample_cv_pct": 0.0870234037321687,
+        "max_over_min_block_median": 1.0017316821942035,
+        "within_block_sample_cv_pct": [
+          0.03983603388750297,
+          0.41393171540167123,
+          0.4413661139147548
+        ],
+        "max_within_block_sample_cv_pct": 0.4413661139147548,
+        "observed_block_median_min_ms": 0.1511564826965332,
+        "observed_block_median_max_ms": 0.15141823768615723,
+        "absolute_block_median_range_us": 0.26175498962402455,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d09": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.015799039602279664,
+          0.015831680297851564,
+          0.015831040143966676
+        ],
+        "block_median_sample_cv_pct": 0.11796694490573588,
+        "max_over_min_block_median": 1.002065992389005,
+        "within_block_sample_cv_pct": [
+          0.7478330409176778,
+          0.6866067932143967,
+          0.5327414114877792
+        ],
+        "max_within_block_sample_cv_pct": 0.7478330409176778,
+        "observed_block_median_min_ms": 0.015799039602279664,
+        "observed_block_median_max_ms": 0.015831680297851564,
+        "absolute_block_median_range_us": 0.032640695571899137,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d10": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.037043840885162355,
+          0.03700799942016601,
+          0.03708735942840576
+        ],
+        "block_median_sample_cv_pct": 0.10727586051104077,
+        "max_over_min_block_median": 1.0021444014667948,
+        "within_block_sample_cv_pct": [
+          0.33656249779712655,
+          0.15699708179642927,
+          0.16520420817006234
+        ],
+        "max_within_block_sample_cv_pct": 0.33656249779712655,
+        "observed_block_median_min_ms": 0.03700799942016601,
+        "observed_block_median_max_ms": 0.03708735942840576,
+        "absolute_block_median_range_us": 0.0793600082397497,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d11": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.0354803204536438,
+          0.035196158885955814,
+          0.034958720207214355
+        ],
+        "block_median_sample_cv_pct": 0.741652391681167,
+        "max_over_min_block_median": 1.0149204617142078,
+        "within_block_sample_cv_pct": [
+          0.30708912085675244,
+          0.29684463822768065,
+          0.2737934201864219
+        ],
+        "max_within_block_sample_cv_pct": 0.30708912085675244,
+        "observed_block_median_min_ms": 0.034958720207214355,
+        "observed_block_median_max_ms": 0.0354803204536438,
+        "absolute_block_median_range_us": 0.5216002464294434,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "d12": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.11348095893859864,
+          0.11467967987060547,
+          0.11462207794189454
+        ],
+        "block_median_sample_cv_pct": 0.5916873793978452,
+        "max_over_min_block_median": 1.0105631900119512,
+        "within_block_sample_cv_pct": [
+          0.11326767961904087,
+          0.14338936238872999,
+          0.19089523329487648
+        ],
+        "max_within_block_sample_cv_pct": 0.19089523329487648,
+        "observed_block_median_min_ms": 0.11348095893859864,
+        "observed_block_median_max_ms": 0.11467967987060547,
+        "absolute_block_median_range_us": 1.1987209320068333,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      }
+    },
+    "controls": {
+      "x01": {
+        "visits": 15,
+        "medians_ms": [
+          0.00473471999168396,
+          0.004730240106582641,
+          0.004732800126075745,
+          0.0047257599234580994,
+          0.004736639857292176,
+          0.00474368005990982,
+          0.004739199876785278,
+          0.0047129601240158085,
+          0.0049587199091911316,
+          0.004731520116329193,
+          0.004739840030670166,
+          0.004757120013236999,
+          0.004759039878845215,
+          0.004778240025043488,
+          0.004746240079402924
+        ],
+        "visit_indices": [
+          1,
+          14,
+          24,
+          34,
+          47,
+          57,
+          67,
+          80,
+          90,
+          100,
+          113,
+          123,
+          133,
+          146,
+          152
+        ],
+        "monotonic_seconds": [
+          1770.51847534,
+          1774.832579696,
+          1778.121228916,
+          1781.307946431,
+          1785.922466019,
+          1789.669171022,
+          1792.980887536,
+          1797.575020504,
+          1800.99582776,
+          1804.535910118,
+          1809.325890434,
+          1812.702420847,
+          1816.150980301,
+          1820.995091837,
+          1823.126479867
+        ],
+        "max_over_min": 1.0521455261042856,
+        "ratios_to_first": [
+          1.0,
+          0.9990538225894695,
+          0.999594513379548,
+          0.9981075822347261,
+          1.0004054866204524,
+          1.001892417765274,
+          1.0009461774105306,
+          0.9954041912285477,
+          1.0473100664665713,
+          0.9993241679845087,
+          1.0010813815801567,
+          1.0047310129410785,
+          1.0051364995615306,
+          1.0091916804871177,
+          1.0024331085553524
+        ],
+        "within_visit_cv_pct": [
+          0.9776679201757332,
+          0.9183226440268923,
+          1.4423904785092145,
+          1.006845639034895,
+          0.8945653684677186,
+          0.7980968640626198,
+          1.15730664717621,
+          1.0422530236237142,
+          2.6531335166738126,
+          0.6836150844978887,
+          0.9812837397826589,
+          1.2449262001028305,
+          0.9243138970884427,
+          1.2100838827275666,
+          1.6068876985286829
+        ]
+      },
+      "x03": {
+        "visits": 15,
+        "medians_ms": [
+          0.02218303918838501,
+          0.02218303918838501,
+          0.02212735891342163,
+          0.022133119106292724,
+          0.022170240879058837,
+          0.02212160110473633,
+          0.02211967945098877,
+          0.02210815906524658,
+          0.022186241149902343,
+          0.02217344045639038,
+          0.022118399143218993,
+          0.02214656114578247,
+          0.02212160110473633,
+          0.022215681076049806,
+          0.022151679992675782
+        ],
+        "visit_indices": [
+          2,
+          12,
+          25,
+          35,
+          45,
+          58,
+          68,
+          78,
+          91,
+          101,
+          111,
+          124,
+          134,
+          144,
+          153
+        ],
+        "monotonic_seconds": [
+          1770.811952483,
+          1774.151703797,
+          1778.419509274,
+          1781.607494712,
+          1785.193021593,
+          1790.0174597,
+          1793.287156181,
+          1796.869498372,
+          1801.347624198,
+          1804.847039738,
+          1808.570182119,
+          1813.057940163,
+          1816.504641884,
+          1820.228014678,
+          1823.449340001
+        ],
+        "max_over_min": 1.0048634538265218,
+        "ratios_to_first": [
+          1.0,
+          1.0,
+          0.9974899618356833,
+          0.9977496283683966,
+          0.9994230587965208,
+          0.9972304027808394,
+          0.9971437756180219,
+          0.9966244425525951,
+          1.0001443427787393,
+          0.9995672940973905,
+          0.9970860600021,
+          0.9983555885966411,
+          0.9972304027808394,
+          1.0014714795113326,
+          0.9985863435824588
+        ],
+        "within_visit_cv_pct": [
+          0.31292552407444285,
+          0.2693205302880461,
+          0.24654240532322674,
+          0.32865032295352603,
+          0.2209519651618479,
+          0.3843423845391749,
+          0.20553054066634585,
+          0.2537426545482683,
+          0.3013073802465592,
+          0.39773801458298524,
+          0.1711408162949019,
+          0.32379964129565825,
+          0.27260959253337014,
+          0.40560741054376265,
+          0.19294206741131023
+        ]
+      },
+      "x06": {
+        "visits": 15,
+        "medians_ms": [
+          0.16334783554077148,
+          0.16310272216796876,
+          0.16502016067504882,
+          0.1632089614868164,
+          0.1647654342651367,
+          0.16500160217285156,
+          0.16553728103637697,
+          0.16484735488891603,
+          0.16512319564819336,
+          0.16319679260253905,
+          0.16394880294799805,
+          0.16555648803710937,
+          0.16487743377685546,
+          0.1652083206176758,
+          0.16492927551269532
+        ],
+        "visit_indices": [
+          3,
+          13,
+          23,
+          36,
+          46,
+          56,
+          69,
+          79,
+          89,
+          102,
+          112,
+          122,
+          135,
+          145,
+          151
+        ],
+        "monotonic_seconds": [
+          1771.115410888,
+          1774.455697858,
+          1777.664957443,
+          1781.948638947,
+          1785.538367461,
+          1789.280487975,
+          1793.603348792,
+          1797.18386706,
+          1800.601260479,
+          1805.167789304,
+          1808.893907104,
+          1812.302968038,
+          1816.830502366,
+          1820.556967059,
+          1822.690234371
+        ],
+        "max_over_min": 1.0150442974619005,
+        "ratios_to_first": [
+          1.0,
+          0.9984994391141379,
+          1.0102378163061727,
+          0.999149826176176,
+          1.008678405316313,
+          1.010124202910955,
+          1.0134035782497957,
+          1.0091799156271664,
+          1.0108685866668785,
+          0.999075329417544,
+          1.0036790656284917,
+          1.0135211616917117,
+          1.009364055734318,
+          1.0113897136790646,
+          1.00968142593802
+        ],
+        "within_visit_cv_pct": [
+          0.3722402404527243,
+          0.04591653035652064,
+          0.026332442840741196,
+          0.29547762795704885,
+          0.5188098761626341,
+          0.5578601329965549,
+          0.03216871716261858,
+          0.0542219284086945,
+          0.11641432757651592,
+          0.4821883385877495,
+          0.3501947565211248,
+          0.20460941641479627,
+          0.08796666103497935,
+          0.20988504445793557,
+          0.07280912931915856
+        ]
+      }
+    },
+    "flags": [],
+    "passed": true,
+    "all_timing_criteria_passed": true,
+    "interpretation": "Prospectively declared descriptive engineering criteria, not significance tests. Retain all data; flags qualify claims and never trigger best-pass selection or retries."
+  },
+  "candidate_pool": {
+    "criteria": {
+      "within_visit_cv_pct": 10.0,
+      "pass_ratio": 1.2,
+      "control_ratio": 1.2
+    },
+    "per_case": {
+      "a01": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.006536319851875305,
+          0.006542720198631287,
+          0.0065356802940368655
+        ],
+        "block_median_sample_cv_pct": 0.059542355403324226,
+        "max_over_min_block_median": 1.0010771494745305,
+        "within_block_sample_cv_pct": [
+          0.6774242486841845,
+          0.8864138372590368,
+          1.1929098596010204
+        ],
+        "max_within_block_sample_cv_pct": 1.1929098596010204,
+        "observed_block_median_min_ms": 0.0065356802940368655,
+        "observed_block_median_max_ms": 0.006542720198631287,
+        "absolute_block_median_range_us": 0.007039904594421421,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a02": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.006679679751396179,
+          0.006704000234603882,
+          0.0066860800981521605
+        ],
+        "block_median_sample_cv_pct": 0.18844403169436313,
+        "max_over_min_block_median": 1.0036409654523661,
+        "within_block_sample_cv_pct": [
+          0.6852906118476161,
+          0.9109367709728402,
+          0.6647652753618905
+        ],
+        "max_within_block_sample_cv_pct": 0.9109367709728402,
+        "observed_block_median_min_ms": 0.006679679751396179,
+        "observed_block_median_max_ms": 0.006704000234603882,
+        "absolute_block_median_range_us": 0.024320483207703435,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a03": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.0069075202941894535,
+          0.0069177597761154175,
+          0.006911360025405884
+        ],
+        "block_median_sample_cv_pct": 0.0748356939016612,
+        "max_over_min_block_median": 1.0014823672591417,
+        "within_block_sample_cv_pct": [
+          0.7146908561429849,
+          0.5652713735465776,
+          0.8457262043194038
+        ],
+        "max_within_block_sample_cv_pct": 0.8457262043194038,
+        "observed_block_median_min_ms": 0.0069075202941894535,
+        "observed_block_median_max_ms": 0.0069177597761154175,
+        "absolute_block_median_range_us": 0.010239481925963974,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a04": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.010588159561157226,
+          0.010629760026931763,
+          0.010606080293655396
+        ],
+        "block_median_sample_cv_pct": 0.19670592888442334,
+        "max_over_min_block_median": 1.003928960980825,
+        "within_block_sample_cv_pct": [
+          0.4000899921785407,
+          0.4279528571564773,
+          0.5699967512842301
+        ],
+        "max_within_block_sample_cv_pct": 0.5699967512842301,
+        "observed_block_median_min_ms": 0.010588159561157226,
+        "observed_block_median_max_ms": 0.010629760026931763,
+        "absolute_block_median_range_us": 0.04160046577453627,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a05": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.006500480175018311,
+          0.006515840291976929,
+          0.006512640118598938
+        ],
+        "block_median_sample_cv_pct": 0.12449039531260657,
+        "max_over_min_block_median": 1.0023629203605062,
+        "within_block_sample_cv_pct": [
+          0.7925549262692375,
+          0.8541867714095429,
+          0.7860314399501711
+        ],
+        "max_within_block_sample_cv_pct": 0.8541867714095429,
+        "observed_block_median_min_ms": 0.006500480175018311,
+        "observed_block_median_max_ms": 0.006515840291976929,
+        "absolute_block_median_range_us": 0.01536011695861799,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a06": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.0074099200963974,
+          0.0074291199445724486,
+          0.007415040135383606
+        ],
+        "block_median_sample_cv_pct": 0.13402822943547144,
+        "max_over_min_block_median": 1.002591100568599,
+        "within_block_sample_cv_pct": [
+          1.0259667328670392,
+          1.1465278080832666,
+          0.7658560023583487
+        ],
+        "max_within_block_sample_cv_pct": 1.1465278080832666,
+        "observed_block_median_min_ms": 0.0074099200963974,
+        "observed_block_median_max_ms": 0.0074291199445724486,
+        "absolute_block_median_range_us": 0.01919984817504855,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a07": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00770304024219513,
+          0.007704319953918457,
+          0.007688959836959839
+        ],
+        "block_median_sample_cv_pct": 0.11070334333405753,
+        "max_over_min_block_median": 1.0019976846393168,
+        "within_block_sample_cv_pct": [
+          0.4504140796500696,
+          0.805373978845569,
+          0.4858000265650044
+        ],
+        "max_within_block_sample_cv_pct": 0.805373978845569,
+        "observed_block_median_min_ms": 0.007688959836959839,
+        "observed_block_median_max_ms": 0.007704319953918457,
+        "absolute_block_median_range_us": 0.01536011695861799,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a08": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.017932800054550172,
+          0.017950079441070556,
+          0.017949440479278565
+        ],
+        "block_median_sample_cv_pct": 0.05459740509156332,
+        "max_over_min_block_median": 1.0009635632175578,
+        "within_block_sample_cv_pct": [
+          0.26068465729905294,
+          0.3319447250743066,
+          0.2961222100744005
+        ],
+        "max_within_block_sample_cv_pct": 0.3319447250743066,
+        "observed_block_median_min_ms": 0.017932800054550172,
+        "observed_block_median_max_ms": 0.017950079441070556,
+        "absolute_block_median_range_us": 0.01727938652038366,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a09": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011255040168762206,
+          0.011223679780960083,
+          0.011214079856872559
+        ],
+        "block_median_sample_cv_pct": 0.19073991046460814,
+        "max_over_min_block_median": 1.0036525789375885,
+        "within_block_sample_cv_pct": [
+          0.8206956024735795,
+          1.4296562193958327,
+          0.2817802566038399
+        ],
+        "max_within_block_sample_cv_pct": 1.4296562193958327,
+        "observed_block_median_min_ms": 0.011214079856872559,
+        "observed_block_median_max_ms": 0.011255040168762206,
+        "absolute_block_median_range_us": 0.0409603118896474,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a10": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011318399906158447,
+          0.01130303978919983,
+          0.011304960250854493
+        ],
+        "block_median_sample_cv_pct": 0.07400473222394889,
+        "max_over_min_block_median": 1.0013589368209863,
+        "within_block_sample_cv_pct": [
+          0.3625855005264708,
+          0.49079896756471214,
+          0.30732212755406724
+        ],
+        "max_within_block_sample_cv_pct": 0.49079896756471214,
+        "observed_block_median_min_ms": 0.01130303978919983,
+        "observed_block_median_max_ms": 0.011318399906158447,
+        "absolute_block_median_range_us": 0.015360116958617123,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a11": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.017255040407180785,
+          0.017247999906539916,
+          0.017280639410018922
+        ],
+        "block_median_sample_cv_pct": 0.09950976558355985,
+        "max_over_min_block_median": 1.0018923645440554,
+        "within_block_sample_cv_pct": [
+          0.30745992056006965,
+          0.24612225925262163,
+          0.2748423387475738
+        ],
+        "max_within_block_sample_cv_pct": 0.30745992056006965,
+        "observed_block_median_min_ms": 0.017247999906539916,
+        "observed_block_median_max_ms": 0.017280639410018922,
+        "absolute_block_median_range_us": 0.03263950347900599,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a12": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.05750144004821777,
+          0.057254400253295895,
+          0.057240958213806155
+        ],
+        "block_median_sample_cv_pct": 0.2558122416950866,
+        "max_over_min_block_median": 1.0045506197404779,
+        "within_block_sample_cv_pct": [
+          0.18413149483864696,
+          0.2627476341051058,
+          0.20344872862276622
+        ],
+        "max_within_block_sample_cv_pct": 0.2627476341051058,
+        "observed_block_median_min_ms": 0.057240958213806155,
+        "observed_block_median_max_ms": 0.05750144004821777,
+        "absolute_block_median_range_us": 0.2604818344116161,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a13": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08179391860961914,
+          0.08209024429321289,
+          0.08202112197875977
+        ],
+        "block_median_sample_cv_pct": 0.1891353506761455,
+        "max_over_min_block_median": 1.0036228327072583,
+        "within_block_sample_cv_pct": [
+          0.11478979847715536,
+          0.05840111948431616,
+          0.09299778070113805
+        ],
+        "max_within_block_sample_cv_pct": 0.11478979847715536,
+        "observed_block_median_min_ms": 0.08179391860961914,
+        "observed_block_median_max_ms": 0.08209024429321289,
+        "absolute_block_median_range_us": 0.2963256835937511,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a14": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08624768257141113,
+          0.08633536338806153,
+          0.08634048461914062
+        ],
+        "block_median_sample_cv_pct": 0.060439235487518644,
+        "max_over_min_block_median": 1.0010759946813952,
+        "within_block_sample_cv_pct": [
+          0.08401601047797196,
+          0.24214838479399328,
+          0.05758096445102521
+        ],
+        "max_within_block_sample_cv_pct": 0.24214838479399328,
+        "observed_block_median_min_ms": 0.08624768257141113,
+        "observed_block_median_max_ms": 0.08634048461914062,
+        "absolute_block_median_range_us": 0.09280204772948997,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a15": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.09823488235473633,
+          0.09829440116882324,
+          0.09832256317138671
+        ],
+        "block_median_sample_cv_pct": 0.04554675806364251,
+        "max_over_min_block_median": 1.0008925629526766,
+        "within_block_sample_cv_pct": [
+          0.11950912815971956,
+          0.11596998279909997,
+          0.11885798995217733
+        ],
+        "max_within_block_sample_cv_pct": 0.11950912815971956,
+        "observed_block_median_min_ms": 0.09823488235473633,
+        "observed_block_median_max_ms": 0.09832256317138671,
+        "absolute_block_median_range_us": 0.08768081665037897,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a16": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.32152256011962893,
+          0.32136959075927735,
+          0.32119998931884763
+        ],
+        "block_median_sample_cv_pct": 0.05020998774629434,
+        "max_over_min_block_median": 1.001004267781781,
+        "within_block_sample_cv_pct": [
+          0.06608045193129741,
+          0.049688126539382094,
+          0.025401699379492274
+        ],
+        "max_within_block_sample_cv_pct": 0.06608045193129741,
+        "observed_block_median_min_ms": 0.32119998931884763,
+        "observed_block_median_max_ms": 0.32152256011962893,
+        "absolute_block_median_range_us": 0.32257080078129663,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a17": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.007404800057411193,
+          0.007413759827613831,
+          0.0074054402112960814
+        ],
+        "block_median_sample_cv_pct": 0.06747283969213769,
+        "max_over_min_block_median": 1.001209994886178,
+        "within_block_sample_cv_pct": [
+          0.855186200247298,
+          0.5664109286903332,
+          0.8159763732462133
+        ],
+        "max_within_block_sample_cv_pct": 0.855186200247298,
+        "observed_block_median_min_ms": 0.007404800057411193,
+        "observed_block_median_max_ms": 0.007413759827613831,
+        "absolute_block_median_range_us": 0.008959770202637135,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a18": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.013647359609603883,
+          0.01371008038520813,
+          0.013675520420074463
+        ],
+        "block_median_sample_cv_pct": 0.22967936331050134,
+        "max_over_min_block_median": 1.0045958176085659,
+        "within_block_sample_cv_pct": [
+          0.4500625739008892,
+          0.617567811668813,
+          0.45114106979299906
+        ],
+        "max_within_block_sample_cv_pct": 0.617567811668813,
+        "observed_block_median_min_ms": 0.013647359609603883,
+        "observed_block_median_max_ms": 0.01371008038520813,
+        "absolute_block_median_range_us": 0.06272077560424798,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a19": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.02045567989349365,
+          0.020442240238189698,
+          0.02043519973754883
+        ],
+        "block_median_sample_cv_pct": 0.050895986036075175,
+        "max_over_min_block_median": 1.0010021999397045,
+        "within_block_sample_cv_pct": [
+          0.18502858626701285,
+          0.40110960462386896,
+          0.16811616212186
+        ],
+        "max_within_block_sample_cv_pct": 0.40110960462386896,
+        "observed_block_median_min_ms": 0.02043519973754883,
+        "observed_block_median_max_ms": 0.02045567989349365,
+        "absolute_block_median_range_us": 0.02048015594482283,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a20": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.07852479934692383,
+          0.07857984066009521,
+          0.0785203218460083
+        ],
+        "block_median_sample_cv_pct": 0.04220225709903422,
+        "max_over_min_block_median": 1.000758005223204,
+        "within_block_sample_cv_pct": [
+          0.2448503966297511,
+          0.2428004420015598,
+          0.04527499261230938
+        ],
+        "max_within_block_sample_cv_pct": 0.2448503966297511,
+        "observed_block_median_min_ms": 0.0785203218460083,
+        "observed_block_median_max_ms": 0.07857984066009521,
+        "absolute_block_median_range_us": 0.05951881408691739,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a21": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.03397119998931885,
+          0.03386368036270142,
+          0.03393088102340698
+        ],
+        "block_median_sample_cv_pct": 0.16012359474138785,
+        "max_over_min_block_median": 1.0031750720968846,
+        "within_block_sample_cv_pct": [
+          0.2142590548463459,
+          0.30427108008544884,
+          0.21243224330034488
+        ],
+        "max_within_block_sample_cv_pct": 0.30427108008544884,
+        "observed_block_median_min_ms": 0.03386368036270142,
+        "observed_block_median_max_ms": 0.03397119998931885,
+        "absolute_block_median_range_us": 0.10751962661743192,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a22": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.03156287908554077,
+          0.03150912046432495,
+          0.03151040077209473
+        ],
+        "block_median_sample_cv_pct": 0.0972949780438466,
+        "max_over_min_block_median": 1.001706128905651,
+        "within_block_sample_cv_pct": [
+          0.22581860844908172,
+          0.15225128827804613,
+          0.3887357974277029
+        ],
+        "max_within_block_sample_cv_pct": 0.3887357974277029,
+        "observed_block_median_min_ms": 0.03150912046432495,
+        "observed_block_median_max_ms": 0.03156287908554077,
+        "absolute_block_median_range_us": 0.05375862121582281,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a23": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.049699201583862304,
+          0.048968958854675296,
+          0.04898880004882813
+        ],
+        "block_median_sample_cv_pct": 0.8451951424879501,
+        "max_over_min_block_median": 1.0149123597124894,
+        "within_block_sample_cv_pct": [
+          0.22018011213278188,
+          0.1415171984413605,
+          0.14363323747596815
+        ],
+        "max_within_block_sample_cv_pct": 0.22018011213278188,
+        "observed_block_median_min_ms": 0.048968958854675296,
+        "observed_block_median_max_ms": 0.049699201583862304,
+        "absolute_block_median_range_us": 0.7302427291870084,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "a24": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.19472768783569336,
+          0.19501312255859374,
+          0.19475263595581055
+        ],
+        "block_median_sample_cv_pct": 0.08114042498088102,
+        "max_over_min_block_median": 1.0014658147799773,
+        "within_block_sample_cv_pct": [
+          0.047262909555030215,
+          0.1304060044738933,
+          0.07742877404395543
+        ],
+        "max_within_block_sample_cv_pct": 0.1304060044738933,
+        "observed_block_median_min_ms": 0.19472768783569336,
+        "observed_block_median_max_ms": 0.19501312255859374,
+        "absolute_block_median_range_us": 0.2854347229003795,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      }
+    },
+    "controls": {
+      "x01": {
+        "visits": 10,
+        "medians_ms": [
+          0.004746879935264587,
+          0.004725120067596436,
+          0.004736639857292176,
+          0.004781439900398254,
+          0.004743039906024933,
+          0.004800640046596527,
+          0.004725120067596436,
+          0.004718720018863678,
+          0.00474368005990982,
+          0.004746879935264587
+        ],
+        "visit_indices": [
+          1,
+          14,
+          24,
+          34,
+          47,
+          57,
+          67,
+          80,
+          90,
+          100
+        ],
+        "monotonic_seconds": [
+          1824.35765301,
+          1828.585290892,
+          1831.978055072,
+          1835.480073823,
+          1839.893588656,
+          1843.206155768,
+          1846.605507061,
+          1851.038284386,
+          1854.548971419,
+          1858.03835435
+        ],
+        "max_over_min": 1.0173606459814024,
+        "ratios_to_first": [
+          1.0,
+          0.9954159641775439,
+          0.997842777126858,
+          1.007280564413884,
+          0.9991910414225719,
+          1.0113253573010255,
+          0.9954159641775439,
+          0.99406769988183,
+          0.9993258992436285,
+          1.0
+        ],
+        "within_visit_cv_pct": [
+          1.0087077732488097,
+          0.6306258213880621,
+          1.0550983901679185,
+          0.7140429206195624,
+          0.7638099372132051,
+          2.6796124517800344,
+          0.9239307027210067,
+          1.2281356634182419,
+          0.5772563726447798,
+          2.0606468389917434
+        ]
+      },
+      "x03": {
+        "visits": 10,
+        "medians_ms": [
+          0.022123520374298097,
+          0.022152318954467773,
+          0.02214400053024292,
+          0.02215424060821533,
+          0.022162559032440184,
+          0.02215104103088379,
+          0.022176640033721925,
+          0.022118399143218993,
+          0.022273919582366943,
+          0.022117760181427002
+        ],
+        "visit_indices": [
+          2,
+          12,
+          25,
+          35,
+          45,
+          58,
+          68,
+          78,
+          91,
+          101
+        ],
+        "monotonic_seconds": [
+          1824.649892668,
+          1827.871981816,
+          1832.276420596,
+          1835.780678753,
+          1839.197771268,
+          1843.509665977,
+          1846.944303011,
+          1850.30034065,
+          1854.891369231,
+          1858.349930174
+        ],
+        "max_over_min": 1.0070603623359238,
+        "ratios_to_first": [
+          1.0,
+          1.0013017177954704,
+          1.000925718673987,
+          1.0013885780109808,
+          1.001764577132464,
+          1.0012439546744858,
+          1.0024010491334616,
+          0.9997685164479947,
+          1.0067981589513924,
+          0.9997396348875025
+        ],
+        "within_visit_cv_pct": [
+          0.545617338337797,
+          0.18008390629698928,
+          0.22371473989213556,
+          0.3699609857519635,
+          0.2607470303317234,
+          0.23093787176534006,
+          0.44530226782747223,
+          0.31373900240555036,
+          0.6000378731295423,
+          0.3237579554592842
+        ]
+      },
+      "x06": {
+        "visits": 10,
+        "medians_ms": [
+          0.1648556709289551,
+          0.1653887939453125,
+          0.16480384826660155,
+          0.16494720458984374,
+          0.16478015899658202,
+          0.16491903305053712,
+          0.16546880722045898,
+          0.16480127334594727,
+          0.1649497604370117,
+          0.16488895416259766
+        ],
+        "visit_indices": [
+          3,
+          13,
+          23,
+          36,
+          46,
+          56,
+          69,
+          79,
+          89,
+          102
+        ],
+        "monotonic_seconds": [
+          1824.952607936,
+          1828.209066218,
+          1831.567181797,
+          1836.090179841,
+          1839.506982813,
+          1842.78383616,
+          1847.258611805,
+          1850.649100436,
+          1854.153350441,
+          1858.671279536
+        ],
+        "max_over_min": 1.0041791938305584,
+        "ratios_to_first": [
+          1.0,
+          1.0032338773264715,
+          0.9996856482882177,
+          1.0005552351361215,
+          0.9995419512598653,
+          1.000384349056511,
+          1.0037192308159548,
+          0.9996700290460055,
+          1.0005707386802434,
+          1.0002018931678542
+        ],
+        "within_visit_cv_pct": [
+          0.039094122223600494,
+          0.22998473589257365,
+          0.32701924162485746,
+          0.052755501516885024,
+          0.06693346326693873,
+          0.11238014993280042,
+          0.1708222854933814,
+          0.052452374182439754,
+          0.05470410102397488,
+          0.07189739516151494
+        ]
+      }
+    },
+    "flags": [],
+    "passed": true,
+    "all_timing_criteria_passed": true,
+    "interpretation": "Prospectively declared descriptive engineering criteria, not significance tests. Retain all data; flags qualify claims and never trigger best-pass selection or retries."
+  },
+  "heldout": {
+    "criteria": {
+      "within_visit_cv_pct": 10.0,
+      "pass_ratio": 1.2,
+      "control_ratio": 1.2
+    },
+    "per_case": {
+      "t01": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00653760015964508,
+          0.006541439890861511,
+          0.006654080152511597
+        ],
+        "block_median_sample_cv_pct": 1.0059612083330443,
+        "max_over_min_block_median": 1.0178169343523817,
+        "within_block_sample_cv_pct": [
+          0.5682989094621004,
+          0.704732852793529,
+          0.5812611714469587
+        ],
+        "max_within_block_sample_cv_pct": 0.704732852793529,
+        "observed_block_median_min_ms": 0.00653760015964508,
+        "observed_block_median_max_ms": 0.006654080152511597,
+        "absolute_block_median_range_us": 0.1164799928665165,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t02": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.0068646401166915895,
+          0.006859520077705383,
+          0.006853759884834289
+        ],
+        "block_median_sample_cv_pct": 0.07935574197456059,
+        "max_over_min_block_median": 1.0015874836644592,
+        "within_block_sample_cv_pct": [
+          0.6000434936742292,
+          0.6786060886266606,
+          0.4310539954024744
+        ],
+        "max_within_block_sample_cv_pct": 0.6786060886266606,
+        "observed_block_median_min_ms": 0.006853759884834289,
+        "observed_block_median_max_ms": 0.0068646401166915895,
+        "absolute_block_median_range_us": 0.01088023185730029,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t03": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.008584960103034974,
+          0.008600320219993591,
+          0.008529279828071595
+        ],
+        "block_median_sample_cv_pct": 0.4360791444555917,
+        "max_over_min_block_median": 1.0083290023722973,
+        "within_block_sample_cv_pct": [
+          0.7286708406813736,
+          0.6779045135871471,
+          0.38219682785246456
+        ],
+        "max_within_block_sample_cv_pct": 0.7286708406813736,
+        "observed_block_median_min_ms": 0.008529279828071595,
+        "observed_block_median_max_ms": 0.008600320219993591,
+        "absolute_block_median_range_us": 0.07104039192199624,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t04": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.015470080375671387,
+          0.015452159643173218,
+          0.015448960065841675
+        ],
+        "block_median_sample_cv_pct": 0.07364370077562997,
+        "max_over_min_block_median": 1.0013671023641526,
+        "within_block_sample_cv_pct": [
+          0.8054662915783368,
+          0.28552774921973667,
+          0.29745182518019797
+        ],
+        "max_within_block_sample_cv_pct": 0.8054662915783368,
+        "observed_block_median_min_ms": 0.015448960065841675,
+        "observed_block_median_max_ms": 0.015470080375671387,
+        "absolute_block_median_range_us": 0.021120309829711706,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t05": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.00657535970211029,
+          0.006611199975013733,
+          0.006547200083732605
+        ],
+        "block_median_sample_cv_pct": 0.4876414927452612,
+        "max_over_min_block_median": 1.009775154335079,
+        "within_block_sample_cv_pct": [
+          1.1135359264645586,
+          2.2153026780175433,
+          1.0094297046942962
+        ],
+        "max_within_block_sample_cv_pct": 2.2153026780175433,
+        "observed_block_median_min_ms": 0.006547200083732605,
+        "observed_block_median_max_ms": 0.006611199975013733,
+        "absolute_block_median_range_us": 0.06399989128112823,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t06": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.007728000283241272,
+          0.007713279724121094,
+          0.007717120051383972
+        ],
+        "block_median_sample_cv_pct": 0.0989147134301692,
+        "max_over_min_block_median": 1.0019084695028166,
+        "within_block_sample_cv_pct": [
+          1.0089052404574044,
+          0.49424532846303804,
+          0.7594318037258221
+        ],
+        "max_within_block_sample_cv_pct": 1.0089052404574044,
+        "observed_block_median_min_ms": 0.007713279724121094,
+        "observed_block_median_max_ms": 0.007728000283241272,
+        "absolute_block_median_range_us": 0.014720559120178292,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t07": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011066240072250367,
+          0.011070719957351684,
+          0.01106112003326416
+        ],
+        "block_median_sample_cv_pct": 0.0434077935639098,
+        "max_over_min_block_median": 1.0008678980120145,
+        "within_block_sample_cv_pct": [
+          0.42235457170797647,
+          0.5249631818407583,
+          0.9650361429442504
+        ],
+        "max_within_block_sample_cv_pct": 0.9650361429442504,
+        "observed_block_median_min_ms": 0.01106112003326416,
+        "observed_block_median_max_ms": 0.011070719957351684,
+        "absolute_block_median_range_us": 0.009599924087524275,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t08": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.030151040554046632,
+          0.030169599056243897,
+          0.030166399478912354
+        ],
+        "block_median_sample_cv_pct": 0.03289184820062144,
+        "max_over_min_block_median": 1.000615517801583,
+        "within_block_sample_cv_pct": [
+          0.1453276568019667,
+          0.1708412392481306,
+          0.14584518990843165
+        ],
+        "max_within_block_sample_cv_pct": 0.1708412392481306,
+        "observed_block_median_min_ms": 0.030151040554046632,
+        "observed_block_median_max_ms": 0.030169599056243897,
+        "absolute_block_median_range_us": 0.018558502197264792,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t09": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011214079856872559,
+          0.011222399473190307,
+          0.011221760511398315
+        ],
+        "block_median_sample_cv_pct": 0.0412670078409885,
+        "max_over_min_block_median": 1.0007418902329868,
+        "within_block_sample_cv_pct": [
+          0.8583635288580693,
+          0.4369245883967799,
+          0.5646479524028565
+        ],
+        "max_within_block_sample_cv_pct": 0.8583635288580693,
+        "observed_block_median_min_ms": 0.011214079856872559,
+        "observed_block_median_max_ms": 0.011222399473190307,
+        "absolute_block_median_range_us": 0.00831961631774826,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t10": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.011753599643707275,
+          0.01181056022644043,
+          0.011815040111541749
+        ],
+        "block_median_sample_cv_pct": 0.29044826629953846,
+        "max_over_min_block_median": 1.005227374565831,
+        "within_block_sample_cv_pct": [
+          0.4464663659777302,
+          0.3658398365162872,
+          0.4279008514274294
+        ],
+        "max_within_block_sample_cv_pct": 0.4464663659777302,
+        "observed_block_median_min_ms": 0.011753599643707275,
+        "observed_block_median_max_ms": 0.011815040111541749,
+        "absolute_block_median_range_us": 0.0614404678344737,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t11": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.03114815950393677,
+          0.03116544008255005,
+          0.031186559200286866
+        ],
+        "block_median_sample_cv_pct": 0.06170619735296642,
+        "max_over_min_block_median": 1.0012328078757027,
+        "within_block_sample_cv_pct": [
+          0.14976803526915472,
+          0.12594351147770425,
+          0.13809559223463774
+        ],
+        "max_within_block_sample_cv_pct": 0.14976803526915472,
+        "observed_block_median_min_ms": 0.03114815950393677,
+        "observed_block_median_max_ms": 0.031186559200286866,
+        "absolute_block_median_range_us": 0.0383996963500971,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t12": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.11435775756835938,
+          0.11437952041625976,
+          0.11415488243103028
+        ],
+        "block_median_sample_cv_pct": 0.10839372376998069,
+        "max_over_min_block_median": 1.001967835106529,
+        "within_block_sample_cv_pct": [
+          0.1344614187437232,
+          0.4884839742544465,
+          0.08584848484932378
+        ],
+        "max_within_block_sample_cv_pct": 0.4884839742544465,
+        "observed_block_median_min_ms": 0.11415488243103028,
+        "observed_block_median_max_ms": 0.11437952041625976,
+        "absolute_block_median_range_us": 0.22463798522948109,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t13": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08310144424438476,
+          0.0828883171081543,
+          0.08271936416625976
+        ],
+        "block_median_sample_cv_pct": 0.23095071279108534,
+        "max_over_min_block_median": 1.004618991961266,
+        "within_block_sample_cv_pct": [
+          0.13064423905222153,
+          0.10249923226383247,
+          0.09751100010304821
+        ],
+        "max_within_block_sample_cv_pct": 0.13064423905222153,
+        "observed_block_median_min_ms": 0.08271936416625976,
+        "observed_block_median_max_ms": 0.08310144424438476,
+        "absolute_block_median_range_us": 0.38208007812499944,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t14": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08321151733398438,
+          0.08248127937316894,
+          0.08364928245544434
+        ],
+        "block_median_sample_cv_pct": 0.709955997887078,
+        "max_over_min_block_median": 1.0141608264463384,
+        "within_block_sample_cv_pct": [
+          0.1848619972137417,
+          0.14015283209355037,
+          0.10060607742144634
+        ],
+        "max_within_block_sample_cv_pct": 0.1848619972137417,
+        "observed_block_median_min_ms": 0.08248127937316894,
+        "observed_block_median_max_ms": 0.08364928245544434,
+        "absolute_block_median_range_us": 1.1680030822753955,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t15": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.1636639976501465,
+          0.1656268882751465,
+          0.1662067222595215
+        ],
+        "block_median_sample_cv_pct": 0.8068123737502998,
+        "max_over_min_block_median": 1.0155362489361308,
+        "within_block_sample_cv_pct": [
+          0.06484686368205758,
+          0.13885171450929315,
+          0.0710307143171997
+        ],
+        "max_within_block_sample_cv_pct": 0.13885171450929315,
+        "observed_block_median_min_ms": 0.1636639976501465,
+        "observed_block_median_max_ms": 0.1662067222595215,
+        "absolute_block_median_range_us": 2.542724609374991,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t16": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.6390073776245118,
+          0.6408576202392579,
+          0.6391897583007813
+        ],
+        "block_median_sample_cv_pct": 0.1594027110614737,
+        "max_over_min_block_median": 1.0028954949184223,
+        "within_block_sample_cv_pct": [
+          0.032916778148835764,
+          0.021853102134838345,
+          0.5109871096427341
+        ],
+        "max_within_block_sample_cv_pct": 0.5109871096427341,
+        "observed_block_median_min_ms": 0.6390073776245118,
+        "observed_block_median_max_ms": 0.6408576202392579,
+        "absolute_block_median_range_us": 1.8502426147460893,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t17": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.010302720069885253,
+          0.010273280143737793,
+          0.010284800529479981
+        ],
+        "block_median_sample_cv_pct": 0.14421617324975602,
+        "max_over_min_block_median": 1.0028656792899204,
+        "within_block_sample_cv_pct": [
+          0.7634108986835894,
+          0.39546554498311065,
+          0.6770932805200155
+        ],
+        "max_within_block_sample_cv_pct": 0.7634108986835894,
+        "observed_block_median_min_ms": 0.010273280143737793,
+        "observed_block_median_max_ms": 0.010302720069885253,
+        "absolute_block_median_range_us": 0.029439926147459966,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t18": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.015780479907989503,
+          0.0158297598361969,
+          0.01582080006599426
+        ],
+        "block_median_sample_cv_pct": 0.16603310485979342,
+        "max_over_min_block_median": 1.003122840908181,
+        "within_block_sample_cv_pct": [
+          0.648777760474063,
+          0.37176155050845355,
+          0.4340968784233727
+        ],
+        "max_within_block_sample_cv_pct": 0.648777760474063,
+        "observed_block_median_min_ms": 0.015780479907989503,
+        "observed_block_median_max_ms": 0.0158297598361969,
+        "absolute_block_median_range_us": 0.04927992820739566,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t19": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.04249599933624268,
+          0.042457599639892575,
+          0.04247424125671387
+        ],
+        "block_median_sample_cv_pct": 0.04533524643576501,
+        "max_over_min_block_median": 1.000904424571238,
+        "within_block_sample_cv_pct": [
+          0.1477006015706143,
+          0.15294586146946043,
+          0.1462398852829368
+        ],
+        "max_within_block_sample_cv_pct": 0.15294586146946043,
+        "observed_block_median_min_ms": 0.042457599639892575,
+        "observed_block_median_max_ms": 0.04249599933624268,
+        "absolute_block_median_range_us": 0.03839969635010404,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t20": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.09332799911499023,
+          0.09336064338684082,
+          0.09342271804809571
+        ],
+        "block_median_sample_cv_pct": 0.05153178984513953,
+        "max_over_min_block_median": 1.001014903715966,
+        "within_block_sample_cv_pct": [
+          0.1083659205774496,
+          0.08343315926321068,
+          0.16472476770029904
+        ],
+        "max_within_block_sample_cv_pct": 0.16472476770029904,
+        "observed_block_median_min_ms": 0.09332799911499023,
+        "observed_block_median_max_ms": 0.09342271804809571,
+        "absolute_block_median_range_us": 0.09471893310547541,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t21": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.03421184062957763,
+          0.03432512044906616,
+          0.0341375994682312
+        ],
+        "block_median_sample_cv_pct": 0.27592616825080907,
+        "max_over_min_block_median": 1.0054930921844538,
+        "within_block_sample_cv_pct": [
+          0.18976646829867105,
+          0.6264896297381015,
+          0.2886804926254437
+        ],
+        "max_within_block_sample_cv_pct": 0.6264896297381015,
+        "observed_block_median_min_ms": 0.0341375994682312,
+        "observed_block_median_max_ms": 0.03432512044906616,
+        "absolute_block_median_range_us": 0.18752098083495844,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t22": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.033799679279327394,
+          0.03389375925064087,
+          0.03389631986618042
+        ],
+        "block_median_sample_cv_pct": 0.162628107787892,
+        "max_over_min_block_median": 1.0028592160906133,
+        "within_block_sample_cv_pct": [
+          0.18039608588134878,
+          0.2701995063520268,
+          0.15021036613275296
+        ],
+        "max_within_block_sample_cv_pct": 0.2701995063520268,
+        "observed_block_median_min_ms": 0.033799679279327394,
+        "observed_block_median_max_ms": 0.03389631986618042,
+        "absolute_block_median_range_us": 0.09664058685302651,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t23": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.3898604965209961,
+          0.38995712280273437,
+          0.3898438262939453
+        ],
+        "block_median_sample_cv_pct": 0.015689162333068933,
+        "max_over_min_block_median": 1.0002906202462307,
+        "within_block_sample_cv_pct": [
+          0.05001698534256631,
+          0.03628140173865325,
+          0.04916923019252586
+        ],
+        "max_within_block_sample_cv_pct": 0.05001698534256631,
+        "observed_block_median_min_ms": 0.3898438262939453,
+        "observed_block_median_max_ms": 0.38995712280273437,
+        "absolute_block_median_range_us": 0.1132965087890514,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "t24": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.37610366821289065,
+          0.37604351043701173,
+          0.3758272171020508
+        ],
+        "block_median_sample_cv_pct": 0.03866804505884329,
+        "max_over_min_block_median": 1.000735580336548,
+        "within_block_sample_cv_pct": [
+          0.04695789553463033,
+          0.05561088131064345,
+          0.0766143813197226
+        ],
+        "max_within_block_sample_cv_pct": 0.0766143813197226,
+        "observed_block_median_min_ms": 0.3758272171020508,
+        "observed_block_median_max_ms": 0.37610366821289065,
+        "absolute_block_median_range_us": 0.2764511108398482,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h01": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.009377279877662658,
+          0.009390079975128173,
+          0.009402880072593689
+        ],
+        "block_median_sample_cv_pct": 0.1363151059354041,
+        "max_over_min_block_median": 1.0027300235532066,
+        "within_block_sample_cv_pct": [
+          0.43862335929774593,
+          0.4990097465734192,
+          0.9514566536521437
+        ],
+        "max_within_block_sample_cv_pct": 0.9514566536521437,
+        "observed_block_median_min_ms": 0.009377279877662658,
+        "observed_block_median_max_ms": 0.009402880072593689,
+        "absolute_block_median_range_us": 0.025600194931030273,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h02": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.013035520315170288,
+          0.012728320360183716,
+          0.012766079902648926
+        ],
+        "block_median_sample_cv_pct": 1.3044068020895532,
+        "max_over_min_block_median": 1.0241351526590692,
+        "within_block_sample_cv_pct": [
+          0.4327023749512179,
+          0.8000206652856087,
+          0.8880766235017513
+        ],
+        "max_within_block_sample_cv_pct": 0.8880766235017513,
+        "observed_block_median_min_ms": 0.012728320360183716,
+        "observed_block_median_max_ms": 0.013035520315170288,
+        "absolute_block_median_range_us": 0.30719995498657177,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h03": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.04271168231964111,
+          0.04233664035797119,
+          0.042330241203308104
+        ],
+        "block_median_sample_cv_pct": 0.5143753058369254,
+        "max_over_min_block_median": 1.0090110782620156,
+        "within_block_sample_cv_pct": [
+          0.27316139335598644,
+          0.1153571047157279,
+          0.4100269190346026
+        ],
+        "max_within_block_sample_cv_pct": 0.4100269190346026,
+        "observed_block_median_min_ms": 0.042330241203308104,
+        "observed_block_median_max_ms": 0.04271168231964111,
+        "absolute_block_median_range_us": 0.3814411163330089,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h04": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.04142208099365234,
+          0.04149375915527344,
+          0.04148223876953125
+        ],
+        "block_median_sample_cv_pct": 0.0928258774457152,
+        "max_over_min_block_median": 1.001730433621432,
+        "within_block_sample_cv_pct": [
+          0.08979234040333982,
+          0.14790100274711498,
+          0.1456941285250261
+        ],
+        "max_within_block_sample_cv_pct": 0.14790100274711498,
+        "observed_block_median_min_ms": 0.04142208099365234,
+        "observed_block_median_max_ms": 0.04149375915527344,
+        "absolute_block_median_range_us": 0.07167816162109708,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h05": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.06005695819854737,
+          0.059853439331054685,
+          0.05998720169067383
+        ],
+        "block_median_sample_cv_pct": 0.17247027681413343,
+        "max_over_min_block_median": 1.00340028693033,
+        "within_block_sample_cv_pct": [
+          0.14174577710491068,
+          0.08604312073550571,
+          0.48771732912431237
+        ],
+        "max_within_block_sample_cv_pct": 0.48771732912431237,
+        "observed_block_median_min_ms": 0.059853439331054685,
+        "observed_block_median_max_ms": 0.06005695819854737,
+        "absolute_block_median_range_us": 0.2035188674926816,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h06": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.2269740867614746,
+          0.22706111907958984,
+          0.22775808334350586
+        ],
+        "block_median_sample_cv_pct": 0.1890861590590024,
+        "max_over_min_block_median": 1.0034541237425714,
+        "within_block_sample_cv_pct": [
+          0.025464850431549294,
+          0.10156612732207042,
+          0.042015915929721696
+        ],
+        "max_within_block_sample_cv_pct": 0.10156612732207042,
+        "observed_block_median_min_ms": 0.2269740867614746,
+        "observed_block_median_max_ms": 0.22775808334350586,
+        "absolute_block_median_range_us": 0.7839965820312655,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h07": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.019927680492401123,
+          0.019923839569091797,
+          0.020100479125976563
+        ],
+        "block_median_sample_cv_pct": 0.5048658799131298,
+        "max_over_min_block_median": 1.0088657387684847,
+        "within_block_sample_cv_pct": [
+          0.2968223638768333,
+          0.3630243081426944,
+          1.7018567884452331
+        ],
+        "max_within_block_sample_cv_pct": 1.7018567884452331,
+        "observed_block_median_min_ms": 0.019923839569091797,
+        "observed_block_median_max_ms": 0.020100479125976563,
+        "absolute_block_median_range_us": 0.17663955688476674,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h08": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.04383743762969971,
+          0.04382207870483398,
+          0.04398464202880859
+        ],
+        "block_median_sample_cv_pct": 0.20453178970925118,
+        "max_over_min_block_median": 1.0037096214688848,
+        "within_block_sample_cv_pct": [
+          0.17364248667371082,
+          0.2887211546170012,
+          0.11427207608153443
+        ],
+        "max_within_block_sample_cv_pct": 0.2887211546170012,
+        "observed_block_median_min_ms": 0.04382207870483398,
+        "observed_block_median_max_ms": 0.04398464202880859,
+        "absolute_block_median_range_us": 0.16256332397460854,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h09": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.15324735641479492,
+          0.15329471588134766,
+          0.15328831672668458
+        ],
+        "block_median_sample_cv_pct": 0.016764249509215335,
+        "max_over_min_block_median": 1.0003090393704708,
+        "within_block_sample_cv_pct": [
+          0.09047022531503544,
+          0.09699901948812881,
+          0.08788082088046698
+        ],
+        "max_within_block_sample_cv_pct": 0.09699901948812881,
+        "observed_block_median_min_ms": 0.15324735641479492,
+        "observed_block_median_max_ms": 0.15329471588134766,
+        "absolute_block_median_range_us": 0.047359466552737706,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h10": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.08478400230407715,
+          0.08468416213989258,
+          0.08470848083496094
+        ],
+        "block_median_sample_cv_pct": 0.06144826772836033,
+        "max_over_min_block_median": 1.0011789709157144,
+        "within_block_sample_cv_pct": [
+          0.30186754791448256,
+          0.3046588830983764,
+          0.3045369237243963
+        ],
+        "max_within_block_sample_cv_pct": 0.3046588830983764,
+        "observed_block_median_min_ms": 0.08468416213989258,
+        "observed_block_median_max_ms": 0.08478400230407715,
+        "absolute_block_median_range_us": 0.09984016418457253,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h11": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          0.5823462295532227,
+          0.5823494338989258,
+          0.5821196746826172
+        ],
+        "block_median_sample_cv_pct": 0.02262453346940167,
+        "max_over_min_block_median": 1.0003946941261415,
+        "within_block_sample_cv_pct": [
+          0.030145675701902595,
+          0.026349705985841028,
+          0.025093071112128638
+        ],
+        "max_within_block_sample_cv_pct": 0.030145675701902595,
+        "observed_block_median_min_ms": 0.5821196746826172,
+        "observed_block_median_max_ms": 0.5823494338989258,
+        "absolute_block_median_range_us": 0.22975921630863372,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      },
+      "h12": {
+        "blocks": 3,
+        "raw_repeat_means_per_block": 9,
+        "block_medians_ms": [
+          1.0303167724609374,
+          1.0302700805664062,
+          1.0300102233886719
+        ],
+        "block_median_sample_cv_pct": 0.016032405406715713,
+        "max_over_min_block_median": 1.000297617504472,
+        "within_block_sample_cv_pct": [
+          0.055042488306287135,
+          0.075360396828375,
+          0.13132783799251704
+        ],
+        "max_within_block_sample_cv_pct": 0.13132783799251704,
+        "observed_block_median_min_ms": 1.0300102233886719,
+        "observed_block_median_max_ms": 1.0303167724609374,
+        "absolute_block_median_range_us": 0.3065490722655717,
+        "interpretation": "Descriptive observed variation; not a confidence or prediction interval. Blocks may be temporally dependent."
+      }
+    },
+    "controls": {
+      "x01": {
+        "visits": 15,
+        "medians_ms": [
+          0.004756479859352112,
+          0.004741120040416717,
+          0.004747520089149475,
+          0.004732800126075745,
+          0.004725120067596436,
+          0.004741759896278381,
+          0.004741120040416717,
+          0.0047379198670387266,
+          0.004818559885025025,
+          0.004754559993743896,
+          0.004719359874725342,
+          0.004731520116329193,
+          0.004742400050163269,
+          0.004724479913711548,
+          0.004744319915771484
+        ],
+        "visit_indices": [
+          1,
+          14,
+          24,
+          34,
+          47,
+          57,
+          67,
+          80,
+          90,
+          100,
+          113,
+          123,
+          133,
+          146,
+          152
+        ],
+        "monotonic_seconds": [
+          1861.497461535,
+          1866.030612012,
+          1870.151385042,
+          1873.713320261,
+          1878.339139094,
+          1882.01328428,
+          1885.667083457,
+          1890.495535236,
+          1894.031769098,
+          1897.859339655,
+          1902.639183541,
+          1906.174333608,
+          1910.433653741,
+          1915.243652271,
+          1917.684919686
+        ],
+        "max_over_min": 1.021019802035219,
+        "ratios_to_first": [
+          1.0,
+          0.9967707591770426,
+          0.9981163022933818,
+          0.9950215844539301,
+          0.9934069327143229,
+          0.9969052821605481,
+          0.9967707591770426,
+          0.9960979562907445,
+          1.0130516742441056,
+          0.9995963683932266,
+          0.9921959125814891,
+          0.9947524758306622,
+          0.9970398678003105,
+          0.9932723470745605,
+          0.9974434994070838
+        ],
+        "within_visit_cv_pct": [
+          0.710875151229852,
+          0.7987804567207683,
+          1.0214975495366923,
+          1.0489478764525262,
+          0.8890591631423396,
+          2.15137327576878,
+          0.9751604540343656,
+          1.2045412275929603,
+          1.5034798358048336,
+          0.9704436022627645,
+          0.8772462050054511,
+          1.8244331684839787,
+          1.6436552611087005,
+          0.9458956342650028,
+          0.843748286679111
+        ]
+      },
+      "x03": {
+        "visits": 15,
+        "medians_ms": [
+          0.02215424060821533,
+          0.022143359184265136,
+          0.022131199836730956,
+          0.02216768026351929,
+          0.02213696002960205,
+          0.022154879570007325,
+          0.022161920070648194,
+          0.02214400053024292,
+          0.022163839340209962,
+          0.022206079959869385,
+          0.022129280567169188,
+          0.02222208023071289,
+          0.022133119106292724,
+          0.022174079418182373,
+          0.02215552091598511
+        ],
+        "visit_indices": [
+          2,
+          12,
+          25,
+          35,
+          45,
+          58,
+          68,
+          78,
+          91,
+          101,
+          111,
+          124,
+          134,
+          144,
+          153
+        ],
+        "monotonic_seconds": [
+          1861.794266079,
+          1865.313233333,
+          1870.449923297,
+          1874.012615856,
+          1877.638351513,
+          1882.352370541,
+          1885.972824401,
+          1889.75366675,
+          1894.342711623,
+          1898.171309697,
+          1901.884042983,
+          1906.491040077,
+          1910.752696985,
+          1914.50593542,
+          1918.047183932
+        ],
+        "max_over_min": 1.0041935237461528,
+        "ratios_to_first": [
+          1.0,
+          0.9995088333586952,
+          0.998959983693784,
+          1.000606640306099,
+          0.999219987770338,
+          1.0000288415118033,
+          1.000346636229545,
+          0.9995377824880798,
+          1.0004332683825359,
+          1.0023399290714046,
+          0.9988733515407932,
+          1.003062150659879,
+          0.999046615846775,
+          1.000895485894456,
+          1.0000577906411878
+        ],
+        "within_visit_cv_pct": [
+          0.19792161341627432,
+          0.246318566984222,
+          0.2748189453114419,
+          0.12739146735064202,
+          0.23361543953273292,
+          0.2175105359536191,
+          0.19736142115958077,
+          0.23856832893941174,
+          0.1791164204043057,
+          0.2531490318420433,
+          0.3658278442710741,
+          0.3994935230755993,
+          0.15548607953208635,
+          0.1770100071935697,
+          0.2789659791525813
+        ]
+      },
+      "x06": {
+        "visits": 15,
+        "medians_ms": [
+          0.16485055923461914,
+          0.16495935440063478,
+          0.16488832473754883,
+          0.16483840942382813,
+          0.16494592666625976,
+          0.16490623474121094,
+          0.16482751846313476,
+          0.1649216079711914,
+          0.1648646354675293,
+          0.16486143112182616,
+          0.16481536865234375,
+          0.16504831314086915,
+          0.1648896026611328,
+          0.16497663497924805,
+          0.16487360000610352
+        ],
+        "visit_indices": [
+          3,
+          13,
+          23,
+          36,
+          46,
+          56,
+          69,
+          79,
+          89,
+          102,
+          112,
+          122,
+          135,
+          145,
+          151
+        ],
+        "monotonic_seconds": [
+          1862.100226866,
+          1865.650428602,
+          1869.768809288,
+          1874.322904463,
+          1877.950836144,
+          1881.624341083,
+          1886.287757512,
+          1890.070319405,
+          1893.601051466,
+          1898.491802523,
+          1902.206743097,
+          1905.737577589,
+          1911.110848574,
+          1914.835156441,
+          1917.276166369
+        ],
+        "max_over_min": 1.0014133663045512,
+        "ratios_to_first": [
+          1.0,
+          1.0006599623715005,
+          1.0002290893225054,
+          0.999926298031093,
+          1.000578508390165,
+          1.0003377331981784,
+          0.9998602323729361,
+          1.000430988750673,
+          1.0000853878383884,
+          1.0000659499564788,
+          0.9997865304040291,
+          1.0011995949978463,
+          1.0002368413349336,
+          1.0007647880917983,
+          1.0001397676270638
+        ],
+        "within_visit_cv_pct": [
+          0.039908807469865026,
+          0.08519564384826463,
+          0.045563390366393695,
+          0.05856046151675677,
+          0.09958644645969594,
+          0.039560607330126916,
+          0.05099738608509534,
+          0.07964158337858453,
+          0.05052489346588046,
+          0.03339998814548684,
+          0.0391497684182448,
+          0.11126545828485745,
+          0.03776629872979332,
+          0.10617378173355439,
+          0.20017034793454266
+        ]
+      }
+    },
+    "flags": [],
+    "passed": true,
+    "all_timing_criteria_passed": true,
+    "interpretation": "Prospectively declared descriptive engineering criteria, not significance tests. Retain all data; flags qualify claims and never trigger best-pass selection or retries."
+  },
+  "whole_session_controls": {
+    "passed": true,
+    "cases": [
+      {
+        "case_id": "x01",
+        "visits": 40,
+        "median_ms_by_visit": [
+          0.00473471999168396,
+          0.004730240106582641,
+          0.004732800126075745,
+          0.0047257599234580994,
+          0.004736639857292176,
+          0.00474368005990982,
+          0.004739199876785278,
+          0.0047129601240158085,
+          0.0049587199091911316,
+          0.004731520116329193,
+          0.004739840030670166,
+          0.004757120013236999,
+          0.004759039878845215,
+          0.004778240025043488,
+          0.004746240079402924,
+          0.004746879935264587,
+          0.004725120067596436,
+          0.004736639857292176,
+          0.004781439900398254,
+          0.004743039906024933,
+          0.004800640046596527,
+          0.004725120067596436,
+          0.004718720018863678,
+          0.00474368005990982,
+          0.004746879935264587,
+          0.004756479859352112,
+          0.004741120040416717,
+          0.004747520089149475,
+          0.004732800126075745,
+          0.004725120067596436,
+          0.004741759896278381,
+          0.004741120040416717,
+          0.0047379198670387266,
+          0.004818559885025025,
+          0.004754559993743896,
+          0.004719359874725342,
+          0.004731520116329193,
+          0.004742400050163269,
+          0.004724479913711548,
+          0.004744319915771484
+        ],
+        "max_over_min": 1.0521455261042856,
+        "passed": true
+      },
+      {
+        "case_id": "x03",
+        "visits": 40,
+        "median_ms_by_visit": [
+          0.02218303918838501,
+          0.02218303918838501,
+          0.02212735891342163,
+          0.022133119106292724,
+          0.022170240879058837,
+          0.02212160110473633,
+          0.02211967945098877,
+          0.02210815906524658,
+          0.022186241149902343,
+          0.02217344045639038,
+          0.022118399143218993,
+          0.02214656114578247,
+          0.02212160110473633,
+          0.022215681076049806,
+          0.022151679992675782,
+          0.022123520374298097,
+          0.022152318954467773,
+          0.02214400053024292,
+          0.02215424060821533,
+          0.022162559032440184,
+          0.02215104103088379,
+          0.022176640033721925,
+          0.022118399143218993,
+          0.022273919582366943,
+          0.022117760181427002,
+          0.02215424060821533,
+          0.022143359184265136,
+          0.022131199836730956,
+          0.02216768026351929,
+          0.02213696002960205,
+          0.022154879570007325,
+          0.022161920070648194,
+          0.02214400053024292,
+          0.022163839340209962,
+          0.022206079959869385,
+          0.022129280567169188,
+          0.02222208023071289,
+          0.022133119106292724,
+          0.022174079418182373,
+          0.02215552091598511
+        ],
+        "max_over_min": 1.0074977078205,
+        "passed": true
+      },
+      {
+        "case_id": "x06",
+        "visits": 40,
+        "median_ms_by_visit": [
+          0.16334783554077148,
+          0.16310272216796876,
+          0.16502016067504882,
+          0.1632089614868164,
+          0.1647654342651367,
+          0.16500160217285156,
+          0.16553728103637697,
+          0.16484735488891603,
+          0.16512319564819336,
+          0.16319679260253905,
+          0.16394880294799805,
+          0.16555648803710937,
+          0.16487743377685546,
+          0.1652083206176758,
+          0.16492927551269532,
+          0.1648556709289551,
+          0.1653887939453125,
+          0.16480384826660155,
+          0.16494720458984374,
+          0.16478015899658202,
+          0.16491903305053712,
+          0.16546880722045898,
+          0.16480127334594727,
+          0.1649497604370117,
+          0.16488895416259766,
+          0.16485055923461914,
+          0.16495935440063478,
+          0.16488832473754883,
+          0.16483840942382813,
+          0.16494592666625976,
+          0.16490623474121094,
+          0.16482751846313476,
+          0.1649216079711914,
+          0.1648646354675293,
+          0.16486143112182616,
+          0.16481536865234375,
+          0.16504831314086915,
+          0.1648896026611328,
+          0.16497663497924805,
+          0.16487360000610352
+        ],
+        "max_over_min": 1.0150442974619005,
+        "passed": true
+      }
+    ],
+    "threshold": 1.2,
+    "interpretation": "Descriptive whole-session control variation; never used to rescale labels or select runs"
+  },
+  "rule": "Disclose all timing flags; never remove data or select a favorable session",
+  "passed": true
+}

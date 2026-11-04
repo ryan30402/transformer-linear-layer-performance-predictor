@@ -1,0 +1,52 @@
+[
+  {
+    "stage": "diagnostics_no_heldout",
+    "at_utc": "2026-11-01T23:08:32.322838+00:00",
+    "monotonic_seconds": 1727.883741271
+  },
+  {
+    "stage": "calibration_and_development",
+    "at_utc": "2026-11-01T23:09:14.904546+00:00",
+    "monotonic_seconds": 1770.465451475
+  },
+  {
+    "stage": "fit_and_development_only_model_selection",
+    "at_utc": "2026-11-01T23:10:08.420770+00:00",
+    "monotonic_seconds": 1823.981673862
+  },
+  {
+    "stage": "fixed_candidate_pool_collection",
+    "at_utc": "2026-11-01T23:10:08.743276+00:00",
+    "monotonic_seconds": 1824.304180168
+  },
+  {
+    "stage": "offline_acquisition_development_only",
+    "at_utc": "2026-11-01T23:10:43.680036+00:00",
+    "monotonic_seconds": 1859.240940314
+  },
+  {
+    "stage": "freeze_models_and_predictions_before_heldout",
+    "at_utc": "2026-11-01T23:10:45.801944+00:00",
+    "monotonic_seconds": 1861.362848994
+  },
+  {
+    "stage": "frozen_test_and_challenge_collection",
+    "at_utc": "2026-11-01T23:10:45.879493+00:00",
+    "monotonic_seconds": 1861.440391999
+  },
+  {
+    "stage": "frozen_evaluation_no_retuning",
+    "at_utc": "2026-11-01T23:11:43.015606+00:00",
+    "monotonic_seconds": 1918.576511325
+  },
+  {
+    "stage": "separate_fixed_work_batching",
+    "at_utc": "2026-11-01T23:11:43.618548+00:00",
+    "monotonic_seconds": 1919.179455451
+  },
+  {
+    "stage": "report_and_integrity_review",
+    "at_utc": "2026-11-01T23:11:48.680447+00:00",
+    "monotonic_seconds": 1924.241351162
+  }
+]

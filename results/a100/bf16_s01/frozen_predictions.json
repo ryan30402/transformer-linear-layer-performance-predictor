@@ -1,0 +1,776 @@
+{
+  "created_at_utc": "2026-11-01T22:50:22.982912+00:00",
+  "source_suite_hash": "335f15b16e6d23fb9abe4d85a4808936fd643ccf28eb6b0e22416812dff84c93",
+  "selected_model_id": "roofline_3p",
+  "models": {
+    "flop_only": [
+      {
+        "case_id": "t01",
+        "predicted_ms": 0.004564728955551632
+      },
+      {
+        "case_id": "t02",
+        "predicted_ms": 0.005144464892143403
+      },
+      {
+        "case_id": "t03",
+        "predicted_ms": 0.009473159885361957
+      },
+      {
+        "case_id": "t04",
+        "predicted_ms": 0.024314399862111286
+      },
+      {
+        "case_id": "t05",
+        "predicted_ms": 0.004603378017991084
+      },
+      {
+        "case_id": "t06",
+        "predicted_ms": 0.005762849891174625
+      },
+      {
+        "case_id": "t07",
+        "predicted_ms": 0.014420239877611735
+      },
+      {
+        "case_id": "t08",
+        "predicted_ms": 0.044102719831110394
+      },
+      {
+        "case_id": "t09",
+        "predicted_ms": 0.004938336559132996
+      },
+      {
+        "case_id": "t10",
+        "predicted_ms": 0.011122186549445216
+      },
+      {
+        "case_id": "t11",
+        "predicted_ms": 0.05729493314377646
+      },
+      {
+        "case_id": "t12",
+        "predicted_ms": 0.2156014928957693
+      },
+      {
+        "case_id": "t13",
+        "predicted_ms": 0.00699961988923707
+      },
+      {
+        "case_id": "t14",
+        "predicted_ms": 0.044102719831110394
+      },
+      {
+        "case_id": "t15",
+        "predicted_ms": 0.32113919939709784
+      },
+      {
+        "case_id": "t16",
+        "predicted_ms": 1.270978557909055
+      },
+      {
+        "case_id": "t17",
+        "predicted_ms": 0.0046035038778860365
+      },
+      {
+        "case_id": "t18",
+        "predicted_ms": 0.005764863649493869
+      },
+      {
+        "case_id": "t19",
+        "predicted_ms": 0.014436349944165677
+      },
+      {
+        "case_id": "t20",
+        "predicted_ms": 0.04416716009732617
+      },
+      {
+        "case_id": "t21",
+        "predicted_ms": 0.004938638554078128
+      },
+      {
+        "case_id": "t22",
+        "predicted_ms": 0.011127018468567337
+      },
+      {
+        "case_id": "t23",
+        "predicted_ms": 0.05733358849675342
+      },
+      {
+        "case_id": "t24",
+        "predicted_ms": 0.21575611430767713
+      },
+      {
+        "case_id": "h01",
+        "predicted_ms": 0.00478374030937519
+      },
+      {
+        "case_id": "h02",
+        "predicted_ms": 0.014420239877611735
+      },
+      {
+        "case_id": "h03",
+        "predicted_ms": 0.06389103980010949
+      },
+      {
+        "case_id": "h04",
+        "predicted_ms": 0.006587363223216254
+      },
+      {
+        "case_id": "h05",
+        "predicted_ms": 0.0836793597691086
+      },
+      {
+        "case_id": "h06",
+        "predicted_ms": 0.47944575914909066
+      },
+      {
+        "case_id": "h07",
+        "predicted_ms": 0.004784033949700197
+      },
+      {
+        "case_id": "h08",
+        "predicted_ms": 0.014431515666091993
+      },
+      {
+        "case_id": "h09",
+        "predicted_ms": 0.06395869453099105
+      },
+      {
+        "case_id": "h10",
+        "predicted_ms": 0.006588202043458485
+      },
+      {
+        "case_id": "h11",
+        "predicted_ms": 0.08371157046641023
+      },
+      {
+        "case_id": "h12",
+        "predicted_ms": 0.4796390233329004
+      }
+    ],
+    "roofline_2p": [
+      {
+        "case_id": "t01",
+        "predicted_ms": 0.0029332943617448523
+      },
+      {
+        "case_id": "t02",
+        "predicted_ms": 0.0032320294810302156
+      },
+      {
+        "case_id": "t03",
+        "predicted_ms": 0.005462585038360928
+      },
+      {
+        "case_id": "t04",
+        "predicted_ms": 0.018815879904821833
+      },
+      {
+        "case_id": "t05",
+        "predicted_ms": 0.005855208337993119
+      },
+      {
+        "case_id": "t06",
+        "predicted_ms": 0.0062819727941150665
+      },
+      {
+        "case_id": "t07",
+        "predicted_ms": 0.009468480733158941
+      },
+      {
+        "case_id": "t08",
+        "predicted_ms": 0.037631759809643665
+      },
+      {
+        "case_id": "t09",
+        "predicted_ms": 0.031144321642321678
+      },
+      {
+        "case_id": "t10",
+        "predicted_ms": 0.032168556337014355
+      },
+      {
+        "case_id": "t11",
+        "predicted_ms": 0.050175679746191554
+      },
+      {
+        "case_id": "t12",
+        "predicted_ms": 0.20070271898476622
+      },
+      {
+        "case_id": "t13",
+        "predicted_ms": 0.1866155613730052
+      },
+      {
+        "case_id": "t14",
+        "predicted_ms": 0.1890054423272881
+      },
+      {
+        "case_id": "t15",
+        "predicted_ms": 0.3010540784771493
+      },
+      {
+        "case_id": "t16",
+        "predicted_ms": 1.2042163139085973
+      },
+      {
+        "case_id": "t17",
+        "predicted_ms": 0.005864717924441601
+      },
+      {
+        "case_id": "t18",
+        "predicted_ms": 0.006291815790294893
+      },
+      {
+        "case_id": "t19",
+        "predicted_ms": 0.009480813188666146
+      },
+      {
+        "case_id": "t20",
+        "predicted_ms": 0.03769303334433738
+      },
+      {
+        "case_id": "t21",
+        "predicted_ms": 0.031167108345182843
+      },
+      {
+        "case_id": "t22",
+        "predicted_ms": 0.03219167644960686
+      },
+      {
+        "case_id": "t23",
+        "predicted_ms": 0.05021243549303779
+      },
+      {
+        "case_id": "t24",
+        "predicted_ms": 0.20084974197215116
+      },
+      {
+        "case_id": "h01",
+        "predicted_ms": 0.011719900330566727
+      },
+      {
+        "case_id": "h02",
+        "predicted_ms": 0.014202721099738412
+      },
+      {
+        "case_id": "h03",
+        "predicted_ms": 0.056447639714465495
+      },
+      {
+        "case_id": "h04",
+        "predicted_ms": 0.09341779107963626
+      },
+      {
+        "case_id": "h05",
+        "predicted_ms": 0.10051156470584106
+      },
+      {
+        "case_id": "h06",
+        "predicted_ms": 0.45158111771572396
+      },
+      {
+        "case_id": "h07",
+        "predicted_ms": 0.011733218197057685
+      },
+      {
+        "case_id": "h08",
+        "predicted_ms": 0.014217424468890738
+      },
+      {
+        "case_id": "h09",
+        "predicted_ms": 0.05651196974820533
+      },
+      {
+        "case_id": "h10",
+        "predicted_ms": 0.09345576644803648
+      },
+      {
+        "case_id": "h11",
+        "predicted_ms": 0.10055092557690266
+      },
+      {
+        "case_id": "h12",
+        "predicted_ms": 0.4517648844871409
+      }
+    ],
+    "roofline_3p": [
+      {
+        "case_id": "t01",
+        "predicted_ms": 0.005712780838900506
+      },
+      {
+        "case_id": "t02",
+        "predicted_ms": 0.005833637870236853
+      },
+      {
+        "case_id": "t03",
+        "predicted_ms": 0.008477424425432487
+      },
+      {
+        "case_id": "t04",
+        "predicted_ms": 0.020331458022393403
+      },
+      {
+        "case_id": "t05",
+        "predicted_ms": 0.006894877707304589
+      },
+      {
+        "case_id": "t06",
+        "predicted_ms": 0.007067530609213656
+      },
+      {
+        "case_id": "t07",
+        "predicted_ms": 0.012428768957752794
+      },
+      {
+        "case_id": "t08",
+        "predicted_ms": 0.03613683615167463
+      },
+      {
+        "case_id": "t09",
+        "predicted_ms": 0.017125905001320583
+      },
+      {
+        "case_id": "t10",
+        "predicted_ms": 0.017540271965902344
+      },
+      {
+        "case_id": "t11",
+        "predicted_ms": 0.04667375490452878
+      },
+      {
+        "case_id": "t12",
+        "predicted_ms": 0.17311677993877858
+      },
+      {
+        "case_id": "t13",
+        "predicted_ms": 0.08002374083990928
+      },
+      {
+        "case_id": "t14",
+        "predicted_ms": 0.08099059709060005
+      },
+      {
+        "case_id": "t15",
+        "predicted_ms": 0.2574121299616117
+      },
+      {
+        "case_id": "t16",
+        "predicted_ms": 1.0160702801671104
+      },
+      {
+        "case_id": "t17",
+        "predicted_ms": 0.006898724929519871
+      },
+      {
+        "case_id": "t18",
+        "predicted_ms": 0.007071512716508556
+      },
+      {
+        "case_id": "t19",
+        "predicted_ms": 0.012441636431796667
+      },
+      {
+        "case_id": "t20",
+        "predicted_ms": 0.03618830604785013
+      },
+      {
+        "case_id": "t21",
+        "predicted_ms": 0.017135123647150814
+      },
+      {
+        "case_id": "t22",
+        "predicted_ms": 0.01754962549681219
+      },
+      {
+        "case_id": "t23",
+        "predicted_ms": 0.046704629808081925
+      },
+      {
+        "case_id": "t24",
+        "predicted_ms": 0.17324027955299115
+      },
+      {
+        "case_id": "h01",
+        "predicted_ms": 0.009267512252650531
+      },
+      {
+        "case_id": "h02",
+        "predicted_ms": 0.012428768957752794
+      },
+      {
+        "case_id": "h03",
+        "predicted_ms": 0.051942214280955856
+      },
+      {
+        "case_id": "h04",
+        "predicted_ms": 0.04231941644789173
+      },
+      {
+        "case_id": "h05",
+        "predicted_ms": 0.06774759241023708
+      },
+      {
+        "case_id": "h06",
+        "predicted_ms": 0.38385515499586154
+      },
+      {
+        "case_id": "h07",
+        "predicted_ms": 0.009272900162219655
+      },
+      {
+        "case_id": "h08",
+        "predicted_ms": 0.012437775184704628
+      },
+      {
+        "case_id": "h09",
+        "predicted_ms": 0.05199625164266686
+      },
+      {
+        "case_id": "h10",
+        "predicted_ms": 0.04233477985846005
+      },
+      {
+        "case_id": "h11",
+        "predicted_ms": 0.06777331982173324
+      },
+      {
+        "case_id": "h12",
+        "predicted_ms": 0.38400951946483847
+      }
+    ],
+    "shape_log_ridge": [
+      {
+        "case_id": "t01",
+        "predicted_ms": 0.0043107401794149095
+      },
+      {
+        "case_id": "t02",
+        "predicted_ms": 0.005143271154899094
+      },
+      {
+        "case_id": "t03",
+        "predicted_ms": 0.01710700707353972
+      },
+      {
+        "case_id": "t04",
+        "predicted_ms": 0.020611943779380686
+      },
+      {
+        "case_id": "t05",
+        "predicted_ms": 0.005837856340748972
+      },
+      {
+        "case_id": "t06",
+        "predicted_ms": 0.007065244225457965
+      },
+      {
+        "case_id": "t07",
+        "predicted_ms": 0.02498418159474128
+      },
+      {
+        "case_id": "t08",
+        "predicted_ms": 0.031896772323350024
+      },
+      {
+        "case_id": "t09",
+        "predicted_ms": 0.012075063897493401
+      },
+      {
+        "case_id": "t10",
+        "predicted_ms": 0.014913822839554804
+      },
+      {
+        "case_id": "t11",
+        "predicted_ms": 0.058598671369107846
+      },
+      {
+        "case_id": "t12",
+        "predicted_ms": 0.08603411919837708
+      },
+      {
+        "case_id": "t13",
+        "predicted_ms": 0.0711481506806553
+      },
+      {
+        "case_id": "t14",
+        "predicted_ms": 0.0888021589677445
+      },
+      {
+        "case_id": "t15",
+        "predicted_ms": 0.3726568447912334
+      },
+      {
+        "case_id": "t16",
+        "predicted_ms": 0.6243483072618734
+      },
+      {
+        "case_id": "t17",
+        "predicted_ms": 0.0127985086554146
+      },
+      {
+        "case_id": "t18",
+        "predicted_ms": 0.015489821796213424
+      },
+      {
+        "case_id": "t19",
+        "predicted_ms": 0.054782985585546305
+      },
+      {
+        "case_id": "t20",
+        "predicted_ms": 0.06995070458315346
+      },
+      {
+        "case_id": "t21",
+        "predicted_ms": 0.03175865521894599
+      },
+      {
+        "case_id": "t22",
+        "predicted_ms": 0.039225153180584726
+      },
+      {
+        "case_id": "t23",
+        "predicted_ms": 0.15412779619225467
+      },
+      {
+        "case_id": "t24",
+        "predicted_ms": 0.2263045047762749
+      },
+      {
+        "case_id": "h01",
+        "predicted_ms": 0.012354165120101408
+      },
+      {
+        "case_id": "h02",
+        "predicted_ms": 0.03304099386598679
+      },
+      {
+        "case_id": "h03",
+        "predicted_ms": 0.06697011176414461
+      },
+      {
+        "case_id": "h04",
+        "predicted_ms": 0.04259126363142174
+      },
+      {
+        "case_id": "h05",
+        "predicted_ms": 0.12139250178211788
+      },
+      {
+        "case_id": "h06",
+        "predicted_ms": 0.29375161137745365
+      },
+      {
+        "case_id": "h07",
+        "predicted_ms": 0.029355062761335027
+      },
+      {
+        "case_id": "h08",
+        "predicted_ms": 0.0785138315571731
+      },
+      {
+        "case_id": "h09",
+        "predicted_ms": 0.15915726757852583
+      },
+      {
+        "case_id": "h10",
+        "predicted_ms": 0.1178830167843499
+      },
+      {
+        "case_id": "h11",
+        "predicted_ms": 0.3359897581629994
+      },
+      {
+        "case_id": "h12",
+        "predicted_ms": 0.8130674165201334
+      }
+    ],
+    "roofline_residual_krr": [
+      {
+        "case_id": "t01",
+        "predicted_ms": 0.005550855446167391
+      },
+      {
+        "case_id": "t02",
+        "predicted_ms": 0.006752283827685128
+      },
+      {
+        "case_id": "t03",
+        "predicted_ms": 0.00788491242187729
+      },
+      {
+        "case_id": "t04",
+        "predicted_ms": 0.01935936643675314
+      },
+      {
+        "case_id": "t05",
+        "predicted_ms": 0.006142050303818072
+      },
+      {
+        "case_id": "t06",
+        "predicted_ms": 0.0073874005473226895
+      },
+      {
+        "case_id": "t07",
+        "predicted_ms": 0.00905558360817899
+      },
+      {
+        "case_id": "t08",
+        "predicted_ms": 0.029662193403742397
+      },
+      {
+        "case_id": "t09",
+        "predicted_ms": 0.010880431818537315
+      },
+      {
+        "case_id": "t10",
+        "predicted_ms": 0.014569165336629166
+      },
+      {
+        "case_id": "t11",
+        "predicted_ms": 0.031354525084997774
+      },
+      {
+        "case_id": "t12",
+        "predicted_ms": 0.15671073799408017
+      },
+      {
+        "case_id": "t13",
+        "predicted_ms": 0.08024651829953044
+      },
+      {
+        "case_id": "t14",
+        "predicted_ms": 0.09008149092830109
+      },
+      {
+        "case_id": "t15",
+        "predicted_ms": 0.16765102201588983
+      },
+      {
+        "case_id": "t16",
+        "predicted_ms": 0.7550081472632122
+      },
+      {
+        "case_id": "t17",
+        "predicted_ms": 0.008346741292767442
+      },
+      {
+        "case_id": "t18",
+        "predicted_ms": 0.01979973456586935
+      },
+      {
+        "case_id": "t19",
+        "predicted_ms": 0.036577743586510184
+      },
+      {
+        "case_id": "t20",
+        "predicted_ms": 0.14368136002809742
+      },
+      {
+        "case_id": "t21",
+        "predicted_ms": 0.018928103234228656
+      },
+      {
+        "case_id": "t22",
+        "predicted_ms": 0.04980018044320849
+      },
+      {
+        "case_id": "t23",
+        "predicted_ms": 0.11933167569509917
+      },
+      {
+        "case_id": "t24",
+        "predicted_ms": 0.5511997763165185
+      },
+      {
+        "case_id": "h01",
+        "predicted_ms": 0.007277947563643669
+      },
+      {
+        "case_id": "h02",
+        "predicted_ms": 0.010113594720177591
+      },
+      {
+        "case_id": "h03",
+        "predicted_ms": 0.03966480158008579
+      },
+      {
+        "case_id": "h04",
+        "predicted_ms": 0.03332516494690668
+      },
+      {
+        "case_id": "h05",
+        "predicted_ms": 0.05256027575204683
+      },
+      {
+        "case_id": "h06",
+        "predicted_ms": 0.3125214043324694
+      },
+      {
+        "case_id": "h07",
+        "predicted_ms": 0.014043019733032548
+      },
+      {
+        "case_id": "h08",
+        "predicted_ms": 0.04380541784736945
+      },
+      {
+        "case_id": "h09",
+        "predicted_ms": 0.19737839178416938
+      },
+      {
+        "case_id": "h10",
+        "predicted_ms": 0.055714655018768836
+      },
+      {
+        "case_id": "h11",
+        "predicted_ms": 0.138473208934743
+      },
+      {
+        "case_id": "h12",
+        "predicted_ms": 0.7646210221177807
+      }
+    ]
+  },
+  "labels_available": false,
+  "case_ids": [
+    "t01",
+    "t02",
+    "t03",
+    "t04",
+    "t05",
+    "t06",
+    "t07",
+    "t08",
+    "t09",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "h01",
+    "h02",
+    "h03",
+    "h04",
+    "h05",
+    "h06",
+    "h07",
+    "h08",
+    "h09",
+    "h10",
+    "h11",
+    "h12"
+  ]
+}

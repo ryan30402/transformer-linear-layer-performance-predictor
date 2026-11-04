@@ -1,0 +1,3080 @@
+{
+  "schema_version": 1,
+  "artifact_type": "linear_perf_suite",
+  "created_at_utc": "2026-11-01T22:34:33.544306+00:00",
+  "measurement_kind": "cuda_measured",
+  "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+  "dtype": "float16",
+  "cache_policy": "warm_reuse",
+  "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+  "sample_unit": "block_median",
+  "protocol_signature": "28afc41d3005f14cc2a50204c2e070d0ebf9b77f4edd173f63bdaa61172e9c74",
+  "models": {
+    "flop_only": {
+      "schema_version": 1,
+      "model_id": "flop_only",
+      "model_type": "flop_only",
+      "measurement_kind": "cuda_measured",
+      "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+      "dtype": "float16",
+      "cache_policy": "warm_reuse",
+      "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+      "sample_unit": "block_median",
+      "train_case_ids": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+      "training_domain": {
+        "train_shapes": [
+          [
+            1,
+            1024,
+            768
+          ],
+          [
+            16,
+            1024,
+            768
+          ],
+          [
+            128,
+            1024,
+            768
+          ],
+          [
+            1024,
+            1024,
+            768
+          ],
+          [
+            1,
+            1536,
+            1024
+          ],
+          [
+            16,
+            1536,
+            1024
+          ],
+          [
+            128,
+            1536,
+            1024
+          ],
+          [
+            1024,
+            1536,
+            1024
+          ],
+          [
+            1,
+            4096,
+            2048
+          ],
+          [
+            16,
+            4096,
+            2048
+          ],
+          [
+            128,
+            4096,
+            2048
+          ],
+          [
+            1024,
+            4096,
+            2048
+          ],
+          [
+            1,
+            8192,
+            6144
+          ],
+          [
+            16,
+            8192,
+            6144
+          ],
+          [
+            128,
+            8192,
+            6144
+          ],
+          [
+            1024,
+            8192,
+            6144
+          ],
+          [
+            1,
+            1537,
+            1025
+          ],
+          [
+            16,
+            1537,
+            1025
+          ],
+          [
+            128,
+            1537,
+            1025
+          ],
+          [
+            1024,
+            1537,
+            1025
+          ],
+          [
+            1,
+            4097,
+            2049
+          ],
+          [
+            16,
+            4097,
+            2049
+          ],
+          [
+            128,
+            4097,
+            2049
+          ],
+          [
+            1024,
+            4097,
+            2049
+          ]
+        ],
+        "axis_min": [
+          1,
+          1024,
+          768
+        ],
+        "axis_max": [
+          1024,
+          8192,
+          6144
+        ],
+        "nk_pairs": [
+          [
+            1024,
+            768
+          ],
+          [
+            1536,
+            1024
+          ],
+          [
+            1537,
+            1025
+          ],
+          [
+            4096,
+            2048
+          ],
+          [
+            4097,
+            2049
+          ],
+          [
+            8192,
+            6144
+          ]
+        ],
+        "loo_nearest_log2_l1_p95": 2.58390605422961,
+        "interpretation": "Training-shape distance diagnostics only; not a probability of failure or accuracy guarantee."
+      },
+      "params": {
+        "overhead_ms": 0.00455615997314453,
+        "compute_tflops": 100.59128626953859
+      },
+      "fit_diagnostics": {
+        "fit_method": "multistart least_squares on positive log parameters",
+        "objective": "soft_l1(log(predicted_ms) - log(actual_ms)); f_scale=0.05",
+        "n_train": 24,
+        "starts_attempted": 5,
+        "starts_converged": 5,
+        "robust_cost": 0.7840914706491233,
+        "train_median_ape_pct": 55.18941476988391,
+        "train_p90_ape_pct": 92.02279872059306,
+        "sensitivity_rank": 2,
+        "parameter_count": 2,
+        "sensitivity_singular_values": [
+          3.4752627935916927,
+          2.601523751728578
+        ],
+        "sensitivity_condition_number": 1.3358566460454417,
+        "near_boundary_parameters": [
+          "overhead_ms"
+        ],
+        "near_equivalent_parameter_spread_ratio": {
+          "overhead_ms": 1.0,
+          "compute_tflops": 1.0000001686674116
+        },
+        "warnings": [
+          "Fit reached or approached an artificial numerical boundary: overhead_ms."
+        ]
+      },
+      "model_hash": "393231998e93adce44455cf27124566b740b4718d545bf2d435f9c9802bdead1"
+    },
+    "roofline_2p": {
+      "schema_version": 1,
+      "model_id": "roofline_2p",
+      "model_type": "roofline_2p",
+      "measurement_kind": "cuda_measured",
+      "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+      "dtype": "float16",
+      "cache_policy": "warm_reuse",
+      "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+      "sample_unit": "block_median",
+      "train_case_ids": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+      "training_domain": {
+        "train_shapes": [
+          [
+            1,
+            1024,
+            768
+          ],
+          [
+            16,
+            1024,
+            768
+          ],
+          [
+            128,
+            1024,
+            768
+          ],
+          [
+            1024,
+            1024,
+            768
+          ],
+          [
+            1,
+            1536,
+            1024
+          ],
+          [
+            16,
+            1536,
+            1024
+          ],
+          [
+            128,
+            1536,
+            1024
+          ],
+          [
+            1024,
+            1536,
+            1024
+          ],
+          [
+            1,
+            4096,
+            2048
+          ],
+          [
+            16,
+            4096,
+            2048
+          ],
+          [
+            128,
+            4096,
+            2048
+          ],
+          [
+            1024,
+            4096,
+            2048
+          ],
+          [
+            1,
+            8192,
+            6144
+          ],
+          [
+            16,
+            8192,
+            6144
+          ],
+          [
+            128,
+            8192,
+            6144
+          ],
+          [
+            1024,
+            8192,
+            6144
+          ],
+          [
+            1,
+            1537,
+            1025
+          ],
+          [
+            16,
+            1537,
+            1025
+          ],
+          [
+            128,
+            1537,
+            1025
+          ],
+          [
+            1024,
+            1537,
+            1025
+          ],
+          [
+            1,
+            4097,
+            2049
+          ],
+          [
+            16,
+            4097,
+            2049
+          ],
+          [
+            128,
+            4097,
+            2049
+          ],
+          [
+            1024,
+            4097,
+            2049
+          ]
+        ],
+        "axis_min": [
+          1,
+          1024,
+          768
+        ],
+        "axis_max": [
+          1024,
+          8192,
+          6144
+        ],
+        "nk_pairs": [
+          [
+            1024,
+            768
+          ],
+          [
+            1536,
+            1024
+          ],
+          [
+            1537,
+            1025
+          ],
+          [
+            4096,
+            2048
+          ],
+          [
+            4097,
+            2049
+          ],
+          [
+            8192,
+            6144
+          ]
+        ],
+        "loo_nearest_log2_l1_p95": 2.58390605422961,
+        "interpretation": "Training-shape distance diagnostics only; not a probability of failure or accuracy guarantee."
+      },
+      "params": {
+        "overhead_ms": 0.0,
+        "compute_tflops": 131.45951234194376,
+        "bandwidth_gbps": 552.0704396791776
+      },
+      "fit_diagnostics": {
+        "parameter_count": 2,
+        "sensitivity_rank": 2,
+        "starts_attempted": 3,
+        "starts_converged": 3,
+        "robust_cost": 0.6895108103724849,
+        "warnings": []
+      },
+      "interpretation": "Explicit zero-offset statistical model; zero offset does not assert zero physical launch overhead.",
+      "model_hash": "9c6bcbfb9c6311da2332ee1285468a0a3460a20aadbde870d9cc2c9d9e8d5719"
+    },
+    "roofline_3p": {
+      "schema_version": 1,
+      "model_id": "roofline_3p",
+      "model_type": "roofline_3p",
+      "measurement_kind": "cuda_measured",
+      "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+      "dtype": "float16",
+      "cache_policy": "warm_reuse",
+      "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+      "sample_unit": "block_median",
+      "train_case_ids": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+      "training_domain": {
+        "train_shapes": [
+          [
+            1,
+            1024,
+            768
+          ],
+          [
+            16,
+            1024,
+            768
+          ],
+          [
+            128,
+            1024,
+            768
+          ],
+          [
+            1024,
+            1024,
+            768
+          ],
+          [
+            1,
+            1536,
+            1024
+          ],
+          [
+            16,
+            1536,
+            1024
+          ],
+          [
+            128,
+            1536,
+            1024
+          ],
+          [
+            1024,
+            1536,
+            1024
+          ],
+          [
+            1,
+            4096,
+            2048
+          ],
+          [
+            16,
+            4096,
+            2048
+          ],
+          [
+            128,
+            4096,
+            2048
+          ],
+          [
+            1024,
+            4096,
+            2048
+          ],
+          [
+            1,
+            8192,
+            6144
+          ],
+          [
+            16,
+            8192,
+            6144
+          ],
+          [
+            128,
+            8192,
+            6144
+          ],
+          [
+            1024,
+            8192,
+            6144
+          ],
+          [
+            1,
+            1537,
+            1025
+          ],
+          [
+            16,
+            1537,
+            1025
+          ],
+          [
+            128,
+            1537,
+            1025
+          ],
+          [
+            1024,
+            1537,
+            1025
+          ],
+          [
+            1,
+            4097,
+            2049
+          ],
+          [
+            16,
+            4097,
+            2049
+          ],
+          [
+            128,
+            4097,
+            2049
+          ],
+          [
+            1024,
+            4097,
+            2049
+          ]
+        ],
+        "axis_min": [
+          1,
+          1024,
+          768
+        ],
+        "axis_max": [
+          1024,
+          8192,
+          6144
+        ],
+        "nk_pairs": [
+          [
+            1024,
+            768
+          ],
+          [
+            1536,
+            1024
+          ],
+          [
+            1537,
+            1025
+          ],
+          [
+            4096,
+            2048
+          ],
+          [
+            4097,
+            2049
+          ],
+          [
+            8192,
+            6144
+          ]
+        ],
+        "loo_nearest_log2_l1_p95": 2.58390605422961,
+        "interpretation": "Training-shape distance diagnostics only; not a probability of failure or accuracy guarantee."
+      },
+      "params": {
+        "overhead_ms": 0.00455615997314453,
+        "compute_tflops": 187.98807132608377,
+        "bandwidth_gbps": 1263.5447732915757
+      },
+      "fit_diagnostics": {
+        "fit_method": "multistart least_squares on positive log parameters",
+        "objective": "soft_l1(log(predicted_ms) - log(actual_ms)); f_scale=0.05",
+        "n_train": 24,
+        "starts_attempted": 15,
+        "starts_converged": 15,
+        "robust_cost": 0.4672614963182228,
+        "train_median_ape_pct": 29.716328561766847,
+        "train_p90_ape_pct": 72.29959882655912,
+        "sensitivity_rank": 3,
+        "parameter_count": 3,
+        "sensitivity_singular_values": [
+          3.0559551863649377,
+          2.140416219844036,
+          1.5355162028782674
+        ],
+        "sensitivity_condition_number": 1.990181009250612,
+        "near_boundary_parameters": [
+          "overhead_ms"
+        ],
+        "near_equivalent_parameter_spread_ratio": {
+          "overhead_ms": 1.0,
+          "compute_tflops": 1.4918297567226588,
+          "bandwidth_gbps": 1.1160003180254776
+        },
+        "warnings": [
+          "Fit reached or approached an artificial numerical boundary: overhead_ms."
+        ],
+        "regime_hypothesis_counts": {
+          "overhead": 9,
+          "compute": 6,
+          "memory": 9
+        },
+        "kernel_term_hypothesis_counts": {
+          "compute": 6,
+          "memory": 18
+        }
+      },
+      "model_hash": "ecf462688b034499787caf50e6a368e5c09f119abe5ee4befbb05e4ec9f90983"
+    },
+    "shape_log_ridge": {
+      "schema_version": 1,
+      "model_id": "shape_log_ridge",
+      "model_type": "shape_log_ridge",
+      "measurement_kind": "cuda_measured",
+      "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+      "dtype": "float16",
+      "cache_policy": "warm_reuse",
+      "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+      "sample_unit": "block_median",
+      "train_case_ids": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+      "training_domain": {
+        "train_shapes": [
+          [
+            1,
+            1024,
+            768
+          ],
+          [
+            16,
+            1024,
+            768
+          ],
+          [
+            128,
+            1024,
+            768
+          ],
+          [
+            1024,
+            1024,
+            768
+          ],
+          [
+            1,
+            1536,
+            1024
+          ],
+          [
+            16,
+            1536,
+            1024
+          ],
+          [
+            128,
+            1536,
+            1024
+          ],
+          [
+            1024,
+            1536,
+            1024
+          ],
+          [
+            1,
+            4096,
+            2048
+          ],
+          [
+            16,
+            4096,
+            2048
+          ],
+          [
+            128,
+            4096,
+            2048
+          ],
+          [
+            1024,
+            4096,
+            2048
+          ],
+          [
+            1,
+            8192,
+            6144
+          ],
+          [
+            16,
+            8192,
+            6144
+          ],
+          [
+            128,
+            8192,
+            6144
+          ],
+          [
+            1024,
+            8192,
+            6144
+          ],
+          [
+            1,
+            1537,
+            1025
+          ],
+          [
+            16,
+            1537,
+            1025
+          ],
+          [
+            128,
+            1537,
+            1025
+          ],
+          [
+            1024,
+            1537,
+            1025
+          ],
+          [
+            1,
+            4097,
+            2049
+          ],
+          [
+            16,
+            4097,
+            2049
+          ],
+          [
+            128,
+            4097,
+            2049
+          ],
+          [
+            1024,
+            4097,
+            2049
+          ]
+        ],
+        "axis_min": [
+          1,
+          1024,
+          768
+        ],
+        "axis_max": [
+          1024,
+          8192,
+          6144
+        ],
+        "nk_pairs": [
+          [
+            1024,
+            768
+          ],
+          [
+            1536,
+            1024
+          ],
+          [
+            1537,
+            1025
+          ],
+          [
+            4096,
+            2048
+          ],
+          [
+            4097,
+            2049
+          ],
+          [
+            8192,
+            6144
+          ]
+        ],
+        "loo_nearest_log2_l1_p95": 2.58390605422961,
+        "interpretation": "Training-shape distance diagnostics only; not a probability of failure or accuracy guarantee."
+      },
+      "feature_names": [
+        "log2_m",
+        "log2_n",
+        "log2_k",
+        "log2_arithmetic_intensity",
+        "log2_ideal_bytes",
+        "log2_n_over_k",
+        "small_m_exp_32",
+        "small_m_exp_128",
+        "n_unaligned_8",
+        "k_unaligned_8",
+        "n_unaligned_16",
+        "k_unaligned_16",
+        "m_tile128_waste_proxy",
+        "n_tile128_waste_proxy",
+        "k_tile128_waste_proxy"
+      ],
+      "feature_mean": [
+        5.25,
+        11.361869354648704,
+        10.695339577474394,
+        4.9186797957765656,
+        23.388529136346534,
+        0.6665297771743101,
+        0.39851988326943105,
+        0.560732436161046,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.466796875,
+        0.017731400543900544,
+        0.028101171023965144
+      ],
+      "feature_scale": [
+        3.6996621467371855,
+        1.0455255165993638,
+        0.9962191446461778,
+        3.3457941326089427,
+        1.9427581524751876,
+        0.2456454158946632,
+        0.4099864562301104,
+        0.4002965013574922,
+        0.47140452079103173,
+        0.47140452079103173,
+        0.47140452079103173,
+        0.47140452079103173,
+        0.4686319838415821,
+        0.028409598061521612,
+        0.042469262381831095
+      ],
+      "coefficients": [
+        0.27180914049810845,
+        0.30821411349127625,
+        0.3807514777254167,
+        0.3196133456131364,
+        0.32829570817296827,
+        -0.23231124026217656,
+        0.2631732124331966,
+        -0.5157451633912826,
+        0.12935355192770126,
+        0.12935355192770118,
+        0.12935355192770137,
+        0.1293535519277012,
+        0.1668185248707796,
+        -0.08424157218693207,
+        -0.027821651677793942
+      ],
+      "intercept": -3.6933208622013836,
+      "alpha": 1.0,
+      "log_prediction_bounds": [
+        -9.996445307371232,
+        3.954157639037201
+      ],
+      "interpretation": "Regularized log-latency regression. Alignment/waste proxies do not identify actual kernel tile dimensions.",
+      "model_hash": "aa46c9392bf789213467505db9406d93b095716b74fe198a6724fd38c1162352"
+    },
+    "roofline_residual_krr": {
+      "schema_version": 1,
+      "model_id": "roofline_residual_krr",
+      "model_type": "roofline_residual_krr",
+      "measurement_kind": "cuda_measured",
+      "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+      "dtype": "float16",
+      "cache_policy": "warm_reuse",
+      "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+      "sample_unit": "block_median",
+      "train_case_ids": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+      "training_domain": {
+        "train_shapes": [
+          [
+            1,
+            1024,
+            768
+          ],
+          [
+            16,
+            1024,
+            768
+          ],
+          [
+            128,
+            1024,
+            768
+          ],
+          [
+            1024,
+            1024,
+            768
+          ],
+          [
+            1,
+            1536,
+            1024
+          ],
+          [
+            16,
+            1536,
+            1024
+          ],
+          [
+            128,
+            1536,
+            1024
+          ],
+          [
+            1024,
+            1536,
+            1024
+          ],
+          [
+            1,
+            4096,
+            2048
+          ],
+          [
+            16,
+            4096,
+            2048
+          ],
+          [
+            128,
+            4096,
+            2048
+          ],
+          [
+            1024,
+            4096,
+            2048
+          ],
+          [
+            1,
+            8192,
+            6144
+          ],
+          [
+            16,
+            8192,
+            6144
+          ],
+          [
+            128,
+            8192,
+            6144
+          ],
+          [
+            1024,
+            8192,
+            6144
+          ],
+          [
+            1,
+            1537,
+            1025
+          ],
+          [
+            16,
+            1537,
+            1025
+          ],
+          [
+            128,
+            1537,
+            1025
+          ],
+          [
+            1024,
+            1537,
+            1025
+          ],
+          [
+            1,
+            4097,
+            2049
+          ],
+          [
+            16,
+            4097,
+            2049
+          ],
+          [
+            128,
+            4097,
+            2049
+          ],
+          [
+            1024,
+            4097,
+            2049
+          ]
+        ],
+        "axis_min": [
+          1,
+          1024,
+          768
+        ],
+        "axis_max": [
+          1024,
+          8192,
+          6144
+        ],
+        "nk_pairs": [
+          [
+            1024,
+            768
+          ],
+          [
+            1536,
+            1024
+          ],
+          [
+            1537,
+            1025
+          ],
+          [
+            4096,
+            2048
+          ],
+          [
+            4097,
+            2049
+          ],
+          [
+            8192,
+            6144
+          ]
+        ],
+        "loo_nearest_log2_l1_p95": 2.58390605422961,
+        "interpretation": "Training-shape distance diagnostics only; not a probability of failure or accuracy guarantee."
+      },
+      "base_model": {
+        "schema_version": 1,
+        "model_id": "roofline_2p",
+        "model_type": "roofline_2p",
+        "measurement_kind": "cuda_measured",
+        "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+        "dtype": "float16",
+        "cache_policy": "warm_reuse",
+        "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+        "sample_unit": "block_median",
+        "train_case_ids": [
+          "c01",
+          "c02",
+          "c03",
+          "c04",
+          "c05",
+          "c06",
+          "c07",
+          "c08",
+          "c09",
+          "c10",
+          "c11",
+          "c12",
+          "c13",
+          "c14",
+          "c15",
+          "c16",
+          "c17",
+          "c18",
+          "c19",
+          "c20",
+          "c21",
+          "c22",
+          "c23",
+          "c24"
+        ],
+        "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+        "training_domain": {
+          "train_shapes": [
+            [
+              1,
+              1024,
+              768
+            ],
+            [
+              16,
+              1024,
+              768
+            ],
+            [
+              128,
+              1024,
+              768
+            ],
+            [
+              1024,
+              1024,
+              768
+            ],
+            [
+              1,
+              1536,
+              1024
+            ],
+            [
+              16,
+              1536,
+              1024
+            ],
+            [
+              128,
+              1536,
+              1024
+            ],
+            [
+              1024,
+              1536,
+              1024
+            ],
+            [
+              1,
+              4096,
+              2048
+            ],
+            [
+              16,
+              4096,
+              2048
+            ],
+            [
+              128,
+              4096,
+              2048
+            ],
+            [
+              1024,
+              4096,
+              2048
+            ],
+            [
+              1,
+              8192,
+              6144
+            ],
+            [
+              16,
+              8192,
+              6144
+            ],
+            [
+              128,
+              8192,
+              6144
+            ],
+            [
+              1024,
+              8192,
+              6144
+            ],
+            [
+              1,
+              1537,
+              1025
+            ],
+            [
+              16,
+              1537,
+              1025
+            ],
+            [
+              128,
+              1537,
+              1025
+            ],
+            [
+              1024,
+              1537,
+              1025
+            ],
+            [
+              1,
+              4097,
+              2049
+            ],
+            [
+              16,
+              4097,
+              2049
+            ],
+            [
+              128,
+              4097,
+              2049
+            ],
+            [
+              1024,
+              4097,
+              2049
+            ]
+          ],
+          "axis_min": [
+            1,
+            1024,
+            768
+          ],
+          "axis_max": [
+            1024,
+            8192,
+            6144
+          ],
+          "nk_pairs": [
+            [
+              1024,
+              768
+            ],
+            [
+              1536,
+              1024
+            ],
+            [
+              1537,
+              1025
+            ],
+            [
+              4096,
+              2048
+            ],
+            [
+              4097,
+              2049
+            ],
+            [
+              8192,
+              6144
+            ]
+          ],
+          "loo_nearest_log2_l1_p95": 2.58390605422961,
+          "interpretation": "Training-shape distance diagnostics only; not a probability of failure or accuracy guarantee."
+        },
+        "params": {
+          "overhead_ms": 0.0,
+          "compute_tflops": 131.45951234194376,
+          "bandwidth_gbps": 552.0704396791776
+        },
+        "fit_diagnostics": {
+          "parameter_count": 2,
+          "sensitivity_rank": 2,
+          "starts_attempted": 3,
+          "starts_converged": 3,
+          "robust_cost": 0.6895108103724849,
+          "warnings": []
+        },
+        "interpretation": "Explicit zero-offset statistical model; zero offset does not assert zero physical launch overhead.",
+        "model_hash": "9c6bcbfb9c6311da2332ee1285468a0a3460a20aadbde870d9cc2c9d9e8d5719"
+      },
+      "feature_names": [
+        "log2_m",
+        "log2_n",
+        "log2_k",
+        "n_unaligned_16",
+        "k_unaligned_16"
+      ],
+      "feature_mean": [
+        5.25,
+        11.361869354648704,
+        10.695339577474394,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        3.6996621467371855,
+        1.0455255165993638,
+        0.9962191446461778,
+        0.47140452079103173,
+        0.47140452079103173
+      ],
+      "feature_train": [
+        [
+          -1.4190484946389206,
+          -1.3025692180887827,
+          -1.1145911848016183,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -0.33786868919974294,
+          -1.3025692180887827,
+          -1.1145911848016183,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          0.47301616487964016,
+          -1.3025692180887827,
+          -1.1145911848016183,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          1.2839010189590232,
+          -1.3025692180887827,
+          -1.1145911848016183,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -1.4190484946389206,
+          -0.7430778508921381,
+          -0.69797853334906,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -0.33786868919974294,
+          -0.7430778508921381,
+          -0.69797853334906,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          0.47301616487964016,
+          -0.7430778508921381,
+          -0.69797853334906,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          1.2839010189590232,
+          -0.7430778508921381,
+          -0.69797853334906,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -1.4190484946389206,
+          0.6103444011838712,
+          0.3058166711239127,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -0.33786868919974294,
+          0.6103444011838712,
+          0.3058166711239127,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          0.47301616487964016,
+          0.6103444011838712,
+          0.3058166711239127,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          1.2839010189590232,
+          0.6103444011838712,
+          0.3058166711239127,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -1.4190484946389206,
+          1.566801210820198,
+          1.8967944286172997,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -0.33786868919974294,
+          1.566801210820198,
+          1.8967944286172997,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          0.47301616487964016,
+          1.566801210820198,
+          1.8967944286172997,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          1.2839010189590232,
+          1.566801210820198,
+          1.8967944286172997,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -1.4190484946389206,
+          -0.7421797867562484,
+          -0.6965649945705926,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          -0.33786868919974294,
+          -0.7421797867562484,
+          -0.6965649945705926,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          0.47301616487964016,
+          -0.7421797867562484,
+          -0.6965649945705926,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          1.2839010189590232,
+          -0.7421797867562484,
+          -0.6965649945705926,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          -1.4190484946389206,
+          0.6106812437331048,
+          0.30652361298006037,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          -0.33786868919974294,
+          0.6106812437331048,
+          0.30652361298006037,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          0.47301616487964016,
+          0.6106812437331048,
+          0.30652361298006037,
+          1.4142135623730951,
+          1.4142135623730951
+        ],
+        [
+          1.2839010189590232,
+          0.6106812437331048,
+          0.30652361298006037,
+          1.4142135623730951,
+          1.4142135623730951
+        ]
+      ],
+      "kernel_weights": [
+        2.1578710925680475,
+        -0.8016002382160469,
+        1.6572626433303854,
+        2.10088871763401,
+        -6.772810457842757,
+        8.049379957533016,
+        0.24240216616171656,
+        -8.247608183115158,
+        5.447002763847465,
+        -8.907778626308856,
+        -0.47150815647229316,
+        5.617016448066351,
+        -0.045786461723402325,
+        -4.379112689967441,
+        9.551940585554256,
+        -6.130452683203956,
+        0.14366664342930127,
+        2.1321658574812172,
+        -4.3718095911302814,
+        3.8616193972169754,
+        -2.559472705359052,
+        -2.2466417126562868,
+        7.939691391185778,
+        -4.308455339750774
+      ],
+      "alpha": 0.01,
+      "length_scale": 2.0,
+      "correction_log_bounds": [
+        -1.3862943611198906,
+        1.3862943611198906
+      ],
+      "interpretation": "RBF-kernel ridge correction to a two-parameter roofline prior; corrections tend to zero far from training features. Bounds are predeclared numerical safeguards, not confidence limits.",
+      "model_hash": "fee648e4df9c07a55bd8afcd9256ccc92c41f91485c0b7779958a9b7fed0898c"
+    }
+  },
+  "selected_model_id": "shape_log_ridge",
+  "development_metrics": {
+    "flop_only": {
+      "n": 12,
+      "median_ape_pct": 42.55808459070675,
+      "p90_ape_pct": 80.1030386962064,
+      "max_ape_pct": 85.11794038514205,
+      "rmse_ms": 0.03638225247635301,
+      "pairwise_ordering_accuracy": 0.8409090909090909,
+      "ranking_pairs": 66,
+      "excluded_actual_ties": 0,
+      "pairwise_actual_tie_rel_tol": 0.01,
+      "predicted_tie_score": 0.5,
+      "predictions": [
+        {
+          "case_id": "d01",
+          "m": 8,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.0062572801113128665,
+          "predicted_ms": 0.0046812494562065475,
+          "ape_pct": 25.187152038422095,
+          "error_ms": -0.001576030655106319,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.006255360245704651,
+            0.006261759996414184
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d02",
+          "m": 256,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.007340800166130066,
+          "predicted_ms": 0.00855902343112909,
+          "ape_pct": 16.59523808616695,
+          "error_ms": 0.0012182232649990236,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.007256320118904114,
+            0.007346559762954712
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d03",
+          "m": 8,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.007664639949798584,
+          "predicted_ms": 0.004806338939268565,
+          "ape_pct": 37.29204540919279,
+          "error_ms": -0.0028583010105300193,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.00764352023601532,
+            0.007724159955978393
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d04",
+          "m": 256,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.010161919593811035,
+          "predicted_ms": 0.012561886889113649,
+          "ape_pct": 23.617263186812433,
+          "error_ms": 0.0023999672953026133,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.009923200011253358,
+            0.01026047945022583
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d05",
+          "m": 8,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.011289600133895874,
+          "predicted_ms": 0.005890447792472717,
+          "ape_pct": 47.82412377222071,
+          "error_ms": -0.005399152341423157,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.011263359785079956,
+            0.011365760564804078
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d06",
+          "m": 256,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.04265727996826172,
+          "predicted_ms": 0.0472533701916465,
+          "ape_pct": 10.774456849579737,
+          "error_ms": 0.00459609022338478,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.04241343975067138,
+            0.043011841773986814
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d07",
+          "m": 8,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.08440959930419922,
+          "predicted_ms": 0.012561886889113649,
+          "ape_pct": 85.11794038514205,
+          "error_ms": -0.07184771241508557,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.0839680004119873,
+            0.0844377613067627
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d08",
+          "m": 256,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.2346963119506836,
+          "predicted_ms": 0.26073942128415634,
+          "ape_pct": 11.096514093900687,
+          "error_ms": 0.02604310933347273,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.23457088470458984,
+            0.234849910736084
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d09",
+          "m": 8,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.012698880434036254,
+          "predicted_ms": 0.004806746290655744,
+          "ape_pct": 62.14826719863878,
+          "error_ms": -0.007892134143380511,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.012688000202178955,
+            0.012699520587921143
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d10",
+          "m": 256,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.037550079822540286,
+          "predicted_ms": 0.012574922133503374,
+          "ape_pct": 66.51159679837752,
+          "error_ms": -0.024975157689036912,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.03749311923980713,
+            0.03758527994155884
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d11",
+          "m": 8,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.0320415997505188,
+          "predicted_ms": 0.005891425213118641,
+          "ape_pct": 81.61319890707627,
+          "error_ms": -0.026150174537400157,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.032025599479675294,
+            0.0321017599105835
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d12",
+          "m": 256,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.14005120277404784,
+          "predicted_ms": 0.047284647652316096,
+          "ape_pct": 66.23759973800227,
+          "error_ms": -0.09276655512173174,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.13994367599487303,
+            0.140065279006958
+          ],
+          "prediction_inside_observed_pass_range": false
+        }
+      ],
+      "rmse_us": 36.38225247635301,
+      "mae_ms": 0.022310217335904464,
+      "mae_us": 22.310217335904465,
+      "signed_bias_ms": -0.016600652316377935,
+      "signed_bias_us": -16.600652316377936,
+      "mean_ape_pct": 44.50128303862769,
+      "log_rmse": 0.9412761670032224,
+      "geometric_mean_multiplicative_error": 2.069962084836629,
+      "log_metric_definitions": {
+        "log_rmse": "sqrt(mean(log(predicted_ms / actual_ms)^2)); natural logarithm",
+        "geometric_mean_multiplicative_error": "exp(mean(abs(log(predicted_ms / actual_ms)))); 1 is exact, 2 means geometric mean factor-of-two error; not signed bias"
+      },
+      "sample_unit": "distinct_shape_aggregate_target",
+      "uncertainty_note": "Pass ranges are descriptive observed variation, not confidence or prediction intervals."
+    },
+    "roofline_2p": {
+      "n": 12,
+      "median_ape_pct": 46.09403120070455,
+      "p90_ape_pct": 112.70421274216238,
+      "max_ape_pct": 170.7597537080989,
+      "rmse_ms": 0.044093032632252775,
+      "pairwise_ordering_accuracy": 0.9242424242424242,
+      "ranking_pairs": 66,
+      "excluded_actual_ties": 0,
+      "pairwise_actual_tie_rel_tol": 0.01,
+      "predicted_tie_score": 0.5,
+      "predictions": [
+        {
+          "case_id": "d01",
+          "m": 8,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.0062572801113128665,
+          "predicted_ms": 0.0029009631468960625,
+          "ape_pct": 53.638592243117614,
+          "error_ms": -0.003356316964416804,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.006255360245704651,
+            0.006261759996414184
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d02",
+          "m": 256,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.007340800166130066,
+          "predicted_ms": 0.004510960596707944,
+          "ape_pct": 38.54947015829149,
+          "error_ms": -0.002829839569422122,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.007256320118904114,
+            0.007346559762954712
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d03",
+          "m": 8,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.007664639949798584,
+          "predicted_ms": 0.0057722489214453625,
+          "ape_pct": 24.689888119310172,
+          "error_ms": -0.001892391028353222,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.00764352023601532,
+            0.007724159955978393
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d04",
+          "m": 256,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.010161919593811035,
+          "predicted_ms": 0.008072245278319477,
+          "ape_pct": 20.563775339889943,
+          "error_ms": -0.002089674315491558,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.009923200011253358,
+            0.01026047945022583
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d05",
+          "m": 8,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.011289600133895874,
+          "predicted_ms": 0.03056769351716567,
+          "ape_pct": 170.7597537080989,
+          "error_ms": 0.019278093383269797,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.011263359785079956,
+            0.011365760564804078
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d06",
+          "m": 256,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.04265727996826172,
+          "predicted_ms": 0.03608768477366355,
+          "ape_pct": 15.400876941722824,
+          "error_ms": -0.006569595194598168,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.04241343975067138,
+            0.043011841773986814
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d07",
+          "m": 8,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.08440959930419922,
+          "predicted_ms": 0.18275325891136524,
+          "ape_pct": 116.50767260812431,
+          "error_ms": 0.09834365960716601,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.0839680004119873,
+            0.0844377613067627
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d08",
+          "m": 256,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.2346963119506836,
+          "predicted_ms": 0.19602844493268234,
+          "ape_pct": 16.475702876032617,
+          "error_ms": -0.03866786701800126,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.23457088470458984,
+            0.234849910736084
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d09",
+          "m": 8,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.012698880434036254,
+          "predicted_ms": 0.005781584686647707,
+          "ape_pct": 54.47169759035152,
+          "error_ms": -0.006917295747388547,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.012688000202178955,
+            0.012699520587921143
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d10",
+          "m": 256,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.037550079822540286,
+          "predicted_ms": 0.00808337791567563,
+          "ape_pct": 78.4730739485049,
+          "error_ms": -0.029466701906864658,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.03749311923980713,
+            0.03758527994155884
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d11",
+          "m": 8,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.0320415997505188,
+          "predicted_ms": 0.030590013132769725,
+          "ape_pct": 4.530318801343771,
+          "error_ms": -0.0014515866177490719,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.032025599479675294,
+            0.0321017599105835
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d12",
+          "m": 256,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.14005120277404784,
+          "predicted_ms": 0.03611180126142141,
+          "ape_pct": 74.21528659080313,
+          "error_ms": -0.10393940151262643,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.13994367599487303,
+            0.140065279006958
+          ],
+          "prediction_inside_observed_pass_range": false
+        }
+      ],
+      "rmse_us": 44.09303263225277,
+      "mae_ms": 0.02623353523877897,
+      "mae_us": 26.23353523877897,
+      "signed_bias_ms": -0.006629909740373002,
+      "signed_bias_us": -6.6299097403730025,
+      "mean_ape_pct": 55.68967574379926,
+      "log_rmse": 0.7867574145043835,
+      "geometric_mean_multiplicative_error": 1.8853968475011524,
+      "log_metric_definitions": {
+        "log_rmse": "sqrt(mean(log(predicted_ms / actual_ms)^2)); natural logarithm",
+        "geometric_mean_multiplicative_error": "exp(mean(abs(log(predicted_ms / actual_ms)))); 1 is exact, 2 means geometric mean factor-of-two error; not signed bias"
+      },
+      "sample_unit": "distinct_shape_aggregate_target",
+      "uncertainty_note": "Pass ranges are descriptive observed variation, not confidence or prediction intervals."
+    },
+    "roofline_3p": {
+      "n": 12,
+      "median_ape_pct": 37.705032259739866,
+      "p90_ape_pct": 74.66143635468123,
+      "max_ape_pct": 80.42150571581213,
+      "rmse_ms": 0.04347377380386192,
+      "pairwise_ordering_accuracy": 0.9242424242424242,
+      "ranking_pairs": 66,
+      "excluded_actual_ties": 0,
+      "pairwise_actual_tie_rel_tol": 0.01,
+      "predicted_tie_score": 0.5,
+      "predictions": [
+        {
+          "case_id": "d01",
+          "m": 8,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.0062572801113128665,
+          "predicted_ms": 0.005823654433058242,
+          "ape_pct": 6.9299387360116675,
+          "error_ms": -0.0004336256782546243,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.006255360245704651,
+            0.006261759996414184
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d02",
+          "m": 256,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.007340800166130066,
+          "predicted_ms": 0.006698068133378582,
+          "ape_pct": 8.755612715314117,
+          "error_ms": -0.0006427320327514838,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.007256320118904114,
+            0.007346559762954712
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d03",
+          "m": 8,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.007664639949798584,
+          "predicted_ms": 0.007078182197729871,
+          "ape_pct": 7.651471640023018,
+          "error_ms": -0.0005864577520687132,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.00764352023601532,
+            0.007724159955978393
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d04",
+          "m": 256,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.010161919593811035,
+          "predicted_ms": 0.008839976293612635,
+          "ape_pct": 13.008795119806987,
+          "error_ms": -0.0013219433001984,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.009923200011253358,
+            0.01026047945022583
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d05",
+          "m": 8,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.011289600133895874,
+          "predicted_ms": 0.017911856072491066,
+          "ape_pct": 58.6580203023537,
+          "error_ms": 0.006622255938595192,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.011263359785079956,
+            0.011365760564804078
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d06",
+          "m": 256,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.04265727996826172,
+          "predicted_ms": 0.02740318034897443,
+          "ape_pct": 35.75966313519473,
+          "error_ms": -0.015254099619287292,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.04241343975067138,
+            0.043011841773986814
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d07",
+          "m": 8,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.08440959930419922,
+          "predicted_ms": 0.08440506927389789,
+          "ape_pct": 0.005366724091424653,
+          "error_ms": -4.530030301333476e-06,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.0839680004119873,
+            0.0844377613067627
+          ],
+          "prediction_inside_observed_pass_range": true
+        },
+        {
+          "case_id": "d08",
+          "m": 256,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.2346963119506836,
+          "predicted_ms": 0.1416382822281239,
+          "ape_pct": 39.650401384285,
+          "error_ms": -0.0930580297225597,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.23457088470458984,
+            0.234849910736084
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d09",
+          "m": 8,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.012698880434036254,
+          "predicted_ms": 0.007082261198418207,
+          "ape_pct": 44.229247332418915,
+          "error_ms": -0.005616619235618047,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.012688000202178955,
+            0.012699520587921143
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d10",
+          "m": 256,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.037550079822540286,
+          "predicted_ms": 0.008846951374482132,
+          "ape_pct": 76.43959369382873,
+          "error_ms": -0.028703128448058154,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.03749311923980713,
+            0.03758527994155884
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d11",
+          "m": 8,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.0320415997505188,
+          "predicted_ms": 0.017921608002347815,
+          "ape_pct": 44.06768656406539,
+          "error_ms": -0.014119991748170982,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.032025599479675294,
+            0.0321017599105835
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d12",
+          "m": 256,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.14005120277404784,
+          "predicted_ms": 0.027419916730053326,
+          "ape_pct": 80.42150571581213,
+          "error_ms": -0.11263128604399451,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.13994367599487303,
+            0.140065279006958
+          ],
+          "prediction_inside_observed_pass_range": false
+        }
+      ],
+      "rmse_us": 43.473773803861924,
+      "mae_ms": 0.023249558295821537,
+      "mae_us": 23.249558295821537,
+      "signed_bias_ms": -0.02214584897272234,
+      "signed_bias_us": -22.14584897272234,
+      "mean_ape_pct": 34.63144192193382,
+      "log_rmse": 0.714777468693082,
+      "geometric_mean_multiplicative_error": 1.653246171051503,
+      "log_metric_definitions": {
+        "log_rmse": "sqrt(mean(log(predicted_ms / actual_ms)^2)); natural logarithm",
+        "geometric_mean_multiplicative_error": "exp(mean(abs(log(predicted_ms / actual_ms)))); 1 is exact, 2 means geometric mean factor-of-two error; not signed bias"
+      },
+      "sample_unit": "distinct_shape_aggregate_target",
+      "uncertainty_note": "Pass ranges are descriptive observed variation, not confidence or prediction intervals."
+    },
+    "shape_log_ridge": {
+      "n": 12,
+      "median_ape_pct": 13.724135067186488,
+      "p90_ape_pct": 67.07422469208922,
+      "max_ape_pct": 71.2768798108092,
+      "rmse_ms": 0.012638153464788459,
+      "pairwise_ordering_accuracy": 0.9242424242424242,
+      "ranking_pairs": 66,
+      "excluded_actual_ties": 0,
+      "pairwise_actual_tie_rel_tol": 0.01,
+      "predicted_tie_score": 0.5,
+      "predictions": [
+        {
+          "case_id": "d01",
+          "m": 8,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.0062572801113128665,
+          "predicted_ms": 0.004199116128539357,
+          "ape_pct": 32.89231017566955,
+          "error_ms": -0.0020581639827735093,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.006255360245704651,
+            0.006261759996414184
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d02",
+          "m": 256,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.007340800166130066,
+          "predicted_ms": 0.012543387856824934,
+          "ape_pct": 70.8722151939136,
+          "error_ms": 0.0052025876906948675,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.007256320118904114,
+            0.007346559762954712
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d03",
+          "m": 8,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.007664639949798584,
+          "predicted_ms": 0.005892514694259027,
+          "ape_pct": 23.12078932795958,
+          "error_ms": -0.0017721252555395577,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.00764352023601532,
+            0.007724159955978393
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d04",
+          "m": 256,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.010161919593811035,
+          "predicted_ms": 0.017405018809162797,
+          "ape_pct": 71.2768798108092,
+          "error_ms": 0.007243099215351762,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.009923200011253358,
+            0.01026047945022583
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d05",
+          "m": 8,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.011289600133895874,
+          "predicted_ms": 0.01330136310303218,
+          "ape_pct": 17.819612256205538,
+          "error_ms": 0.002011762969136306,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.011263359785079956,
+            0.011365760564804078
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d06",
+          "m": 256,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.04265727996826172,
+          "predicted_ms": 0.038590026264835986,
+          "ape_pct": 9.534723513669627,
+          "error_ms": -0.004067253703425734,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.04241343975067138,
+            0.043011841773986814
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d07",
+          "m": 8,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.08440959930419922,
+          "predicted_ms": 0.08806514584153946,
+          "ape_pct": 4.330723718005354,
+          "error_ms": 0.0036555465373402374,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.0839680004119873,
+            0.0844377613067627
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d08",
+          "m": 256,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.2346963119506836,
+          "predicted_ms": 0.2528581629553395,
+          "ape_pct": 7.738447551094133,
+          "error_ms": 0.01816185100465592,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.23457088470458984,
+            0.234849910736084
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d09",
+          "m": 8,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.012698880434036254,
+          "predicted_ms": 0.01312349167787359,
+          "ape_pct": 3.3436903831243967,
+          "error_ms": 0.0004246112438373358,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.012688000202178955,
+            0.012699520587921143
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d10",
+          "m": 256,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.037550079822540286,
+          "predicted_ms": 0.03876254423655571,
+          "ape_pct": 3.228926329172843,
+          "error_ms": 0.0012124644140154225,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.03749311923980713,
+            0.03758527994155884
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d11",
+          "m": 8,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.0320415997505188,
+          "predicted_ms": 0.035126775769188004,
+          "ape_pct": 9.62865787816744,
+          "error_ms": 0.003085176018669207,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.032025599479675294,
+            0.0321017599105835
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d12",
+          "m": 256,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.14005120277404784,
+          "predicted_ms": 0.10190942865292692,
+          "ape_pct": 27.234163909793125,
+          "error_ms": -0.03814177412112092,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.13994367599487303,
+            0.140065279006958
+          ],
+          "prediction_inside_observed_pass_range": false
+        }
+      ],
+      "rmse_us": 12.63815346478846,
+      "mae_ms": 0.007253034679713399,
+      "mae_us": 7.253034679713399,
+      "signed_bias_ms": -0.00042018483076322204,
+      "signed_bias_us": -0.42018483076322205,
+      "mean_ape_pct": 23.418428337298703,
+      "log_rmse": 0.2829492384156631,
+      "geometric_mean_multiplicative_error": 1.2410305203812126,
+      "log_metric_definitions": {
+        "log_rmse": "sqrt(mean(log(predicted_ms / actual_ms)^2)); natural logarithm",
+        "geometric_mean_multiplicative_error": "exp(mean(abs(log(predicted_ms / actual_ms)))); 1 is exact, 2 means geometric mean factor-of-two error; not signed bias"
+      },
+      "sample_unit": "distinct_shape_aggregate_target",
+      "uncertainty_note": "Pass ranges are descriptive observed variation, not confidence or prediction intervals."
+    },
+    "roofline_residual_krr": {
+      "n": 12,
+      "median_ape_pct": 15.18425604199358,
+      "p90_ape_pct": 44.10921475389742,
+      "max_ape_pct": 53.0735372953193,
+      "rmse_ms": 0.034289447883552086,
+      "pairwise_ordering_accuracy": 0.9393939393939394,
+      "ranking_pairs": 66,
+      "excluded_actual_ties": 0,
+      "pairwise_actual_tie_rel_tol": 0.01,
+      "predicted_tie_score": 0.5,
+      "predictions": [
+        {
+          "case_id": "d01",
+          "m": 8,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.0062572801113128665,
+          "predicted_ms": 0.006054299782508993,
+          "ape_pct": 3.2439067005629867,
+          "error_ms": -0.0002029803288038732,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.006255360245704651,
+            0.006261759996414184
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d02",
+          "m": 256,
+          "n": 1024,
+          "k": 768,
+          "split": "development",
+          "actual_ms": 0.007340800166130066,
+          "predicted_ms": 0.0073060648123893825,
+          "ape_pct": 0.4731821184964286,
+          "error_ms": -3.4735353740683594e-05,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.007256320118904114,
+            0.007346559762954712
+          ],
+          "prediction_inside_observed_pass_range": true
+        },
+        {
+          "case_id": "d03",
+          "m": 8,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.007664639949798584,
+          "predicted_ms": 0.006738374877924733,
+          "ape_pct": 12.084913028409016,
+          "error_ms": -0.0009262650718738514,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.00764352023601532,
+            0.007724159955978393
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d04",
+          "m": 256,
+          "n": 1536,
+          "k": 1024,
+          "split": "development",
+          "actual_ms": 0.010161919593811035,
+          "predicted_ms": 0.008487619742322136,
+          "ape_pct": 16.47621628996756,
+          "error_ms": -0.001674299851488899,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.009923200011253358,
+            0.01026047945022583
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d05",
+          "m": 8,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.011289600133895874,
+          "predicted_ms": 0.011490399975597738,
+          "ape_pct": 1.7786266946601867,
+          "error_ms": 0.00020079984170186423,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.011263359785079956,
+            0.011365760564804078
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d06",
+          "m": 256,
+          "n": 4096,
+          "k": 2048,
+          "split": "development",
+          "actual_ms": 0.04265727996826172,
+          "predicted_ms": 0.02001755257513757,
+          "ape_pct": 53.0735372953193,
+          "error_ms": -0.02263972739312415,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.04241343975067138,
+            0.043011841773986814
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d07",
+          "m": 8,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.08440959930419922,
+          "predicted_ms": 0.08489777180526122,
+          "ape_pct": 0.5783376595625029,
+          "error_ms": 0.0004881725010619925,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.0839680004119873,
+            0.0844377613067627
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d08",
+          "m": 256,
+          "n": 8192,
+          "k": 6144,
+          "split": "development",
+          "actual_ms": 0.2346963119506836,
+          "predicted_ms": 0.12849760366902396,
+          "ape_pct": 45.249415041500534,
+          "error_ms": -0.10619870828165964,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.23457088470458984,
+            0.234849910736084
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d09",
+          "m": 8,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.012698880434036254,
+          "predicted_ms": 0.010404536907112471,
+          "ape_pct": 18.067289780714482,
+          "error_ms": -0.002294343526923783,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.012688000202178955,
+            0.012699520587921143
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d10",
+          "m": 256,
+          "n": 1537,
+          "k": 1025,
+          "split": "development",
+          "actual_ms": 0.037550079822540286,
+          "predicted_ms": 0.03233351166270252,
+          "ape_pct": 13.8922957940196,
+          "error_ms": -0.005216568159837766,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.03749311923980713,
+            0.03758527994155884
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d11",
+          "m": 8,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.0320415997505188,
+          "predicted_ms": 0.026133847540372537,
+          "ape_pct": 18.437756716721378,
+          "error_ms": -0.00590775221014626,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.032025599479675294,
+            0.0321017599105835
+          ],
+          "prediction_inside_observed_pass_range": false
+        },
+        {
+          "case_id": "d12",
+          "m": 256,
+          "n": 4097,
+          "k": 2049,
+          "split": "development",
+          "actual_ms": 0.14005120277404784,
+          "predicted_ms": 0.09264749492841864,
+          "ape_pct": 33.847412165469336,
+          "error_ms": -0.047403707845629195,
+          "regime_hypothesis": "model_hypothesis_only",
+          "observed_pass_range_ms": [
+            0.13994367599487303,
+            0.140065279006958
+          ],
+          "prediction_inside_observed_pass_range": false
+        }
+      ],
+      "rmse_us": 34.289447883552086,
+      "mae_ms": 0.01609900503049933,
+      "mae_us": 16.099005030499328,
+      "signed_bias_ms": -0.01598417630670535,
+      "signed_bias_us": -15.98417630670535,
+      "mean_ape_pct": 18.100240773783607,
+      "log_rmse": 0.3240503523098359,
+      "geometric_mean_multiplicative_error": 1.251777841047408,
+      "log_metric_definitions": {
+        "log_rmse": "sqrt(mean(log(predicted_ms / actual_ms)^2)); natural logarithm",
+        "geometric_mean_multiplicative_error": "exp(mean(abs(log(predicted_ms / actual_ms)))); 1 is exact, 2 means geometric mean factor-of-two error; not signed bias"
+      },
+      "sample_unit": "distinct_shape_aggregate_target",
+      "uncertainty_note": "Pass ranges are descriptive observed variation, not confidence or prediction intervals."
+    }
+  },
+  "hyperparameter_search": {
+    "shape_log_ridge": [
+      {
+        "configuration": {
+          "alpha": 0.1
+        },
+        "median_ape_pct": 15.211418355243731,
+        "p90_ape_pct": 80.60973788846788,
+        "selected": false,
+        "model_hash": "4762b91cc38098ab251a58efe64a1e97ea2062e1b68042276455f19b01e574a3"
+      },
+      {
+        "configuration": {
+          "alpha": 1.0
+        },
+        "median_ape_pct": 13.724135067186488,
+        "p90_ape_pct": 67.07422469208922,
+        "selected": true,
+        "model_hash": "aa46c9392bf789213467505db9406d93b095716b74fe198a6724fd38c1162352"
+      },
+      {
+        "configuration": {
+          "alpha": 10.0
+        },
+        "median_ape_pct": 21.345942843292022,
+        "p90_ape_pct": 75.70367916241787,
+        "selected": false,
+        "model_hash": "e50b23f3248e9d5306360a4f20715ccee75b5509fd3aa717af9fe1183816baa5"
+      },
+      {
+        "configuration": {
+          "alpha": 100.0
+        },
+        "median_ape_pct": 57.155059684330666,
+        "p90_ape_pct": 126.5155025572485,
+        "selected": false,
+        "model_hash": "30ac16afbcd597d587352be0b05f86792546a3e0cc801a4403eb4967315833e2"
+      }
+    ],
+    "roofline_residual_krr": [
+      {
+        "configuration": {
+          "alpha": 0.01,
+          "length_scale": 0.5
+        },
+        "median_ape_pct": 16.32576101476251,
+        "p90_ape_pct": 40.77362239876921,
+        "selected": false,
+        "model_hash": "939820956b540dd377313135f728e570c871e6c445f12c843e0c1e75f616db68"
+      },
+      {
+        "configuration": {
+          "alpha": 0.01,
+          "length_scale": 1.0
+        },
+        "median_ape_pct": 15.297400735853305,
+        "p90_ape_pct": 40.67972469020719,
+        "selected": false,
+        "model_hash": "93a6b833ffbae56f6fb24124e3ee6fee7c18dab75dc55f67c48f6862bfc91b60"
+      },
+      {
+        "configuration": {
+          "alpha": 0.01,
+          "length_scale": 2.0
+        },
+        "median_ape_pct": 15.18425604199358,
+        "p90_ape_pct": 44.10921475389742,
+        "selected": true,
+        "model_hash": "fee648e4df9c07a55bd8afcd9256ccc92c41f91485c0b7779958a9b7fed0898c"
+      },
+      {
+        "configuration": {
+          "alpha": 0.01,
+          "length_scale": 4.0
+        },
+        "median_ape_pct": 16.68210035967724,
+        "p90_ape_pct": 45.46021683935659,
+        "selected": false,
+        "model_hash": "0850ebce8a56866f092947eeb81ad94a1fc93c6fa3ffadac7829c50738cb4971"
+      },
+      {
+        "configuration": {
+          "alpha": 0.1,
+          "length_scale": 0.5
+        },
+        "median_ape_pct": 18.230126934864025,
+        "p90_ape_pct": 40.50982101979532,
+        "selected": false,
+        "model_hash": "893dff52c53447bca51410c4504208d93af4aaf3d8da250db0b5040bb5795b40"
+      },
+      {
+        "configuration": {
+          "alpha": 0.1,
+          "length_scale": 1.0
+        },
+        "median_ape_pct": 16.207650749277782,
+        "p90_ape_pct": 42.29566246991071,
+        "selected": false,
+        "model_hash": "0a9e89614e2afef111468be7167c1f08690c0df91b49bd20c1cf4c4a99e034aa"
+      },
+      {
+        "configuration": {
+          "alpha": 0.1,
+          "length_scale": 2.0
+        },
+        "median_ape_pct": 15.471389971520736,
+        "p90_ape_pct": 45.75318986879721,
+        "selected": false,
+        "model_hash": "704e87b1a1f7b6fe8f61b37c5ef540bffff119aaf43b75b28848da1a063ba677"
+      },
+      {
+        "configuration": {
+          "alpha": 0.1,
+          "length_scale": 4.0
+        },
+        "median_ape_pct": 26.428471724302057,
+        "p90_ape_pct": 49.09265006293241,
+        "selected": false,
+        "model_hash": "b62fad51059636b6bbb25fccb25e0e58b7fba0823c294e59c147a24fba5f7f75"
+      },
+      {
+        "configuration": {
+          "alpha": 1.0,
+          "length_scale": 0.5
+        },
+        "median_ape_pct": 35.43982919796473,
+        "p90_ape_pct": 53.37141150562849,
+        "selected": false,
+        "model_hash": "8eef700b4f428d0392c7d4632f52ba6698464a6e1ca40262fb381170a9702352"
+      },
+      {
+        "configuration": {
+          "alpha": 1.0,
+          "length_scale": 1.0
+        },
+        "median_ape_pct": 29.645810710103685,
+        "p90_ape_pct": 46.379177171274215,
+        "selected": false,
+        "model_hash": "701f10745d408bff5839de43e5cb2dc9891d8c34858550583ea15c42f795ff81"
+      },
+      {
+        "configuration": {
+          "alpha": 1.0,
+          "length_scale": 2.0
+        },
+        "median_ape_pct": 30.458317849257647,
+        "p90_ape_pct": 47.38305766333923,
+        "selected": false,
+        "model_hash": "f505f07af0e6a3952f1cc67d95dc9caa673a7fa2ddd424dc26fe55b1d0ce334b"
+      },
+      {
+        "configuration": {
+          "alpha": 1.0,
+          "length_scale": 4.0
+        },
+        "median_ape_pct": 28.971001212002385,
+        "p90_ape_pct": 60.92637819799257,
+        "selected": false,
+        "model_hash": "ec960950d0543f5eea8f9d375dd57e95791694256c6a30ab2bf030ff1604b725"
+      }
+    ]
+  },
+  "selection_rule": "Minimum development median APE; ties break by development P90 APE then the fixed MODEL_ORDER. No test/challenge labels are available to this function.",
+  "model_order": [
+    "flop_only",
+    "roofline_2p",
+    "roofline_3p",
+    "shape_log_ridge",
+    "roofline_residual_krr"
+  ],
+  "train_case_ids": [
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08",
+    "c09",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21",
+    "c22",
+    "c23",
+    "c24"
+  ],
+  "development_case_ids": [
+    "d01",
+    "d02",
+    "d03",
+    "d04",
+    "d05",
+    "d06",
+    "d07",
+    "d08",
+    "d09",
+    "d10",
+    "d11",
+    "d12"
+  ],
+  "training_data_hash": "5c58d82d2911daa1e354992c64aaa27299d03a638796eb4d09c3a69be509655d",
+  "development_data_hash": "c0fdc023f1b15e20d8e98882795c72d38cea544b11fbc75c1f542bc7356b9508",
+  "source_environment": {
+    "schema_version": 1,
+    "captured_at_utc": "2026-11-01T22:32:44.433332+00:00",
+    "measurement_kind": "cuda_measured",
+    "environment_id": "ee1a47e00a07c4bb070153eac943521b07357b543eaee75dfad13335de2e5081",
+    "plan_hash": "5a9638433b519956def9dbff91e3f18dd4142b703ae16e2365894d1813adecc5",
+    "identity": {
+      "schema_version": 1,
+      "runner_version": "cuda-events",
+      "python_version": "3.12.13",
+      "platform": {
+        "system": "Linux",
+        "machine": "x86_64"
+      },
+      "pytorch_version": "2.11.0+cu128",
+      "cuda_runtime_version": "12.8",
+      "driver_versions": [
+        "580.82.07"
+      ],
+      "device": {
+        "logical_device_index": 0,
+        "name": "NVIDIA A100-SXM4-40GB",
+        "compute_capability": [
+          8,
+          0
+        ],
+        "total_memory_bytes": 42405855232,
+        "multiprocessor_count": 108,
+        "uuid": "685d3e90-adc9-e43d-e69a-c40fe6735243"
+      },
+      "dtype": "float16",
+      "cache_policy": "warm_reuse",
+      "timing": {
+        "mode": "cuda_graph",
+        "warmup": 20,
+        "iterations": 50,
+        "repeats": 9,
+        "graph_warmup_replays": 5,
+        "graph_warmup_min_seconds": 0.25,
+        "graph_warmup_max_replays": 4096
+      },
+      "collection": {
+        "blocks": 3,
+        "order": "seeded_shuffle_per_block",
+        "aggregation": "median_of_block_medians"
+      },
+      "math_policy": {
+        "fp32_reference_precision": "ieee",
+        "tf32_control_api": "fp32_precision",
+        "fp32_precision": "ieee",
+        "allow_fp16_reduced_precision_reduction": false,
+        "allow_bf16_reduced_precision_reduction": false,
+        "allow_fp16_accumulation": false
+      },
+      "execution": {
+        "operation": "torch.mm(X, W_T, out=Y); W_T=W.t() prepared before timing",
+        "mode": "cuda_graph",
+        "layout": "contiguous_X_MK_weight_NK_Y_MN; transposed_weight_view_KN",
+        "autocast": "disabled",
+        "grad": "inference_mode",
+        "input_distribution": "normal; X scaled by 1/sqrt(K) before dtype cast",
+        "timer": "CUDA_events_one_graph_replay_divided_by_captured_operations",
+        "timer_scope": "graph_replay_elapsed_including_graph_launch_and_inter_kernel_gaps_per_operation",
+        "captured_operations_per_graph": 50,
+        "graph_warmup_replays": 5,
+        "capture_and_warmup_excluded_from_timing": true,
+        "output_poisoned_after_capture_before_replay": true,
+        "setup": "eager warmup and capture on a joined side stream; static input/output addresses",
+        "graph_warmup_min_seconds": 0.25,
+        "graph_warmup_max_replays": 4096,
+        "graph_warmup_stop_rule": "fixed minimum wall duration and minimum replay count; never sample-quality adaptive",
+        "graph_warmup_scope": "target graph before each case visit; batching prepares each variant before every timed sample"
+      }
+    },
+    "limitations": [
+      "Clock, thermal, power, and concurrent-load differences are not controlled by this identity.",
+      "warm_reuse does not flush caches or measure HBM bytes.",
+      "Run one experiment process at a time on an otherwise idle GPU."
+    ],
+    "session_id": "fp16_s01",
+    "session_metadata_is_not_hardware_identity": true
+  },
+  "accuracy_claim": "No hardware accuracy improvement is established by fitting or software tests; frozen held-out measured results decide.",
+  "suite_hash": "964d586a4303f466fe91bdb691c681fa5f2e23bb85702a927c308b92b85eebdd"
+}

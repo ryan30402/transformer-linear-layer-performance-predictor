@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "plan_hash": "774be1d0a40dcb3e2c8187ae87bde36240da62a94e0dd7221053eec0f8198ded",
+  "source_environment_id": "84671265ca3dbea6d930d013a916023a1c174425a661554a090eb4b8b776a2bd",
+  "source_measurement_kind": "cuda_measured",
+  "measurement_kind": "numerical_witness",
+  "excluded_from_model": true,
+  "scope": "Four small deterministic witnesses; not the main benchmark dataset.",
+  "records": [
+    {
+      "name": "zero",
+      "file": "zero.npz",
+      "sha256": "56dbb9667a64870f1610e32f6ba47a50a388f47b7410049ea4b8ace131330e87",
+      "gpu_check": {
+        "passed": true,
+        "finite": true,
+        "relative_l2_error": 0.0,
+        "max_abs_error": 0.0,
+        "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+        "limits": {
+          "relative_l2": 0.01,
+          "absolute_atol": 0.01,
+          "absolute_rtol": 0.01
+        },
+        "reference_max_abs": 0.0,
+        "max_abs_error_limit": 0.01
+      },
+      "independent_cpu_recomputation": {
+        "passed": true,
+        "witness_name": "zero",
+        "dtype": "bfloat16",
+        "m": 3,
+        "n": 11,
+        "k": 17,
+        "fp64_relative_l2_error": 0.0,
+        "fp64_max_abs_error": 0.0,
+        "fp32_reference_max_abs_error": 0.0,
+        "fp32_reference_max_abs_limit": 1e-06,
+        "output_max_abs_limit": 0.01,
+        "comparison": "NumPy float64 product of the exact archived represented input values",
+        "limitations": "Small archived witness only; no attestation of GPU execution or all main-case outputs."
+      },
+      "captured_at_utc": "2026-11-01T23:25:52.754626+00:00",
+      "visit_started_at_utc": "2026-11-01T23:25:52.734942+00:00",
+      "visit_finished_at_utc": "2026-11-01T23:25:52.754639+00:00",
+      "visit_started_monotonic_seconds": 1110.839823747,
+      "visit_finished_monotonic_seconds": 1110.859526753
+    },
+    {
+      "name": "identity",
+      "file": "identity.npz",
+      "sha256": "1b14179c6685d0bf828020f4ee7b6d7be1d2b32ed7c983810696638ad398fb30",
+      "gpu_check": {
+        "passed": true,
+        "finite": true,
+        "relative_l2_error": 0.0,
+        "max_abs_error": 0.0,
+        "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+        "limits": {
+          "relative_l2": 0.01,
+          "absolute_atol": 0.01,
+          "absolute_rtol": 0.01
+        },
+        "reference_max_abs": 0.49609375,
+        "max_abs_error_limit": 0.0149609375
+      },
+      "independent_cpu_recomputation": {
+        "passed": true,
+        "witness_name": "identity",
+        "dtype": "bfloat16",
+        "m": 3,
+        "n": 17,
+        "k": 17,
+        "fp64_relative_l2_error": 0.0,
+        "fp64_max_abs_error": 0.0,
+        "fp32_reference_max_abs_error": 0.0,
+        "fp32_reference_max_abs_limit": 5.9609375e-06,
+        "output_max_abs_limit": 0.0149609375,
+        "comparison": "NumPy float64 product of the exact archived represented input values",
+        "limitations": "Small archived witness only; no attestation of GPU execution or all main-case outputs."
+      },
+      "captured_at_utc": "2026-11-01T23:25:52.761717+00:00",
+      "visit_started_at_utc": "2026-11-01T23:25:52.757187+00:00",
+      "visit_finished_at_utc": "2026-11-01T23:25:52.761731+00:00",
+      "visit_started_monotonic_seconds": 1110.86206802,
+      "visit_finished_monotonic_seconds": 1110.866618535
+    },
+    {
+      "name": "alternating",
+      "file": "alternating.npz",
+      "sha256": "74964c3c15c24de72dded4fbfa2b02f6a86df7eb538433383bd35b1abbe1d5ad",
+      "gpu_check": {
+        "passed": true,
+        "finite": true,
+        "relative_l2_error": 0.0,
+        "max_abs_error": 0.0,
+        "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+        "limits": {
+          "relative_l2": 0.01,
+          "absolute_atol": 0.01,
+          "absolute_rtol": 0.01
+        },
+        "reference_max_abs": 2.125,
+        "max_abs_error_limit": 0.03125
+      },
+      "independent_cpu_recomputation": {
+        "passed": true,
+        "witness_name": "alternating",
+        "dtype": "bfloat16",
+        "m": 3,
+        "n": 11,
+        "k": 17,
+        "fp64_relative_l2_error": 0.0,
+        "fp64_max_abs_error": 0.0,
+        "fp32_reference_max_abs_error": 0.0,
+        "fp32_reference_max_abs_limit": 2.2250000000000002e-05,
+        "output_max_abs_limit": 0.03125,
+        "comparison": "NumPy float64 product of the exact archived represented input values",
+        "limitations": "Small archived witness only; no attestation of GPU execution or all main-case outputs."
+      },
+      "captured_at_utc": "2026-11-01T23:25:52.768732+00:00",
+      "visit_started_at_utc": "2026-11-01T23:25:52.764336+00:00",
+      "visit_finished_at_utc": "2026-11-01T23:25:52.768742+00:00",
+      "visit_started_monotonic_seconds": 1110.869217596,
+      "visit_finished_monotonic_seconds": 1110.87362844
+    },
+    {
+      "name": "random",
+      "file": "random.npz",
+      "sha256": "f202624d2aab91b46f51aaef276ed502517b4213ee53f8e561b1de6e04ed7c07",
+      "gpu_check": {
+        "passed": true,
+        "finite": true,
+        "relative_l2_error": 0.0010960011528709734,
+        "max_abs_error": 0.0007719099521636963,
+        "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+        "limits": {
+          "relative_l2": 0.01,
+          "absolute_atol": 0.01,
+          "absolute_rtol": 0.01
+        },
+        "reference_max_abs": 0.7229845523834229,
+        "max_abs_error_limit": 0.01722984552383423
+      },
+      "independent_cpu_recomputation": {
+        "passed": true,
+        "witness_name": "random",
+        "dtype": "bfloat16",
+        "m": 3,
+        "n": 11,
+        "k": 17,
+        "fp64_relative_l2_error": 0.0010960053975474788,
+        "fp64_max_abs_error": 0.0007719099521636963,
+        "fp32_reference_max_abs_error": 1.4901161193847656e-08,
+        "fp32_reference_max_abs_limit": 8.22984552383423e-06,
+        "output_max_abs_limit": 0.01722984552383423,
+        "comparison": "NumPy float64 product of the exact archived represented input values",
+        "limitations": "Small archived witness only; no attestation of GPU execution or all main-case outputs."
+      },
+      "captured_at_utc": "2026-11-01T23:25:52.774923+00:00",
+      "visit_started_at_utc": "2026-11-01T23:25:52.771094+00:00",
+      "visit_finished_at_utc": "2026-11-01T23:25:52.774935+00:00",
+      "visit_started_monotonic_seconds": 1110.875974978,
+      "visit_finished_monotonic_seconds": 1110.879821254
+    }
+  ],
+  "started_at_utc": "2026-11-01T23:25:52.711007+00:00",
+  "started_monotonic_seconds": 1110.815911776,
+  "session_id": "bf16_s03",
+  "input_seed": 20261101,
+  "arrays_archived": true,
+  "completed_at_utc": "2026-11-01T23:25:52.777452+00:00",
+  "completed_monotonic_seconds": 1110.882346495
+}

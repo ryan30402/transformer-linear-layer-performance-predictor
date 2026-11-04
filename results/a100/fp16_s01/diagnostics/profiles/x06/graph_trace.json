@@ -1,0 +1,2813 @@
+{
+  "schemaVersion": 1,
+  "deviceProperties": [
+    {
+      "id": 0,
+      "name": "NVIDIA A100-SXM4-40GB",
+      "totalGlobalMem": 42405855232,
+      "computeMajor": 8,
+      "computeMinor": 0,
+      "maxThreadsPerBlock": 1024,
+      "maxThreadsPerMultiprocessor": 2048,
+      "regsPerBlock": 65536,
+      "warpSize": 32,
+      "sharedMemPerBlock": 49152,
+      "numSms": 108,
+      "regsPerMultiprocessor": 65536,
+      "sharedMemPerBlockOptin": 166912,
+      "sharedMemPerMultiprocessor": 167936
+    }
+  ],
+  "trace_id": "7CB40A392D034F0B894281EF313EB27E",
+  "record_shapes": 1,
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 12080,
+  "cupti_version": 26,
+  "displayTimeUnit": "ms",
+  "baseTimeNanoseconds": 1790857026000000000,
+  "traceEvents": [
+    {
+      "ph": "X",
+      "cat": "user_annotation",
+      "name": "linear_perf_graph_replay",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390197012.752,
+      "dur": 9750.777,
+      "args": {
+        "External id": 513,
+        "Record function id": 0,
+        "Ev Idx": 0
+      }
+    },
+    {
+      "ph": "X",
+      "cat": "overhead",
+      "name": "Activity Buffer Request",
+      "pid": -1,
+      "tid": 0,
+      "ts": 2715390197055.924,
+      "dur": 2099.989
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaStreamIsCapturing",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390199164.48,
+      "dur": 6.238,
+      "args": {
+        "cbid": 317,
+        "correlation": 1915
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1915,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390199164.48,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199305.715,
+      "dur": 148.384,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199305.715,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199454.035,
+      "dur": 147.744,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199454.035,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199601.715,
+      "dur": 147.743,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199601.715,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199749.362,
+      "dur": 147.52,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199749.362,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199896.818,
+      "dur": 147.616,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199896.818,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200044.402,
+      "dur": 147.776,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200044.402,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200191.922,
+      "dur": 148.128,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200191.922,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200339.986,
+      "dur": 147.647,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200339.986,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200487.537,
+      "dur": 148.096,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200487.537,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200635.569,
+      "dur": 148.032,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200635.569,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200783.345,
+      "dur": 148.192,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200783.345,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200931.473,
+      "dur": 148.736,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390200931.473,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201080.049,
+      "dur": 148.159,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201080.049,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201228.112,
+      "dur": 148.48,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201228.112,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201376.496,
+      "dur": 148.448,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201376.496,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201524.816,
+      "dur": 148.383,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201524.816,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201673.103,
+      "dur": 148.192,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201673.103,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201821.199,
+      "dur": 147.712,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201821.199,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201968.815,
+      "dur": 148.16,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390201968.815,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202116.879,
+      "dur": 147.968,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202116.879,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202264.718,
+      "dur": 148.096,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202264.718,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202412.718,
+      "dur": 148.064,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202412.718,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202560.686,
+      "dur": 147.936,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202560.686,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202708.526,
+      "dur": 147.584,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202708.526,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202856.014,
+      "dur": 147.552,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390202856.014,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203003.469,
+      "dur": 148.224,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203003.469,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203151.565,
+      "dur": 148.064,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203151.565,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203299.501,
+      "dur": 148.256,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203299.501,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203447.597,
+      "dur": 148.223,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203447.597,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203595.725,
+      "dur": 147.935,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203595.725,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203743.532,
+      "dur": 148.256,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203743.532,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203891.532,
+      "dur": 147.936,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390203891.532,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204039.372,
+      "dur": 148.032,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204039.372,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204187.339,
+      "dur": 148.096,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204187.339,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204335.275,
+      "dur": 148.128,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204335.275,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204483.211,
+      "dur": 147.968,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204483.211,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204631.083,
+      "dur": 148.095,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204631.083,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204779.082,
+      "dur": 148.384,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204779.082,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204927.306,
+      "dur": 147.872,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390204927.306,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205075.05,
+      "dur": 148.0,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205075.05,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205222.762,
+      "dur": 147.935,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205222.762,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205370.601,
+      "dur": 147.745,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205370.601,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205518.249,
+      "dur": 147.712,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205518.249,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205665.833,
+      "dur": 147.904,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205665.833,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205813.641,
+      "dur": 147.839,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205813.641,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205961.417,
+      "dur": 147.519,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390205961.417,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206108.872,
+      "dur": 147.616,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206108.872,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206256.424,
+      "dur": 148.096,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206256.424,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206404.456,
+      "dur": 148.0,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206404.456,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206552.392,
+      "dur": 147.712,
+      "args": {
+        "queued": 0,
+        "device": 0,
+        "context": 1,
+        "stream": 7,
+        "correlation": 1917,
+        "registers per thread": 222,
+        "shared memory": 81920,
+        "blocks per SM": 4.740741,
+        "warps per SM": 18.962963,
+        "grid": [
+          64,
+          8,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "est. achieved occupancy %": 0
+      }
+    },
+    {
+      "ph": "f",
+      "id": 1917,
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390206552.392,
+      "cat": "ac2g",
+      "name": "ac2g",
+      "bp": "e"
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaGraphLaunch",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390199174.294,
+      "dur": 126.268,
+      "args": {
+        "cbid": 311,
+        "correlation": 1917
+      }
+    },
+    {
+      "ph": "s",
+      "id": 1917,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390199174.294,
+      "cat": "ac2g",
+      "name": "ac2g"
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaDeviceSynchronize",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390199330.797,
+      "dur": 7377.04,
+      "args": {
+        "cbid": 165,
+        "correlation": 1921
+      }
+    },
+    {
+      "ph": "s",
+      "id": 1921,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390199330.797,
+      "cat": "ac2g",
+      "name": "ac2g"
+    },
+    {
+      "ph": "X",
+      "cat": "cuda_runtime",
+      "name": "cudaDeviceSynchronize",
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390206813.091,
+      "dur": 8.529,
+      "args": {
+        "cbid": 165,
+        "correlation": 1925
+      }
+    },
+    {
+      "ph": "s",
+      "id": 1925,
+      "pid": 1013,
+      "tid": 1013,
+      "ts": 2715390206813.091,
+      "cat": "ac2g",
+      "name": "ac2g"
+    },
+    {
+      "ph": "X",
+      "cat": "gpu_user_annotation",
+      "name": "linear_perf_graph_replay",
+      "pid": 0,
+      "tid": 7,
+      "ts": 2715390199305.714,
+      "dur": 7394.391,
+      "args": {
+        "External id": 513
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 0,
+      "args": {
+        "labels": "CPU"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 0,
+      "args": {
+        "sort_index": 1013
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 0"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 0,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000000
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 1"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000001
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 2,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 2,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 2"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 2,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000002
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 3,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 3,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 3"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 3,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000003
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 4,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 4,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 4"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 4,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000004
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 5,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 5,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 5"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 5,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000005
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 6,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 6,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 6"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 6,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000006
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 7,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 7,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 7"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 7,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000007
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 8,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 8,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 8"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 8,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000008
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 9,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 9,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 9"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 9,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000009
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 10,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 10,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 10"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 10,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000010
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 11,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 11,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 11"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 11,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000011
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 12,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 12,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 12"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 12,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000012
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 13,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 13,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 13"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 13,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000013
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 14,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 14,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 14"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 14,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000014
+      }
+    },
+    {
+      "name": "process_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 15,
+      "tid": 0,
+      "args": {
+        "name": "python3"
+      }
+    },
+    {
+      "name": "process_labels",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 15,
+      "tid": 0,
+      "args": {
+        "labels": "GPU 15"
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 15,
+      "tid": 0,
+      "args": {
+        "sort_index": 5000015
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 0,
+      "tid": 7,
+      "args": {
+        "name": "stream 7 "
+      }
+    },
+    {
+      "name": "thread_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 0,
+      "tid": 7,
+      "args": {
+        "sort_index": 7
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "name": "thread 1013 (python3)"
+      }
+    },
+    {
+      "name": "thread_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "sort_index": 1013
+      }
+    },
+    {
+      "name": "thread_name",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "name": "thread 1013 (python3)"
+      }
+    },
+    {
+      "name": "thread_sort_index",
+      "ph": "M",
+      "ts": 2715390196903.113,
+      "pid": 1013,
+      "tid": 1013,
+      "args": {
+        "sort_index": 1013
+      }
+    },
+    {
+      "ph": "X",
+      "cat": "Trace",
+      "ts": 2715390196852.067,
+      "dur": 9980.997,
+      "pid": "Spans",
+      "tid": "PyTorch Profiler",
+      "name": "PyTorch Profiler (0)",
+      "args": {
+        "Op count": 0
+      }
+    },
+    {
+      "name": "process_sort_index",
+      "ph": "M",
+      "ts": 2715390196852.067,
+      "pid": "Spans",
+      "tid": 0,
+      "args": {
+        "sort_index": 536870912
+      }
+    },
+    {
+      "name": "Iteration Start: PyTorch Profiler",
+      "ph": "i",
+      "s": "g",
+      "pid": "Traces",
+      "tid": "Trace PyTorch Profiler",
+      "ts": 2715390196852.067
+    },
+    {
+      "name": "Record Window End",
+      "ph": "i",
+      "s": "g",
+      "pid": "",
+      "tid": "",
+      "ts": 2715390206994.047
+    }
+  ],
+  "traceName": "./diagnostics/profiles/x06/graph_trace.json"
+}

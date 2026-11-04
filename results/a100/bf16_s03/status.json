@@ -1,0 +1,17 @@
+{
+  "session_id": "bf16_s03",
+  "status": "completed_pending_review",
+  "stage": "completed",
+  "started_at_utc": "2026-11-01T23:25:08.492161+00:00",
+  "measurement_kind": "cuda_measured",
+  "test_opened": true,
+  "automatic_retries": 0,
+  "samples_removed": 0,
+  "expected_independent_sessions": 3,
+  "hardware_accuracy_validated": false,
+  "industry_certification": false,
+  "elapsed_seconds": 197.11452019900003,
+  "all_timing_criteria_passed": true,
+  "completed_at_utc": "2026-11-01T23:28:25.593000+00:00",
+  "result_scope": "single session; perform planned independent sessions before generalizing"
+}

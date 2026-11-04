@@ -1,0 +1,36 @@
+name: CPU validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-analysis-lock.txt
+      - name: Install analysis dependencies
+        run: |
+          python -m pip install -r requirements-analysis-lock.txt
+          python -m pip install --no-deps -e .
+      - name: Run CPU unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify published measurement evidence
+        run: python scripts/verify_published_results.py
+      - name: Build and verify the embedded Colab release
+        run: |
+          python release_tools/build_release.py --out dist
+          python dist/linear_perf_colab.py --self-check

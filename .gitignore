@@ -1,0 +1,28 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# New benchmark outputs; the reviewed results/ snapshot is tracked explicitly.
+runs/
+linear-perf_*_workspace/
+linear-perf_*_RESULTS.zip*
+linear-perf_*_REVIEW.zip*
+
+# Local notes, credentials, and operating-system metadata
+private/
+local_notes/
+*_zh-TW.*
+*_zh_TW.*
+.env
+.env.*
+*.pem
+.DS_Store
+.ipynb_checkpoints/

@@ -1,0 +1,17 @@
+{
+  "session_id": "fp16_s02",
+  "status": "completed_pending_review",
+  "stage": "completed",
+  "started_at_utc": "2026-11-01T23:02:19.956585+00:00",
+  "measurement_kind": "cuda_measured",
+  "test_opened": true,
+  "automatic_retries": 0,
+  "samples_removed": 0,
+  "expected_independent_sessions": 3,
+  "hardware_accuracy_validated": false,
+  "industry_certification": false,
+  "elapsed_seconds": 210.68478187000005,
+  "all_timing_criteria_passed": true,
+  "completed_at_utc": "2026-11-01T23:05:50.628209+00:00",
+  "result_scope": "single session; perform planned independent sessions before generalizing"
+}

@@ -1,0 +1,2129 @@
+{
+  "schema_version": 1,
+  "protocol_version": "1.0.0",
+  "name": "bfloat16_registered_study",
+  "seed": 20261101,
+  "dtype": "bfloat16",
+  "cache_policy": "warm_reuse",
+  "timing": {
+    "mode": "cuda_graph",
+    "warmup": 20,
+    "iterations": 50,
+    "repeats": 9,
+    "graph_warmup_replays": 5,
+    "graph_warmup_min_seconds": 0.25,
+    "graph_warmup_max_replays": 4096
+  },
+  "collection": {
+    "blocks": 3,
+    "order": "seeded_shuffle_per_block",
+    "aggregation": "median_of_block_medians"
+  },
+  "budget": {
+    "max_acquisition_rounds": 6,
+    "max_new_cases": 12,
+    "max_wall_seconds": 1800
+  },
+  "cases": [
+    {
+      "id": "c01",
+      "m": 1,
+      "n": 1024,
+      "k": 768,
+      "split": "calibration"
+    },
+    {
+      "id": "c02",
+      "m": 16,
+      "n": 1024,
+      "k": 768,
+      "split": "calibration"
+    },
+    {
+      "id": "c03",
+      "m": 128,
+      "n": 1024,
+      "k": 768,
+      "split": "calibration"
+    },
+    {
+      "id": "c04",
+      "m": 1024,
+      "n": 1024,
+      "k": 768,
+      "split": "calibration"
+    },
+    {
+      "id": "c05",
+      "m": 1,
+      "n": 1536,
+      "k": 1024,
+      "split": "calibration"
+    },
+    {
+      "id": "c06",
+      "m": 16,
+      "n": 1536,
+      "k": 1024,
+      "split": "calibration"
+    },
+    {
+      "id": "c07",
+      "m": 128,
+      "n": 1536,
+      "k": 1024,
+      "split": "calibration"
+    },
+    {
+      "id": "c08",
+      "m": 1024,
+      "n": 1536,
+      "k": 1024,
+      "split": "calibration"
+    },
+    {
+      "id": "c09",
+      "m": 1,
+      "n": 4096,
+      "k": 2048,
+      "split": "calibration"
+    },
+    {
+      "id": "c10",
+      "m": 16,
+      "n": 4096,
+      "k": 2048,
+      "split": "calibration"
+    },
+    {
+      "id": "c11",
+      "m": 128,
+      "n": 4096,
+      "k": 2048,
+      "split": "calibration"
+    },
+    {
+      "id": "c12",
+      "m": 1024,
+      "n": 4096,
+      "k": 2048,
+      "split": "calibration"
+    },
+    {
+      "id": "c13",
+      "m": 1,
+      "n": 8192,
+      "k": 6144,
+      "split": "calibration"
+    },
+    {
+      "id": "c14",
+      "m": 16,
+      "n": 8192,
+      "k": 6144,
+      "split": "calibration"
+    },
+    {
+      "id": "c15",
+      "m": 128,
+      "n": 8192,
+      "k": 6144,
+      "split": "calibration"
+    },
+    {
+      "id": "c16",
+      "m": 1024,
+      "n": 8192,
+      "k": 6144,
+      "split": "calibration"
+    },
+    {
+      "id": "c17",
+      "m": 1,
+      "n": 1537,
+      "k": 1025,
+      "split": "calibration"
+    },
+    {
+      "id": "c18",
+      "m": 16,
+      "n": 1537,
+      "k": 1025,
+      "split": "calibration"
+    },
+    {
+      "id": "c19",
+      "m": 128,
+      "n": 1537,
+      "k": 1025,
+      "split": "calibration"
+    },
+    {
+      "id": "c20",
+      "m": 1024,
+      "n": 1537,
+      "k": 1025,
+      "split": "calibration"
+    },
+    {
+      "id": "c21",
+      "m": 1,
+      "n": 4097,
+      "k": 2049,
+      "split": "calibration"
+    },
+    {
+      "id": "c22",
+      "m": 16,
+      "n": 4097,
+      "k": 2049,
+      "split": "calibration"
+    },
+    {
+      "id": "c23",
+      "m": 128,
+      "n": 4097,
+      "k": 2049,
+      "split": "calibration"
+    },
+    {
+      "id": "c24",
+      "m": 1024,
+      "n": 4097,
+      "k": 2049,
+      "split": "calibration"
+    },
+    {
+      "id": "d01",
+      "m": 8,
+      "n": 1024,
+      "k": 768,
+      "split": "development"
+    },
+    {
+      "id": "d02",
+      "m": 256,
+      "n": 1024,
+      "k": 768,
+      "split": "development"
+    },
+    {
+      "id": "d03",
+      "m": 8,
+      "n": 1536,
+      "k": 1024,
+      "split": "development"
+    },
+    {
+      "id": "d04",
+      "m": 256,
+      "n": 1536,
+      "k": 1024,
+      "split": "development"
+    },
+    {
+      "id": "d05",
+      "m": 8,
+      "n": 4096,
+      "k": 2048,
+      "split": "development"
+    },
+    {
+      "id": "d06",
+      "m": 256,
+      "n": 4096,
+      "k": 2048,
+      "split": "development"
+    },
+    {
+      "id": "d07",
+      "m": 8,
+      "n": 8192,
+      "k": 6144,
+      "split": "development"
+    },
+    {
+      "id": "d08",
+      "m": 256,
+      "n": 8192,
+      "k": 6144,
+      "split": "development"
+    },
+    {
+      "id": "d09",
+      "m": 8,
+      "n": 1537,
+      "k": 1025,
+      "split": "development"
+    },
+    {
+      "id": "d10",
+      "m": 256,
+      "n": 1537,
+      "k": 1025,
+      "split": "development"
+    },
+    {
+      "id": "d11",
+      "m": 8,
+      "n": 4097,
+      "k": 2049,
+      "split": "development"
+    },
+    {
+      "id": "d12",
+      "m": 256,
+      "n": 4097,
+      "k": 2049,
+      "split": "development"
+    },
+    {
+      "id": "t01",
+      "m": 3,
+      "n": 1024,
+      "k": 768,
+      "split": "test"
+    },
+    {
+      "id": "t02",
+      "m": 48,
+      "n": 1024,
+      "k": 768,
+      "split": "test"
+    },
+    {
+      "id": "t03",
+      "m": 384,
+      "n": 1024,
+      "k": 768,
+      "split": "test"
+    },
+    {
+      "id": "t04",
+      "m": 1536,
+      "n": 1024,
+      "k": 768,
+      "split": "test"
+    },
+    {
+      "id": "t05",
+      "m": 3,
+      "n": 1536,
+      "k": 1024,
+      "split": "test"
+    },
+    {
+      "id": "t06",
+      "m": 48,
+      "n": 1536,
+      "k": 1024,
+      "split": "test"
+    },
+    {
+      "id": "t07",
+      "m": 384,
+      "n": 1536,
+      "k": 1024,
+      "split": "test"
+    },
+    {
+      "id": "t08",
+      "m": 1536,
+      "n": 1536,
+      "k": 1024,
+      "split": "test"
+    },
+    {
+      "id": "t09",
+      "m": 3,
+      "n": 4096,
+      "k": 2048,
+      "split": "test"
+    },
+    {
+      "id": "t10",
+      "m": 48,
+      "n": 4096,
+      "k": 2048,
+      "split": "test"
+    },
+    {
+      "id": "t11",
+      "m": 384,
+      "n": 4096,
+      "k": 2048,
+      "split": "test"
+    },
+    {
+      "id": "t12",
+      "m": 1536,
+      "n": 4096,
+      "k": 2048,
+      "split": "test"
+    },
+    {
+      "id": "t13",
+      "m": 3,
+      "n": 8192,
+      "k": 6144,
+      "split": "test"
+    },
+    {
+      "id": "t14",
+      "m": 48,
+      "n": 8192,
+      "k": 6144,
+      "split": "test"
+    },
+    {
+      "id": "t15",
+      "m": 384,
+      "n": 8192,
+      "k": 6144,
+      "split": "test"
+    },
+    {
+      "id": "t16",
+      "m": 1536,
+      "n": 8192,
+      "k": 6144,
+      "split": "test"
+    },
+    {
+      "id": "t17",
+      "m": 3,
+      "n": 1537,
+      "k": 1025,
+      "split": "test"
+    },
+    {
+      "id": "t18",
+      "m": 48,
+      "n": 1537,
+      "k": 1025,
+      "split": "test"
+    },
+    {
+      "id": "t19",
+      "m": 384,
+      "n": 1537,
+      "k": 1025,
+      "split": "test"
+    },
+    {
+      "id": "t20",
+      "m": 1536,
+      "n": 1537,
+      "k": 1025,
+      "split": "test"
+    },
+    {
+      "id": "t21",
+      "m": 3,
+      "n": 4097,
+      "k": 2049,
+      "split": "test"
+    },
+    {
+      "id": "t22",
+      "m": 48,
+      "n": 4097,
+      "k": 2049,
+      "split": "test"
+    },
+    {
+      "id": "t23",
+      "m": 384,
+      "n": 4097,
+      "k": 2049,
+      "split": "test"
+    },
+    {
+      "id": "t24",
+      "m": 1536,
+      "n": 4097,
+      "k": 2049,
+      "split": "test"
+    },
+    {
+      "id": "h01",
+      "m": 5,
+      "n": 2048,
+      "k": 1536,
+      "split": "challenge"
+    },
+    {
+      "id": "h02",
+      "m": 192,
+      "n": 2048,
+      "k": 1536,
+      "split": "challenge"
+    },
+    {
+      "id": "h03",
+      "m": 1152,
+      "n": 2048,
+      "k": 1536,
+      "split": "challenge"
+    },
+    {
+      "id": "h04",
+      "m": 5,
+      "n": 6144,
+      "k": 4096,
+      "split": "challenge"
+    },
+    {
+      "id": "h05",
+      "m": 192,
+      "n": 6144,
+      "k": 4096,
+      "split": "challenge"
+    },
+    {
+      "id": "h06",
+      "m": 1152,
+      "n": 6144,
+      "k": 4096,
+      "split": "challenge"
+    },
+    {
+      "id": "h07",
+      "m": 5,
+      "n": 2049,
+      "k": 1537,
+      "split": "challenge"
+    },
+    {
+      "id": "h08",
+      "m": 192,
+      "n": 2049,
+      "k": 1537,
+      "split": "challenge"
+    },
+    {
+      "id": "h09",
+      "m": 1152,
+      "n": 2049,
+      "k": 1537,
+      "split": "challenge"
+    },
+    {
+      "id": "h10",
+      "m": 5,
+      "n": 6145,
+      "k": 4097,
+      "split": "challenge"
+    },
+    {
+      "id": "h11",
+      "m": 192,
+      "n": 6145,
+      "k": 4097,
+      "split": "challenge"
+    },
+    {
+      "id": "h12",
+      "m": 1152,
+      "n": 6145,
+      "k": 4097,
+      "split": "challenge"
+    },
+    {
+      "id": "a01",
+      "m": 2,
+      "n": 1024,
+      "k": 768,
+      "split": "candidate"
+    },
+    {
+      "id": "a02",
+      "m": 32,
+      "n": 1024,
+      "k": 768,
+      "split": "candidate"
+    },
+    {
+      "id": "a03",
+      "m": 96,
+      "n": 1024,
+      "k": 768,
+      "split": "candidate"
+    },
+    {
+      "id": "a04",
+      "m": 768,
+      "n": 1024,
+      "k": 768,
+      "split": "candidate"
+    },
+    {
+      "id": "a05",
+      "m": 2,
+      "n": 1536,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "a06",
+      "m": 32,
+      "n": 1536,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "a07",
+      "m": 96,
+      "n": 1536,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "a08",
+      "m": 768,
+      "n": 1536,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "a09",
+      "m": 2,
+      "n": 4096,
+      "k": 2048,
+      "split": "candidate"
+    },
+    {
+      "id": "a10",
+      "m": 32,
+      "n": 4096,
+      "k": 2048,
+      "split": "candidate"
+    },
+    {
+      "id": "a11",
+      "m": 96,
+      "n": 4096,
+      "k": 2048,
+      "split": "candidate"
+    },
+    {
+      "id": "a12",
+      "m": 768,
+      "n": 4096,
+      "k": 2048,
+      "split": "candidate"
+    },
+    {
+      "id": "a13",
+      "m": 2,
+      "n": 8192,
+      "k": 6144,
+      "split": "candidate"
+    },
+    {
+      "id": "a14",
+      "m": 32,
+      "n": 8192,
+      "k": 6144,
+      "split": "candidate"
+    },
+    {
+      "id": "a15",
+      "m": 96,
+      "n": 8192,
+      "k": 6144,
+      "split": "candidate"
+    },
+    {
+      "id": "a16",
+      "m": 768,
+      "n": 8192,
+      "k": 6144,
+      "split": "candidate"
+    },
+    {
+      "id": "a17",
+      "m": 2,
+      "n": 1537,
+      "k": 1025,
+      "split": "candidate"
+    },
+    {
+      "id": "a18",
+      "m": 32,
+      "n": 1537,
+      "k": 1025,
+      "split": "candidate"
+    },
+    {
+      "id": "a19",
+      "m": 96,
+      "n": 1537,
+      "k": 1025,
+      "split": "candidate"
+    },
+    {
+      "id": "a20",
+      "m": 768,
+      "n": 1537,
+      "k": 1025,
+      "split": "candidate"
+    },
+    {
+      "id": "a21",
+      "m": 2,
+      "n": 4097,
+      "k": 2049,
+      "split": "candidate"
+    },
+    {
+      "id": "a22",
+      "m": 32,
+      "n": 4097,
+      "k": 2049,
+      "split": "candidate"
+    },
+    {
+      "id": "a23",
+      "m": 96,
+      "n": 4097,
+      "k": 2049,
+      "split": "candidate"
+    },
+    {
+      "id": "a24",
+      "m": 768,
+      "n": 4097,
+      "k": 2049,
+      "split": "candidate"
+    },
+    {
+      "id": "x01",
+      "m": 1,
+      "n": 1024,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "x02",
+      "m": 4,
+      "n": 1024,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "x03",
+      "m": 1,
+      "n": 4096,
+      "k": 4096,
+      "split": "candidate"
+    },
+    {
+      "id": "x04",
+      "m": 8,
+      "n": 4096,
+      "k": 4096,
+      "split": "candidate"
+    },
+    {
+      "id": "x05",
+      "m": 64,
+      "n": 4096,
+      "k": 1024,
+      "split": "candidate"
+    },
+    {
+      "id": "x06",
+      "m": 1024,
+      "n": 8192,
+      "k": 2048,
+      "split": "candidate"
+    },
+    {
+      "id": "x07",
+      "m": 7,
+      "n": 1023,
+      "k": 1025,
+      "split": "candidate"
+    },
+    {
+      "id": "x08",
+      "m": 1025,
+      "n": 8193,
+      "k": 2049,
+      "split": "candidate"
+    }
+  ],
+  "study": {
+    "study_id": "linear-perf-20261101-bfloat16",
+    "case_metadata": {
+      "c01": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1576448,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c02": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1630208,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c03": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 2031616,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c04": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 5242880,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c05": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3150848,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c06": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3227648,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c07": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3801088,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c08": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 8388608,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c09": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16789504,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c10": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16973824,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c11": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 18350080,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c12": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 29360128,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c13": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 100691968,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c14": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 101122048,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c15": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 104333312,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c16": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 130023424,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c17": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3155974,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c18": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3232834,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c19": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3806722,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c20": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 8397826,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c21": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16801798,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c22": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16986178,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c23": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 18362882,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "c24": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 29376514,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d01": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1601536,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d02": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 2490368,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d03": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3186688,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d04": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 4456448,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d05": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16875520,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d06": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 19922944,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d07": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 100892672,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d08": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 108003328,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d09": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3191842,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d10": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 4462594,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d11": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16887842,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "d12": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 19936258,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t01": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1583616,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t02": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1744896,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t03": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 2949120,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t04": {
+        "role": "primary",
+        "family": "nk_1024_768",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_extrapolation_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 7077888,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t05": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3161088,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t06": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3391488,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t07": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 5111808,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t08": {
+        "role": "primary",
+        "family": "nk_1536_1024",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_extrapolation_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 11010048,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t09": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16814080,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t10": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 17367040,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t11": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 21495808,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t12": {
+        "role": "primary",
+        "family": "nk_4096_2048",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_extrapolation_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 35651584,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t13": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 100749312,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t14": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 102039552,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t15": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 111673344,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t16": {
+        "role": "primary",
+        "family": "nk_8192_6144",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_extrapolation_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 144703488,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t17": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3166222,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t18": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3396802,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t19": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 5118466,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t20": {
+        "role": "primary",
+        "family": "nk_1537_1025",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_extrapolation_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 11021314,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t21": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16826382,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t22": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 17379522,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t23": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 21509634,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "t24": {
+        "role": "primary",
+        "family": "nk_4097_2049",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_extrapolation_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 35670018,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h01": {
+        "role": "primary",
+        "family": "nk_2048_1536",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 6327296,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h02": {
+        "role": "primary",
+        "family": "nk_2048_1536",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 7667712,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h03": {
+        "role": "primary",
+        "family": "nk_2048_1536",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 14548992,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h04": {
+        "role": "primary",
+        "family": "nk_6144_4096",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 50434048,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h05": {
+        "role": "primary",
+        "family": "nk_6144_4096",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 54263808,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h06": {
+        "role": "primary",
+        "family": "nk_6144_4096",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 73924608,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h07": {
+        "role": "primary",
+        "family": "nk_2049_1537",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 6334486,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h08": {
+        "role": "primary",
+        "family": "nk_2049_1537",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 7675650,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h09": {
+        "role": "primary",
+        "family": "nk_2049_1537",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 14560770,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h10": {
+        "role": "primary",
+        "family": "nk_6145_4097",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 50454550,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h11": {
+        "role": "primary",
+        "family": "nk_6145_4097",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 54285058,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "h12": {
+        "role": "primary",
+        "family": "nk_6145_4097",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "heldout_NK_family",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 73949698,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a01": {
+        "role": "candidate_pool",
+        "family": "nk_1024_768",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1580032,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a02": {
+        "role": "candidate_pool",
+        "family": "nk_1024_768",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1687552,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a03": {
+        "role": "candidate_pool",
+        "family": "nk_1024_768",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 1916928,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a04": {
+        "role": "candidate_pool",
+        "family": "nk_1024_768",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 4325376,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a05": {
+        "role": "candidate_pool",
+        "family": "nk_1536_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3155968,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a06": {
+        "role": "candidate_pool",
+        "family": "nk_1536_1024",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3309568,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a07": {
+        "role": "candidate_pool",
+        "family": "nk_1536_1024",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3637248,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a08": {
+        "role": "candidate_pool",
+        "family": "nk_1536_1024",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 7077888,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a09": {
+        "role": "candidate_pool",
+        "family": "nk_4096_2048",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16801792,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a10": {
+        "role": "candidate_pool",
+        "family": "nk_4096_2048",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 17170432,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a11": {
+        "role": "candidate_pool",
+        "family": "nk_4096_2048",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 17956864,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a12": {
+        "role": "candidate_pool",
+        "family": "nk_4096_2048",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 26214400,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a13": {
+        "role": "candidate_pool",
+        "family": "nk_8192_6144",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 100720640,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a14": {
+        "role": "candidate_pool",
+        "family": "nk_8192_6144",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 101580800,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a15": {
+        "role": "candidate_pool",
+        "family": "nk_8192_6144",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 103415808,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a16": {
+        "role": "candidate_pool",
+        "family": "nk_8192_6144",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 122683392,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a17": {
+        "role": "candidate_pool",
+        "family": "nk_1537_1025",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3161098,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a18": {
+        "role": "candidate_pool",
+        "family": "nk_1537_1025",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3314818,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a19": {
+        "role": "candidate_pool",
+        "family": "nk_1537_1025",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 3642754,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a20": {
+        "role": "candidate_pool",
+        "family": "nk_1537_1025",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 7086082,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a21": {
+        "role": "candidate_pool",
+        "family": "nk_4097_2049",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 16814090,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a22": {
+        "role": "candidate_pool",
+        "family": "nk_4097_2049",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 17182850,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a23": {
+        "role": "candidate_pool",
+        "family": "nk_4097_2049",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 17969538,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "a24": {
+        "role": "candidate_pool",
+        "family": "nk_4097_2049",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "M_within_training_range_in_seen_NK_family",
+        "NK_family_seen_in_calibration": true,
+        "diagnostic_shape": false,
+        "ideal_tensor_bytes": 26229762,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x01": {
+        "role": "diagnostic",
+        "family": "nk_1024_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 2101248,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x02": {
+        "role": "diagnostic",
+        "family": "nk_1024_1024",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 2113536,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x03": {
+        "role": "diagnostic",
+        "family": "nk_4096_4096",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 33570816,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x04": {
+        "role": "diagnostic",
+        "family": "nk_4096_4096",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 33685504,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x05": {
+        "role": "diagnostic",
+        "family": "nk_4096_1024",
+        "m_bucket": "medium_m_17_to_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 9043968,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x06": {
+        "role": "diagnostic",
+        "family": "nk_8192_2048",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_multiple_of_16",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 54525952,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x07": {
+        "role": "diagnostic",
+        "family": "nk_1023_1025",
+        "m_bucket": "small_m_le_16",
+        "alignment": "NK_irregular",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 2125822,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      },
+      "x08": {
+        "role": "diagnostic",
+        "family": "nk_8193_2049",
+        "m_bucket": "large_m_gt_256",
+        "alignment": "NK_irregular",
+        "coverage": "diagnostic_not_generalization",
+        "NK_family_seen_in_calibration": false,
+        "diagnostic_shape": true,
+        "ideal_tensor_bytes": 54571014,
+        "workload_origin": "registered_transformer_style_dense_linear_shapes_not_a_full_model_trace",
+        "alignment_interpretation": "shape feature only; does not identify a kernel tile or prove Tensor Core usage"
+      }
+    },
+    "diagnostic_case_ids": [
+      "x01",
+      "x02",
+      "x03",
+      "x04",
+      "x05",
+      "x06",
+      "x07",
+      "x08"
+    ],
+    "control_case_ids": [
+      "x01",
+      "x03",
+      "x06"
+    ],
+    "candidate_pool_ids": [
+      "a01",
+      "a02",
+      "a03",
+      "a04",
+      "a05",
+      "a06",
+      "a07",
+      "a08",
+      "a09",
+      "a10",
+      "a11",
+      "a12",
+      "a13",
+      "a14",
+      "a15",
+      "a16",
+      "a17",
+      "a18",
+      "a19",
+      "a20",
+      "a21",
+      "a22",
+      "a23",
+      "a24"
+    ],
+    "expected_sessions": 3,
+    "control_every_visits": 8,
+    "telemetry_interval_seconds": 1.0,
+    "quality": {
+      "within_visit_cv_pct": 10.0,
+      "pass_ratio": 1.2,
+      "control_ratio": 1.2
+    },
+    "diagnostics": {
+      "iterations": [
+        25,
+        50,
+        100
+      ],
+      "passes": 2,
+      "profile_case_ids": [
+        "x02",
+        "x06"
+      ],
+      "rotation_case_ids": [
+        "x02",
+        "x03"
+      ],
+      "rotation_buffer_counts": [
+        1,
+        4
+      ]
+    },
+    "acquisition": {
+      "budgets": [
+        2,
+        4,
+        8,
+        12
+      ],
+      "seeds": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105,
+        20261106,
+        20261107,
+        20261108,
+        20261109,
+        20261110
+      ],
+      "batch_size": 2
+    },
+    "primary_metric": "median_ape_pct",
+    "diagnostic_registry": {
+      "source": "registered_diagnostic_shapes",
+      "shape_order": [
+        "m",
+        "n",
+        "k"
+      ],
+      "shape_count": 8,
+      "sha256": "0d23ce33f20ffe7f925b3184899ec357e44e328ea1c598876c07de04b27ad326",
+      "policy": "diagnostic shapes are excluded from primary and acquisition data"
+    },
+    "generalization_contract": {
+      "ordinary_test": "new M values inside known NK families; M=1536 additionally extrapolates beyond initial calibration M",
+      "challenge": "four entirely heldout NK families, two regular and two irregular; no family occurs in train/dev/candidate pool",
+      "training_coverage": "six NK families including four regular and two irregular; small/medium/large M",
+      "cross_session": "frozen source model and per-session refit are separate evaluations; no claim that event repeats are independent sessions",
+      "cross_gpu": "explicitly declared transfer only; no fitting that mixes environment identities",
+      "bf16": "separate plan and fit; never pooled with FP16 observations"
+    },
+    "interpretation": {
+      "diagnostics_excluded_from_model": true,
+      "profiler_times_excluded_from_model": true,
+      "rotation_is_cache_flush": false,
+      "quality_thresholds_are_vendor_standards": false,
+      "accuracy_improvement_is_established": false,
+      "benchmark_certification": "none; not MLPerf or vendor certification",
+      "shape_metadata_contains_latency": false
+    }
+  }
+}

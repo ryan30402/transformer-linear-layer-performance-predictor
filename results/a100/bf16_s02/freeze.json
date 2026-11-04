@@ -1,0 +1,11 @@
+{
+  "frozen_at_utc": "2026-11-01T23:10:45.820663+00:00",
+  "frozen_at_monotonic": 1861.381565531,
+  "plan_hash": "774be1d0a40dcb3e2c8187ae87bde36240da62a94e0dd7221053eec0f8198ded",
+  "source_identity_hash": "71be333d8f7795dc2cd549799ed9dd8228b1cccf8716363b9460ea1d4c00fee5",
+  "model_suite_hash": "f500756c7554363d6f48057a00437c8e42489998b2cbedcb1a119de9d15b886a",
+  "acquisition_hash": "df14308c625ada93a65687c4f3966500b787d7fe849bf3c3726c62d7a9ae59a7",
+  "frozen_predictions_hash": "2f2a01629e394f0645bdc73c523480c79fb9d930829466a0881f1126d52db1ac",
+  "test_labels_available": false,
+  "development_selection_closed": true
+}

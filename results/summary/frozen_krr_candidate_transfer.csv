@@ -1,0 +1,5 @@
+source,target,model,test_median_ape_pct,challenge_median_ape_pct
+fp16_s01,fp16_s02,roofline_residual_krr,16.711819605186378,21.06065575593076
+fp16_s01,fp16_s03,roofline_residual_krr,16.937334057391674,21.074918142614948
+bf16_s01,bf16_s02,roofline_residual_krr,16.631389899168447,24.138820511382196
+bf16_s01,bf16_s03,roofline_residual_krr,16.057939450126316,24.203688094081265

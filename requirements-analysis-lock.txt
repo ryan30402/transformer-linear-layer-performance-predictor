@@ -1,0 +1,5 @@
+# CPU analysis stack validated for this release. Requires Python >= 3.11.
+# PyTorch and CUDA are intentionally provided by the selected GPU runtime.
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.10.8

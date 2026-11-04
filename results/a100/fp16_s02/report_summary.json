@@ -1,0 +1,57 @@
+{
+  "measurement_kind": "cuda_measured",
+  "session_id": "fp16_s02",
+  "selected_model_id": "shape_log_ridge",
+  "heldout": {
+    "test": {
+      "selected_model": "shape_log_ridge",
+      "median_ape_pct": 26.53314516793855,
+      "difference_to_same_data_roofline_3p_pp": 4.754978525577677,
+      "descriptive_family_bootstrap": {
+        "method": "paired shape-family cluster bootstrap",
+        "resampling_unit": "registered_NK_shape_family",
+        "n_shape_families": 6,
+        "resamples": 1000,
+        "seed": 20261101,
+        "difference_definition": "candidate median APE minus baseline median APE, percentage points; negative favors candidate",
+        "observed_difference_pp": 4.754978525577677,
+        "limitations": "Descriptive resampling of this registered set; few families, unmodeled dependence and session drift limit inference. Raw event repeats are never resampled as independent sessions. Not a prediction interval or guaranteed population coverage.",
+        "status": "descriptive_only",
+        "percentile_95_interval_pp": [
+          -35.749422236697185,
+          31.583186164530712
+        ]
+      },
+      "gpu_accuracy_claim_permitted_from_simulation": false,
+      "generalization_established": false
+    },
+    "challenge": {
+      "selected_model": "shape_log_ridge",
+      "median_ape_pct": 31.7529714006711,
+      "difference_to_same_data_roofline_3p_pp": -0.9857354545407446,
+      "descriptive_family_bootstrap": {
+        "method": "paired shape-family cluster bootstrap",
+        "resampling_unit": "registered_NK_shape_family",
+        "n_shape_families": 4,
+        "resamples": 1000,
+        "seed": 20261101,
+        "difference_definition": "candidate median APE minus baseline median APE, percentage points; negative favors candidate",
+        "observed_difference_pp": -0.9857354545407446,
+        "limitations": "Descriptive resampling of this registered set; few families, unmodeled dependence and session drift limit inference. Raw event repeats are never resampled as independent sessions. Not a prediction interval or guaranteed population coverage.",
+        "status": "descriptive_only",
+        "percentile_95_interval_pp": [
+          -39.0306835617709,
+          49.836890696377765
+        ]
+      },
+      "gpu_accuracy_claim_permitted_from_simulation": false,
+      "generalization_established": false
+    }
+  },
+  "timing_quality_passed": true,
+  "hardware_accuracy_validated": false,
+  "cross_session_validated": false,
+  "industry_certification": false,
+  "source_result_directory": ".",
+  "report_does_not_refit_or_select_models": true
+}

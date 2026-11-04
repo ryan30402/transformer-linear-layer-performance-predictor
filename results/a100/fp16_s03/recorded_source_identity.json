@@ -1,0 +1,10 @@
+{
+  "source_hash": "87e63f6919213df557d1f270be43a5b4fa4fb94a7e3b0a997799aeccc340fb7f",
+  "analysis_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "source_archive_sha256": "fad0f964c192808cf2600be11433e39ce4fa1b2cd8e0bd362bb109942614f59d",
+  "scope": "Recorded acquisition source identity; not the publication source identity."
+}
