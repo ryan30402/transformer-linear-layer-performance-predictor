@@ -220,7 +220,7 @@ class DurationWarmupTests(unittest.TestCase):
         self.assertNotEqual(single["environment_id"], changed["environment_id"])
         self.assertEqual(single["identity"]["collection"]["blocks"], 1)
         self.assertEqual(triple["identity"]["collection"], replicated["collection"])
-        self.assertEqual(single["identity"]["runner_version"], "cuda-events-v3")
+        self.assertEqual(single["identity"]["runner_version"], "cuda-events-1.0.0")
 
 
 if __name__ == "__main__":
