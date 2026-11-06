@@ -1,0 +1,32 @@
+{
+  "archived_numerical_witnesses_recomputed": 24,
+  "bytes_verified": 70445615,
+  "checks": 39708,
+  "distinct_shapes": 96,
+  "files_verified": 264,
+  "gpu_operations_performed": 0,
+  "model_refits_performed": 0,
+  "per_session_checks": {
+    "bf16_s01": 6006,
+    "bf16_s02": 6006,
+    "bf16_s03": 6006,
+    "fp16_s01": 6006,
+    "fp16_s02": 6006,
+    "fp16_s03": 6006
+  },
+  "primary_event_repeat_means": 15552,
+  "recorded_acquisition_audit_count_is_separate": true,
+  "scope": "Exported-file integrity and CPU recomputation of retained evidence; not independent GPU attestation or reconstruction of omitted original archive bytes.",
+  "selected_models": {
+    "bf16_s01": "roofline_3p",
+    "bf16_s02": "roofline_3p",
+    "bf16_s03": "roofline_3p",
+    "fp16_s01": "shape_log_ridge",
+    "fp16_s02": "shape_log_ridge",
+    "fp16_s03": "roofline_residual_krr"
+  },
+  "sessions": 6,
+  "shape_session_labels": 576,
+  "status": "passed",
+  "verification_kind": "publication_snapshot_cpu_verification"
+}

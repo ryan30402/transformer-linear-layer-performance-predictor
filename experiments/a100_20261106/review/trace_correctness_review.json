@@ -1,0 +1,2531 @@
+{
+  "primary": {
+    "aggregate_rows": 2256,
+    "raw_visits": 6768,
+    "control_visits": 378,
+    "timing_intervals_excluding_controls": 60912,
+    "timing_intervals_including_controls": 64314,
+    "normalization_max_absolute_difference_ms": 0.0,
+    "captured_ops_min": 1,
+    "captured_ops_max": 256,
+    "ops_at_cap_visits": 701,
+    "total_raw_event_ms_min": 0.8376320004463196,
+    "total_raw_event_ms_max": 23.838720321655273,
+    "correctness_check_records": 35412,
+    "correctness": {
+      "float16": {
+        "count": 17706,
+        "records_by_kind": {
+          "raw": 16110,
+          "controls": 378,
+          "profiles": 1218
+        },
+        "max_relative_l2": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "float16",
+          "case_id": "m1_n128_k896",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.00023977329653877542,
+          "max_abs_error": 0.0009293556213378906,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.002,
+            "absolute_atol": 0.002,
+            "absolute_rtol": 0.002
+          },
+          "reference_max_abs": 2.9010238647460938,
+          "max_abs_error_limit": 0.0078020477294921875
+        },
+        "max_abs_error": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "float16",
+          "case_id": "m8192_n2048_k11008",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.00020847009452817556,
+          "max_abs_error": 0.0020494461059570312,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.002,
+            "absolute_atol": 0.002,
+            "absolute_rtol": 0.002
+          },
+          "reference_max_abs": 5.63983678817749,
+          "max_abs_error_limit": 0.01327967357635498
+        },
+        "max_abs_fraction_of_limit": 0.19347939769649838
+      },
+      "bfloat16": {
+        "count": 17706,
+        "records_by_kind": {
+          "raw": 16110,
+          "controls": 378,
+          "profiles": 1218
+        },
+        "max_relative_l2": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "bfloat16",
+          "case_id": "m1_n256_k1536",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.001867572619623881,
+          "max_abs_error": 0.007245540618896484,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.01,
+            "absolute_atol": 0.01,
+            "absolute_rtol": 0.01
+          },
+          "reference_max_abs": 2.94225811958313,
+          "max_abs_error_limit": 0.0394225811958313
+        },
+        "max_abs_error": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "bfloat16",
+          "case_id": "m8192_n2048_k11008",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.0016617925300910267,
+          "max_abs_error": 0.015697002410888672,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.01,
+            "absolute_atol": 0.01,
+            "absolute_rtol": 0.01
+          },
+          "reference_max_abs": 5.6228532791137695,
+          "max_abs_error_limit": 0.06622853279113769
+        },
+        "max_abs_fraction_of_limit": 0.3038640131306893
+      }
+    },
+    "aggregate_coverage": {
+      "bfloat16/warm_reuse": 609,
+      "float16/warm_reuse": 609,
+      "bfloat16/rotating_buffers": 519,
+      "float16/rotating_buffers": 519
+    },
+    "rotation_eligibility": {
+      "eligible": 1038,
+      "weight_exceeds_declared_L2_multiple": 180
+    },
+    "skipped_variants_count": 180,
+    "skipped_reasons": {
+      "weight_exceeds_declared_L2_multiple": 180
+    },
+    "profile_captures": 1218,
+    "trace_files": 1218,
+    "actual_kernel_events": 144578,
+    "kernel_names_count": 95,
+    "profile_kernel_events_per_gemm": {
+      "1.0": 987,
+      "2.0": 231
+    },
+    "profile_more_than_one_kernel": [
+      {
+        "case_id": "m2_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 253,
+        "kernel_events": 506,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n256_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 224,
+        "kernel_events": 448,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n256_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 241,
+        "kernel_events": 482,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n256_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n256_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n256_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n256_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 245,
+        "kernel_events": 490,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 256,
+        "kernel_events": 512,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n256_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 224,
+        "kernel_events": 448,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 241,
+        "kernel_events": 482,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n256_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 193,
+        "kernel_events": 386,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n256_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 227,
+        "kernel_events": 454,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n896_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 253,
+        "kernel_events": 506,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n896_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 234,
+        "kernel_events": 468,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 193,
+        "kernel_events": 386,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 196,
+        "kernel_events": 392,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 196,
+        "kernel_events": 392,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 193,
+        "kernel_events": 386,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 196,
+        "kernel_events": 392,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 196,
+        "kernel_events": 392,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 193,
+        "kernel_events": 386,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 193,
+        "kernel_events": 386,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 191,
+        "kernel_events": 382,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 191,
+        "kernel_events": 382,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 189,
+        "kernel_events": 378,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 187,
+        "kernel_events": 374,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 189,
+        "kernel_events": 378,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 182,
+        "kernel_events": 364,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 180,
+        "kernel_events": 360,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 176,
+        "kernel_events": 352,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 143,
+        "kernel_events": 286,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 172,
+        "kernel_events": 344,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 121,
+        "kernel_events": 242,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 130,
+        "kernel_events": 260,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 107,
+        "kernel_events": 214,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 107,
+        "kernel_events": 214,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 91,
+        "kernel_events": 182,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 95,
+        "kernel_events": 190,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m512_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 65,
+        "kernel_events": 130,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m512_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 62,
+        "kernel_events": 124,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n1536_k1536",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 227,
+        "kernel_events": 454,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n1536_k1536",
+        "dtype": "float16",
+        "captured_gemm_count": 201,
+        "kernel_events": 402,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 139,
+        "kernel_events": 278,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 138,
+        "kernel_events": 276,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 127,
+        "kernel_events": 254,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 138,
+        "kernel_events": 276,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 138,
+        "kernel_events": 276,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 136,
+        "kernel_events": 272,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 129,
+        "kernel_events": 258,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 129,
+        "kernel_events": 258,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 130,
+        "kernel_events": 260,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 129,
+        "kernel_events": 258,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 127,
+        "kernel_events": 254,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 122,
+        "kernel_events": 244,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 113,
+        "kernel_events": 226,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 113,
+        "kernel_events": 226,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 98,
+        "kernel_events": 196,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 103,
+        "kernel_events": 206,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 68,
+        "kernel_events": 136,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 86,
+        "kernel_events": 172,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 53,
+        "kernel_events": 106,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 51,
+        "kernel_events": 102,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 46,
+        "kernel_events": 92,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 46,
+        "kernel_events": 92,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n1536_k8960",
+        "dtype": "float16",
+        "captured_gemm_count": 43,
+        "kernel_events": 86,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n1536_k8960",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 42,
+        "kernel_events": 84,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 221,
+        "kernel_events": 442,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 221,
+        "kernel_events": 442,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 218,
+        "kernel_events": 436,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 221,
+        "kernel_events": 442,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 218,
+        "kernel_events": 436,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 218,
+        "kernel_events": 436,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 218,
+        "kernel_events": 436,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 218,
+        "kernel_events": 436,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 201,
+        "kernel_events": 402,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 198,
+        "kernel_events": 396,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 198,
+        "kernel_events": 396,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 198,
+        "kernel_events": 396,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 184,
+        "kernel_events": 368,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 187,
+        "kernel_events": 374,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 124,
+        "kernel_events": 248,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 144,
+        "kernel_events": 288,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 140,
+        "kernel_events": 280,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 141,
+        "kernel_events": 282,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 141,
+        "kernel_events": 282,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 140,
+        "kernel_events": 280,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 144,
+        "kernel_events": 288,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 143,
+        "kernel_events": 286,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 134,
+        "kernel_events": 268,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 136,
+        "kernel_events": 272,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 135,
+        "kernel_events": 270,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 135,
+        "kernel_events": 270,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 138,
+        "kernel_events": 276,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 122,
+        "kernel_events": 244,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 128,
+        "kernel_events": 256,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 122,
+        "kernel_events": 244,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 116,
+        "kernel_events": 232,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 120,
+        "kernel_events": 240,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 73,
+        "kernel_events": 146,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 52,
+        "kernel_events": 104,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 50,
+        "kernel_events": 100,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 48,
+        "kernel_events": 96,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 47,
+        "kernel_events": 94,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m1_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 65,
+        "kernel_events": 130,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m1_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 59,
+        "kernel_events": 118,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 79,
+        "kernel_events": 158,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 70,
+        "kernel_events": 140,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 79,
+        "kernel_events": 158,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 72,
+        "kernel_events": 144,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 76,
+        "kernel_events": 152,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 66,
+        "kernel_events": 132,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 71,
+        "kernel_events": 142,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 61,
+        "kernel_events": 122,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 68,
+        "kernel_events": 136,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 69,
+        "kernel_events": 138,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 68,
+        "kernel_events": 136,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 66,
+        "kernel_events": 132,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 57,
+        "kernel_events": 114,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 63,
+        "kernel_events": 126,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 56,
+        "kernel_events": 112,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 58,
+        "kernel_events": 116,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 59,
+        "kernel_events": 118,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 52,
+        "kernel_events": 104,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 42,
+        "kernel_events": 84,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 40,
+        "kernel_events": 80,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 37,
+        "kernel_events": 74,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 37,
+        "kernel_events": 74,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 35,
+        "kernel_events": 70,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m1_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 37,
+        "kernel_events": 74,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m1_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 40,
+        "kernel_events": 80,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 47,
+        "kernel_events": 94,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 52,
+        "kernel_events": 104,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 48,
+        "kernel_events": 96,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 52,
+        "kernel_events": 104,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 47,
+        "kernel_events": 94,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 52,
+        "kernel_events": 104,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 47,
+        "kernel_events": 94,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 46,
+        "kernel_events": 92,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 48,
+        "kernel_events": 96,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 48,
+        "kernel_events": 96,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 46,
+        "kernel_events": 92,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 43,
+        "kernel_events": 86,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 42,
+        "kernel_events": 84,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 37,
+        "kernel_events": 74,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m128_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 36,
+        "kernel_events": 72,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 32,
+        "kernel_events": 64,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 32,
+        "kernel_events": 64,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 30,
+        "kernel_events": 60,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 29,
+        "kernel_events": 58,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m1_n2560_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 196,
+        "kernel_events": 392,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m1_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 170,
+        "kernel_events": 340,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2560_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 193,
+        "kernel_events": 386,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 189,
+        "kernel_events": 378,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2560_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 191,
+        "kernel_events": 382,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 191,
+        "kernel_events": 382,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2560_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 196,
+        "kernel_events": 392,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m4_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 198,
+        "kernel_events": 396,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m8_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 136,
+        "kernel_events": 272,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m12_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 135,
+        "kernel_events": 270,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2560_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 135,
+        "kernel_events": 270,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2560_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 180,
+        "kernel_events": 360,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n1153_k897",
+        "dtype": "float16",
+        "captured_gemm_count": 209,
+        "kernel_events": 418,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n1153_k897",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 65,
+        "kernel_events": 130,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n897_k897",
+        "dtype": "float16",
+        "captured_gemm_count": 215,
+        "kernel_events": 430,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n897_k897",
+        "dtype": "float16",
+        "captured_gemm_count": 91,
+        "kernel_events": 182,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n897_k897",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 78,
+        "kernel_events": 156,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n1537_k1537",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 109,
+        "kernel_events": 218,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n1537_k1537",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 45,
+        "kernel_events": 90,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n49153_k2049",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 7,
+        "kernel_events": 14,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2049_k1537",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 95,
+        "kernel_events": 190,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2049_k1537",
+        "dtype": "float16",
+        "captured_gemm_count": 38,
+        "kernel_events": 76,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2049_k1537",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 38,
+        "kernel_events": 76,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n257_k2049",
+        "dtype": "float16",
+        "captured_gemm_count": 206,
+        "kernel_events": 412,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n257_k2049",
+        "dtype": "float16",
+        "captured_gemm_count": 101,
+        "kernel_events": 202,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n257_k2049",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 94,
+        "kernel_events": 188,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2048_n257_k2049",
+        "dtype": "float16",
+        "captured_gemm_count": 24,
+        "kernel_events": 48,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2048_n257_k2049",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 31,
+        "kernel_events": 62,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n5633_k2049",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 41,
+        "kernel_events": 82,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2049_k11009",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 25,
+        "kernel_events": 50,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2049_k11009",
+        "dtype": "float16",
+        "captured_gemm_count": 5,
+        "kernel_events": 10,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2049_k5633",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 49,
+        "kernel_events": 98,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2049_k5633",
+        "dtype": "float16",
+        "captured_gemm_count": 9,
+        "kernel_events": 18,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n2049_k5633",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 13,
+        "kernel_events": 26,
+        "kernels_per_gemm": 2.0
+      }
+    ],
+    "unique_kernel_names": {
+      "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>)": 14,
+      "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)": 14,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize32x32x64_stage6_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 22,
+      "ampere_s16816gemm_bf16_64x64_ldg8_stages_64x6_tn": 15,
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)": 120,
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __half, float, __half, false, __half, __half, __half, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __half const*, __half*, __half*, float const*, float const*, __half const*, float const*, __half*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)": 111,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x1_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x1_tn_align8::Params)": 5,
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn": 97,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_64x64_32x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_64x64_32x6_tn_align8::Params)": 16,
+      "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn": 90,
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn": 46,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize96x128x32_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 15,
+      "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn": 18,
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x4_tn": 33,
+      "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_32x5_tn": 37,
+      "ampere_bf16_s16816gemm_bf16_128x128_ldg8_f2f_stages_64x3_tn": 27,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_32x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_32x6_tn_align8::Params)": 5,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x2_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x2_tn_align8::Params)": 3,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_bf16_32x32_128x2_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_bf16_32x32_128x2_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)": 41,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_64x64_64x6_tn_align8::Params)": 29,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_64x128_64x6_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_64x128_64x6_tn_align8::Params)": 4,
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn": 24,
+      "ampere_fp16_s16816gemm_fp16_128x256_ldg8_f2f_stages_64x3_tn": 39,
+      "ampere_bf16_s16816gemm_bf16_128x256_ldg8_f2f_stages_64x3_tn": 130,
+      "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x5_tn": 15,
+      "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_32x6_tn": 15,
+      "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x3_tn": 24,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize160x128x32_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 5,
+      "ampere_fp16_s16816gemm_fp16_256x128_ldg8_f2f_stages_32x3_tn": 7,
+      "ampere_s16816gemm_fp16_128x64_ldg8_stages_64x4_tn": 20,
+      "ampere_s16816gemm_bf16_128x64_ldg8_stages_64x4_tn": 26,
+      "ampere_s16816gemm_fp16_128x128_ldg8_stages_64x3_tn": 9,
+      "ampere_s16816gemm_bf16_128x128_ldg8_stages_64x3_tn": 15,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_128x128_32x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_128x128_32x6_tn_align8::Params)": 7,
+      "ampere_fp16_s1688gemm_fp16_256x64_ldg8_f2f_stages_32x1_tn": 4,
+      "ampere_fp16_s16816gemm_fp16_256x128_ldg8_f2f_stages_64x3_tn": 34,
+      "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn": 27,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x6_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x6_tn_align8::Params)": 1,
+      "ampere_fp16_s16816gemm_fp16_256x64_ldg8_f2f_stages_64x3_tn": 12,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)": 19,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize192x128x32_stage4_warpsize4x2x1_tensor16x8x16_execute_kernel__5x_cublas": 3,
+      "ampere_s16816gemm_fp16_128x64_ldg8_stages_32x6_tn": 9,
+      "ampere_bf16_s16816gemm_bf16_64x128_ldg8_f2f_stages_64x4_tn": 1,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize128x160x32_stage3_warpsize2x4x1_tensor16x8x16_execute_kernel__5x_cublas": 4,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x256_32x3_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x256_32x3_tn_align8::Params)": 1,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize192x128x32_stage3_warpsize4x2x1_tensor16x8x16_execute_kernel__5x_cublas": 5,
+      "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_64x3_tn": 15,
+      "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn": 9,
+      "void gemv2T_kernel_val<int, int, __half, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)": 2,
+      "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)": 2,
+      "ampere_bf16_s16816gemm_bf16_256x64_ldg8_f2f_stages_64x3_tn": 10,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_f16_16x16_128x2_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_f16_16x16_128x2_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_bf16_16x16_128x2_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_bf16_16x16_128x2_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_128x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_128x64_64x6_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_128x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_128x64_64x6_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x128_32x3_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x128_32x3_tn_align8::Params)": 1,
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn": 9,
+      "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x6_tn": 7,
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x6_tn": 7,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_f16_s161616gemm_f16_32x32_128x1_tn_align8>(cutlass_80_wmma_tensorop_f16_s161616gemm_f16_32x32_128x1_tn_align8::Params)": 2,
+      "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_32x3_tn": 31,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize128x128x32_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 1,
+      "ampere_bf16_s16816gemm_bf16_128x128_ldg8_f2f_stages_32x5_tn": 4,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x64_64x6_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x64_64x6_tn_align8::Params)": 4,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize96x64x64_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 2,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x64_32x4_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x64_32x4_tn_align8::Params)": 12,
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn": 3,
+      "ampere_fp16_s1688gemm_fp16_256x64_ldg8_f2f_tn": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_128x64_64x6_tn_align8>(cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_128x64_64x6_tn_align8::Params)": 2,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize64x96x64_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 2,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x64_64x3_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x64_64x3_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_256x64_32x4_tn_align8>(cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_256x64_32x4_tn_align8::Params)": 12,
+      "ampere_fp16_s16816gemm_fp16_256x64_ldg8_f2f_tn": 1,
+      "void gemv2T_kernel_val<int, int, __half, __half, __half, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>, float, float)": 8,
+      "void gemv2T_kernel_val<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>, float, float)": 8,
+      "void cutlass::Kernel2<cutlass_75_wmma_tensorop_s161616gemm_f16_32x32_128x2_tn_align1>(cutlass_75_wmma_tensorop_s161616gemm_f16_32x32_128x2_tn_align1::Params)": 3,
+      "void cutlass::Kernel2<cutlass_75_wmma_tensorop_bf16_s161616gemm_bf16_32x32_32x1_tn_align1>(cutlass_75_wmma_tensorop_bf16_s161616gemm_bf16_32x32_32x1_tn_align1::Params)": 10,
+      "void cutlass::Kernel2<cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_64x2_tn_align1>(cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_64x2_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_64x128_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_64x128_tn_align1::Params)": 2,
+      "void cutlass::Kernel2<cutlass_75_tensorop_f16_s1688gemm_f16_128x256_tn_align1>(cutlass_75_tensorop_f16_s1688gemm_f16_128x256_tn_align1::Params)": 9,
+      "void cutlass::Kernel2<cutlass_75_tensorop_bf16_s1688gemm_bf16_128x256_tn_align1>(cutlass_75_tensorop_bf16_s1688gemm_bf16_128x256_tn_align1::Params)": 11,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_f16_128x64_tn_align1>(cutlass_75_tensorop_s1688gemm_f16_128x64_tn_align1::Params)": 3,
+      "void cutlass::Kernel2<cutlass_75_tensorop_f16_s1688gemm_f16_256x128_tn_align1>(cutlass_75_tensorop_f16_s1688gemm_f16_256x128_tn_align1::Params)": 4,
+      "void cutlass::Kernel2<cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_128x2_tn_align1>(cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_128x2_tn_align1::Params)": 9,
+      "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, false, true, true, false, 9, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>)": 1,
+      "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 9, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_128x64_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_128x64_tn_align1::Params)": 5,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_256x128_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_256x128_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_64x64_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_64x64_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_f16_256x128_tn_align1>(cutlass_75_tensorop_s1688gemm_f16_256x128_tn_align1::Params)": 2,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_128x256_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_128x256_tn_align1::Params)": 4,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_f16_64x64_tn_align1>(cutlass_75_tensorop_s1688gemm_f16_64x64_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_128x1_tn_align1>(cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_128x1_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_f16_s1688gemm_f16_128x64_tn_align1>(cutlass_75_tensorop_f16_s1688gemm_f16_128x64_tn_align1::Params)": 1
+    },
+    "hardware_counter_declarations": {
+      "not_collected": 1218
+    },
+    "violations": []
+  },
+  "repeat": {
+    "aggregate_rows": 280,
+    "raw_visits": 840,
+    "control_visits": 72,
+    "timing_intervals_excluding_controls": 7560,
+    "timing_intervals_including_controls": 8208,
+    "normalization_max_absolute_difference_ms": 0.0,
+    "captured_ops_min": 1,
+    "captured_ops_max": 256,
+    "ops_at_cap_visits": 8,
+    "total_raw_event_ms_min": 1.241760015487671,
+    "total_raw_event_ms_max": 7.754335880279541,
+    "correctness_check_records": 4400,
+    "correctness": {
+      "float16": {
+        "count": 2200,
+        "records_by_kind": {
+          "raw": 1974,
+          "controls": 72,
+          "profiles": 154
+        },
+        "max_relative_l2": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "float16",
+          "case_id": "m3_n128_k896",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.00021799586763592192,
+          "max_abs_error": 0.00095367431640625,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.002,
+            "absolute_atol": 0.002,
+            "absolute_rtol": 0.002
+          },
+          "reference_max_abs": 3.200462818145752,
+          "max_abs_error_limit": 0.008400925636291504
+        },
+        "max_abs_error": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "float16",
+          "case_id": "m8192_n2048_k11008",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.00020847009452817556,
+          "max_abs_error": 0.0020494461059570312,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.002,
+            "absolute_atol": 0.002,
+            "absolute_rtol": 0.002
+          },
+          "reference_max_abs": 5.63983678817749,
+          "max_abs_error_limit": 0.01327967357635498
+        },
+        "max_abs_fraction_of_limit": 0.19078401217690655
+      },
+      "bfloat16": {
+        "count": 2200,
+        "records_by_kind": {
+          "raw": 1974,
+          "controls": 72,
+          "profiles": 154
+        },
+        "max_relative_l2": {
+          "kind": "controls",
+          "when": "before",
+          "dtype": "bfloat16",
+          "case_id": "control_small",
+          "cache_policy": "warm_reuse",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.0017481575134814455,
+          "max_abs_error": 0.007768154144287109,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.01,
+            "absolute_atol": 0.01,
+            "absolute_rtol": 0.01
+          },
+          "reference_max_abs": 3.2237396240234375,
+          "max_abs_error_limit": 0.04223739624023438
+        },
+        "max_abs_error": {
+          "kind": "raw",
+          "when": "before",
+          "dtype": "bfloat16",
+          "case_id": "m8192_n2048_k11008",
+          "cache_policy": "rotating_buffers",
+          "passed": true,
+          "finite": true,
+          "relative_l2_error": 0.0016617925300910267,
+          "max_abs_error": 0.015697002410888672,
+          "reference": "FP32 torch.mm(X, W_T) of the same already-represented inputs, with CUDA matmul FP32 precision set to IEEE; this is not a float64 oracle",
+          "limits": {
+            "relative_l2": 0.01,
+            "absolute_atol": 0.01,
+            "absolute_rtol": 0.01
+          },
+          "reference_max_abs": 5.6228532791137695,
+          "max_abs_error_limit": 0.06622853279113769
+        },
+        "max_abs_fraction_of_limit": 0.302442583099437
+      }
+    },
+    "aggregate_coverage": {
+      "float16/warm_reuse": 77,
+      "bfloat16/warm_reuse": 77,
+      "float16/rotating_buffers": 63,
+      "bfloat16/rotating_buffers": 63
+    },
+    "rotation_eligibility": {
+      "eligible": 126,
+      "weight_exceeds_declared_L2_multiple": 28
+    },
+    "skipped_variants_count": 28,
+    "skipped_reasons": {
+      "weight_exceeds_declared_L2_multiple": 28
+    },
+    "profile_captures": 154,
+    "trace_files": 154,
+    "actual_kernel_events": 15334,
+    "kernel_names_count": 56,
+    "profile_kernel_events_per_gemm": {
+      "1.0": 131,
+      "2.0": 23
+    },
+    "profile_more_than_one_kernel": [
+      {
+        "case_id": "m3_n128_k896",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 248,
+        "kernel_events": 496,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 241,
+        "kernel_events": 482,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n128_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 242,
+        "kernel_events": 484,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m32_n896_k896",
+        "dtype": "float16",
+        "captured_gemm_count": 220,
+        "kernel_events": 440,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m512_n896_k4864",
+        "dtype": "float16",
+        "captured_gemm_count": 63,
+        "kernel_events": 126,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m512_n896_k4864",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 61,
+        "kernel_events": 122,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k2048",
+        "dtype": "float16",
+        "captured_gemm_count": 189,
+        "kernel_events": 378,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k2048",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 194,
+        "kernel_events": 388,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 125,
+        "kernel_events": 250,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 125,
+        "kernel_events": 250,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k5632",
+        "dtype": "float16",
+        "captured_gemm_count": 116,
+        "kernel_events": 232,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m48_n2048_k5632",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 112,
+        "kernel_events": 224,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 66,
+        "kernel_events": 132,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m2_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 73,
+        "kernel_events": 146,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 55,
+        "kernel_events": 110,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m64_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 51,
+        "kernel_events": 102,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k8192",
+        "dtype": "float16",
+        "captured_gemm_count": 36,
+        "kernel_events": 72,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m192_n2048_k8192",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 37,
+        "kernel_events": 74,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k11008",
+        "dtype": "float16",
+        "captured_gemm_count": 46,
+        "kernel_events": 92,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m3_n2048_k11008",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 50,
+        "kernel_events": 100,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n897_k897",
+        "dtype": "float16",
+        "captured_gemm_count": 84,
+        "kernel_events": 168,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m256_n897_k897",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 73,
+        "kernel_events": 146,
+        "kernels_per_gemm": 2.0
+      },
+      {
+        "case_id": "m16_n1537_k1537",
+        "dtype": "bfloat16",
+        "captured_gemm_count": 102,
+        "kernel_events": 204,
+        "kernels_per_gemm": 2.0
+      }
+    ],
+    "unique_kernel_names": {
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize32x32x64_stage6_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 1,
+      "ampere_s16816gemm_bf16_64x64_ldg8_stages_64x6_tn": 1,
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)": 11,
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __half, float, __half, false, __half, __half, __half, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __half const*, __half*, __half*, float const*, float const*, __half const*, float const*, __half*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)": 12,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_64x64_32x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_64x64_32x6_tn_align8::Params)": 2,
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn": 16,
+      "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn": 14,
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn": 6,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_64x128_64x6_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_64x128_64x6_tn_align8::Params)": 2,
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x4_tn": 7,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize96x128x32_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 3,
+      "ampere_bf16_s16816gemm_bf16_128x128_ldg8_f2f_stages_64x3_tn": 2,
+      "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x1_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x1_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_128x128_32x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_128x128_32x6_tn_align8::Params)": 2,
+      "ampere_s16816gemm_bf16_128x128_ldg8_stages_64x3_tn": 2,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize160x128x32_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas": 1,
+      "ampere_bf16_s16816gemm_bf16_128x256_ldg8_f2f_stages_64x3_tn": 12,
+      "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn": 5,
+      "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_32x5_tn": 3,
+      "ampere_bf16_s16816gemm_bf16_64x128_ldg8_f2f_stages_64x4_tn": 1,
+      "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x5_tn": 2,
+      "sm80_xmma_gemm_f16f16_f16f32_f32_tn_n_tilesize192x128x32_stage4_warpsize4x2x1_tensor16x8x16_execute_kernel__5x_cublas": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_f16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_f16_64x64_64x6_tn_align8::Params)": 3,
+      "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)": 3,
+      "ampere_s16816gemm_fp16_128x64_ldg8_stages_64x4_tn": 2,
+      "ampere_s16816gemm_bf16_128x64_ldg8_stages_64x4_tn": 3,
+      "ampere_s16816gemm_fp16_128x64_ldg8_stages_32x6_tn": 1,
+      "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_64x3_tn": 2,
+      "ampere_fp16_s16816gemm_fp16_128x256_ldg8_f2f_stages_64x3_tn": 6,
+      "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn": 3,
+      "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_32x3_tn": 5,
+      "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x6_tn": 1,
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x6_tn": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x64_32x4_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x64_32x4_tn_align8::Params)": 3,
+      "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn": 2,
+      "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x3_tn": 7,
+      "ampere_fp16_s1688gemm_fp16_256x64_ldg8_f2f_tn": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x64_64x6_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x64_64x6_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_128x64_64x6_tn_align8>(cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_128x64_64x6_tn_align8::Params)": 1,
+      "ampere_fp16_s16816gemm_fp16_256x64_ldg8_f2f_stages_64x3_tn": 1,
+      "ampere_bf16_s16816gemm_bf16_256x64_ldg8_f2f_stages_64x3_tn": 1,
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn": 1,
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn": 6,
+      "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8::Params)": 1,
+      "ampere_fp16_s16816gemm_fp16_256x128_ldg8_f2f_stages_64x3_tn": 4,
+      "void cutlass::Kernel2<cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_256x64_32x4_tn_align8>(cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_256x64_32x4_tn_align8::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_f16_128x64_tn_align1>(cutlass_75_tensorop_s1688gemm_f16_128x64_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_64x128_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_64x128_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_128x2_tn_align1>(cutlass_75_wmma_tensorop_f16_s161616gemm_f16_32x32_128x2_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_s1688gemm_bf16_128x64_tn_align1>(cutlass_75_tensorop_s1688gemm_bf16_128x64_tn_align1::Params)": 1,
+      "void gemv2T_kernel_val<int, int, __half, __half, __half, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>, float, float)": 1,
+      "void gemv2T_kernel_val<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>, float, float)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_f16_s1688gemm_f16_128x256_tn_align1>(cutlass_75_tensorop_f16_s1688gemm_f16_128x256_tn_align1::Params)": 1,
+      "void cutlass::Kernel2<cutlass_75_tensorop_bf16_s1688gemm_bf16_128x256_tn_align1>(cutlass_75_tensorop_bf16_s1688gemm_bf16_128x256_tn_align1::Params)": 1,
+      "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>)": 1,
+      "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)": 1
+    },
+    "hardware_counter_declarations": {
+      "not_collected": 154
+    },
+    "violations": []
+  },
+  "hardware_software": {
+    "device": {
+      "logical_device_index": 0,
+      "name": "NVIDIA A100-SXM4-40GB",
+      "compute_capability": [
+        8,
+        0
+      ],
+      "total_memory_bytes": 42405855232,
+      "multiprocessor_count": 108,
+      "uuid": "811661e4-2f9d-b191-ffe7-18a41a02a95b",
+      "l2_cache_bytes": 41943040,
+      "l2_cache_source": "torch.cuda.device_properties.L2_cache_size",
+      "l2_cache_observation": {
+        "bytes": 41943040,
+        "source": "torch.cuda.device_properties.L2_cache_size"
+      },
+      "l2_cache_override_requested": null,
+      "l2_cache_override_applied": false
+    },
+    "python_version": "3.13.16",
+    "pytorch_version": "2.11.0+cu130",
+    "cuda_runtime_version": "13.0",
+    "driver_versions": [
+      "580.82.07"
+    ],
+    "math_policy": {
+      "fp32_reference_precision": "ieee",
+      "tf32_control_api": "fp32_precision",
+      "fp32_precision": "ieee",
+      "allow_fp16_reduced_precision_reduction": false,
+      "allow_bf16_reduced_precision_reduction": false,
+      "allow_fp16_accumulation": false
+    },
+    "execution": "preallocated torch.mm(X, W.T, out=Y), inference mode, autocast disabled",
+    "primary_repeat_device_equal": true,
+    "primary_repeat_contexts_equal": true
+  },
+  "timing_scope": {
+    "included": "CUDA-event elapsed time of one complete graph replay, including device-side launch and inter-kernel gaps, divided by captured GEMM operation count; median of 9 normalized graph samples per visit, then median of 3 visit medians.",
+    "excluded": "Allocation, CPU-GPU transfer, reference checks, eager/capture and graph warmup, profiling, model fitting, backup copies, full decoder, serving/queueing/network overhead.",
+    "graph_operations_need_not_equal_kernel_events": true,
+    "raw_matrix_outputs_archived": false,
+    "arithmetic_audit_scope": "Recheck recorded finite flags, error values and tolerance formulas; cannot independently recompute output-vs-reference errors without re-executing the matrices."
+  },
+  "repeat_outlier": {
+    "primary": {
+      "measurements": [
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "float16",
+          "cache_policy": "warm_reuse",
+          "median_ms": 0.01950101145021208,
+          "samples_ms": [
+            0.019358990066929867,
+            0.01982612064085811,
+            0.01950101145021208
+          ],
+          "captured_operations_by_visit": [
+            95,
+            83,
+            91
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.2781377405722708,
+            "max_over_min_visit_median": 1.024129904107251,
+            "passed": true
+          }
+        },
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "bfloat16",
+          "cache_policy": "warm_reuse",
+          "median_ms": 0.019411957392128566,
+          "samples_ms": [
+            0.019347576534046847,
+            0.019700869269992993,
+            0.019411957392128566
+          ],
+          "captured_operations_by_visit": [
+            85,
+            92,
+            93
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.16979556803501183,
+            "max_over_min_visit_median": 1.0182603095185818,
+            "passed": true
+          }
+        },
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "float16",
+          "cache_policy": "rotating_buffers",
+          "median_ms": 0.028973176198847154,
+          "samples_ms": [
+            0.0290032940752366,
+            0.028973176198847154,
+            0.028867765384561875
+          ],
+          "captured_operations_by_visit": [
+            68,
+            68,
+            68
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.16706637309766992,
+            "max_over_min_visit_median": 1.0046948105913043,
+            "passed": true
+          }
+        },
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "bfloat16",
+          "cache_policy": "rotating_buffers",
+          "median_ms": 0.02895811726065243,
+          "samples_ms": [
+            0.028991999104619026,
+            0.02895811726065243,
+            0.02883764750817243
+          ],
+          "captured_operations_by_visit": [
+            64,
+            68,
+            68
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.18891503542327048,
+            "max_over_min_visit_median": 1.0053524337032989,
+            "passed": true
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "dtype": "float16",
+          "kernel_names": [
+            "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn"
+          ],
+          "captured_gemm_count": 95,
+          "cuda_kernel_event_count": 95,
+          "captured_at_utc": "2026-11-06T07:25:01.550342+00:00",
+          "trace_path": "traces/m1_n8192_k2048_float16.json",
+          "kernel_duration_median_us": 28.416,
+          "kernel_duration_sum_per_gemm_us": 28.783926315789472,
+          "kernel_grid": [
+            64,
+            1,
+            1
+          ],
+          "kernel_block": [
+            128,
+            1,
+            1
+          ],
+          "shared_memory_bytes": 98304
+        },
+        {
+          "dtype": "bfloat16",
+          "kernel_names": [
+            "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x4_tn"
+          ],
+          "captured_gemm_count": 85,
+          "cuda_kernel_event_count": 85,
+          "captured_at_utc": "2026-11-06T07:25:01.573029+00:00",
+          "trace_path": "traces/m1_n8192_k2048_bfloat16.json",
+          "kernel_duration_median_us": 24.768,
+          "kernel_duration_sum_per_gemm_us": 24.825917647058823,
+          "kernel_grid": [
+            64,
+            1,
+            1
+          ],
+          "kernel_block": [
+            128,
+            1,
+            1
+          ],
+          "shared_memory_bytes": 98304
+        }
+      ]
+    },
+    "repeat": {
+      "measurements": [
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "bfloat16",
+          "cache_policy": "warm_reuse",
+          "median_ms": 0.02488336908189874,
+          "samples_ms": [
+            0.02488336908189874,
+            0.02542250633239746,
+            0.024874159267970493
+          ],
+          "captured_operations_by_visit": [
+            76,
+            75,
+            63
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.3155127876208676,
+            "max_over_min_visit_median": 1.0220448481703281,
+            "passed": true
+          }
+        },
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "float16",
+          "cache_policy": "warm_reuse",
+          "median_ms": 0.024935642285133477,
+          "samples_ms": [
+            0.024935642285133477,
+            0.025370666475007027,
+            0.024854793940504938
+          ],
+          "captured_operations_by_visit": [
+            67,
+            66,
+            73
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.27223743186529825,
+            "max_over_min_visit_median": 1.0207554540881303,
+            "passed": true
+          }
+        },
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "bfloat16",
+          "cache_policy": "rotating_buffers",
+          "median_ms": 0.029554822865654442,
+          "samples_ms": [
+            0.029212706229266,
+            0.029644236845128676,
+            0.029554822865654442
+          ],
+          "captured_operations_by_visit": [
+            68,
+            68,
+            68
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.35497051747633646,
+            "max_over_min_visit_median": 1.0147720177814392,
+            "passed": true
+          }
+        },
+        {
+          "case_id": "m1_n8192_k2048",
+          "dtype": "float16",
+          "cache_policy": "rotating_buffers",
+          "median_ms": 0.02945411906522863,
+          "samples_ms": [
+            0.029261177077012902,
+            0.0296898834845599,
+            0.02945411906522863
+          ],
+          "captured_operations_by_visit": [
+            68,
+            68,
+            68
+          ],
+          "quality": {
+            "max_within_visit_cv_pct": 0.5476170582911088,
+            "max_over_min_visit_median": 1.0146510308323784,
+            "passed": true
+          }
+        }
+      ],
+      "profiles": [
+        {
+          "dtype": "float16",
+          "kernel_names": [
+            "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn"
+          ],
+          "captured_gemm_count": 67,
+          "cuda_kernel_event_count": 67,
+          "captured_at_utc": "2026-11-06T07:31:44.082193+00:00",
+          "trace_path": "traces/m1_n8192_k2048_float16.json",
+          "kernel_duration_median_us": 20.512,
+          "kernel_duration_sum_per_gemm_us": 20.614462686567165,
+          "kernel_grid": [
+            64,
+            1,
+            1
+          ],
+          "kernel_block": [
+            128,
+            1,
+            1
+          ],
+          "shared_memory_bytes": 98304
+        },
+        {
+          "dtype": "bfloat16",
+          "kernel_names": [
+            "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x4_tn"
+          ],
+          "captured_gemm_count": 76,
+          "cuda_kernel_event_count": 76,
+          "captured_at_utc": "2026-11-06T07:31:44.101082+00:00",
+          "trace_path": "traces/m1_n8192_k2048_bfloat16.json",
+          "kernel_duration_median_us": 19.9525,
+          "kernel_duration_sum_per_gemm_us": 20.03109210526316,
+          "kernel_grid": [
+            64,
+            1,
+            1
+          ],
+          "kernel_block": [
+            128,
+            1,
+            1
+          ],
+          "shared_memory_bytes": 98304
+        }
+      ]
+    },
+    "interpretation": "For m1_n8192_k2048, later independent primary/repeat profiles use identical kernel names and grid/block/shared-memory metadata for each dtype; profile median kernel durations move in the opposite direction to timing labels. These later captures cannot identify the cause of the measured warm-reuse repeat latency change."
+  }
+}

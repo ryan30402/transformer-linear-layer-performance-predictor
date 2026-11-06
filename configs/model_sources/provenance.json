@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-11-06",
+  "description": "Raw, immutable public architecture configuration snapshots. No model weights are included. Revisions identify commits containing the exact retrieved config bytes, not floating main branches.",
+  "sources": [
+    {
+      "id": "qwen2_5_0_5b",
+      "repository": "Qwen/Qwen2.5-0.5B",
+      "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+      "file": "qwen2_5_0_5b.json",
+      "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+      "bytes": 681,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B/raw/b937cc073b55e980e6f21d5f8b7a77818efcf0eb/config.json"
+    },
+    {
+      "id": "qwen2_5_1_5b",
+      "repository": "Qwen/Qwen2.5-1.5B",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "file": "qwen2_5_1_5b.json",
+      "sha256": "0e8c8aa86468aba09c9d32157ff4bc2301c7e6c50e4398960425b2ea71e66f77",
+      "bytes": 684,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/8faed761d45a263340a0528343f099c05c9a4323/config.json"
+    },
+    {
+      "id": "qwen2_5_3b",
+      "repository": "Qwen/Qwen2.5-3B",
+      "revision": "a895be0c08c468bdcd02a1eb4fd87d437bbc1c73",
+      "file": "qwen2_5_3b.json",
+      "sha256": "27467e2fc311a7656c09a43ae9c3d408211e1f212bbddbc93c8596a06423826f",
+      "bytes": 683,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B/raw/a895be0c08c468bdcd02a1eb4fd87d437bbc1c73/config.json"
+    },
+    {
+      "id": "smollm2_1_7b",
+      "repository": "HuggingFaceTB/SmolLM2-1.7B",
+      "revision": "4fa12cab4f5f53670b05125fb9d2873af587d231",
+      "file": "smollm2_1_7b.json",
+      "sha256": "33397f6af8090f7290f27ce6fb1cd23a95fd0915a5c648dfd10b6002aaf7fc48",
+      "bytes": 635,
+      "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B/raw/4fa12cab4f5f53670b05125fb9d2873af587d231/config.json"
+    },
+    {
+      "id": "tinyllama_1_1b",
+      "repository": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "revision": "26d45f26ea2159eee86ccb80db170f755c1b3d95",
+      "file": "tinyllama_1_1b.json",
+      "sha256": "486bedda3a6988332e60d9638a09ca4b260d34ebcf1b19e22cf3b140b63d8fe9",
+      "bytes": 608,
+      "url": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0/raw/26d45f26ea2159eee86ccb80db170f755c1b3d95/config.json"
+    }
+  ]
+}

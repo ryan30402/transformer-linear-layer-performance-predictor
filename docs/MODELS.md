@@ -1,146 +1,75 @@
-# Latency Models
+# Grouped Model Selection and Latency Prediction
 
-The project compares five compact models of one measured operation. All main models fit the same 24 calibration shapes. Twelve development shapes select hyperparameters and the official model; test and challenge labels are reserved for evaluation. FP16 and BF16 models are fitted separately.
+The current model workflow selects configurations on an already measured offline dataset. Its primary objective is weighted mean absolute percentage error, evaluated out of fold by N/K family. The earlier median-only selector is retained only for verifying the recorded [baseline models](BASELINE_MODELS.md).
 
-Implementation: [`linear_perf/models.py`](../linear_perf/models.py). The [protocol](PROTOCOL.md) defines the measurement target and data permissions.
+## Why change the selection objective
 
-## Inputs, outputs, and units
+A median can hide severe errors affecting fewer than half the examples. Mean APE makes every shape's relative error contribute to selection. The workload weights describe model operation occurrences under a declared M sampling grid; they are not inferred from held-out errors or claimed to represent live traffic. Unweighted and tail metrics remain available so weighting does not hide failures.
 
-For `X[M, K] @ W[N, K].T`, define:
+P90 APE breaks a tie in the primary score, followed by deterministic model order. This choice is an engineering objective, not a universal industry accuracy standard. If a future use case optimizes kernel ranking, capacity, or absolute delay, its selection objective should be declared separately and evaluated on new held-out data.
 
-$$
-F = 2MNK, \qquad Q = b(MK + NK + MN),
-$$
+## Training and validation
 
-where F is the conventional floating-point operation count and b is bytes per element. FP16 and BF16 both use b = 2 here. Q counts an idealized input read, weight read, and output write. It is a shape-derived proxy, not a hardware measurement of DRAM traffic. Cache reuse, tiling, and repeated loads can change actual traffic. The [NVIDIA matrix multiplication guide](REFERENCES.md#matrix-multiplication) explains the arithmetic-intensity reasoning behind these features.
+Only rows with `split="train"` enter `fit_cv_suite`. For historical reanalysis, calibration and development rows are explicitly mapped into the training pool; test/challenge rows are not.
 
-Prediction functions return **milliseconds**. Reports usually display microseconds. With P expressed in TFLOP/s and B in GB/s, the code uses `F / (P * 1e9)` and `Q / (B * 1e6)` to obtain milliseconds.
+Whole N/K families are allocated to folds. With a small number of families, a family is left out in each fold; larger sets use a bounded grouped partition. Every feature scaler and model is fitted on the training portion of that fold. Candidate scores come from validation predictions, with fold scores and dispersion reported.
 
-| ID | Prediction structure | Main assumption |
-|---|---|---|
-| `flop_only` | Fixed term + compute term | One effective arithmetic rate explains shape dependence |
-| `roofline_2p` | Maximum of compute and memory terms | Two effective rates, with a fixed zero offset |
-| `roofline_3p` | Fixed term + maximum of compute and memory terms | A fixed term plus two effective rates |
-| `shape_log_ridge` | Exponentiated regularized linear model of shape features | Shape features explain log latency |
-| `roofline_residual_krr` | Two-parameter Roofline times a learned correction | Similar shapes share residual behavior around a physical baseline |
+After selection, the chosen configuration for each family is fitted again using all training rows. Test, challenge, and irregular stress rows are evaluated only after this step. Their existence on disk does not prevent ordinary offline model training.
 
-## 1. FLOP-only baseline
+Cross-validation scores are used for tuning. They are not advertised as independent test scores or as calibrated confidence intervals.
 
-In consistent time units:
+## Candidate families
 
-$$
-\hat t = t_0 + F/P.
-$$
+| Candidate | Purpose |
+|---|---|
+| FLOP-only | Tests how much a fixed term and arithmetic amount explain. |
+| Roofline 2p | A compact compute/memory proxy with no fitted offset. |
+| Roofline 3p | Adds a fixed term for effects missing from the resource proxy. |
+| Shape-log Ridge | Fits log latency using regularized geometric features. |
+| Roofline residual KRR | Learns a multiplicative correction to the two-parameter baseline. |
 
-Both the offset and effective compute rate are fitted. This is not simply a line through the origin. It is a useful baseline for testing whether the byte proxy and richer shape features add predictive information.
+The two-parameter residual baseline is retained as a declared simple reference: it limits the interaction between a separately fitted offset and the residual correction. This is a modeling choice, not a claim that it is always better than a three-parameter residual baseline. A direct 2p/3p residual ablation would be a new comparison.
 
-The positive parameters are optimized using robust least squares on log prediction errors. A fixed set of starting points reduces sensitivity to an arbitrary initialization. Training fit quality alone is not evidence of held-out accuracy.
+## Geometry and hardware
 
-## 2. Two-parameter Roofline
+Ridge and KRR share a declared geometric feature policy: dimensions, arithmetic/data proxies, aspect ratio, small-M behavior, alignment, tile waste, and SM-aware candidate-wave features. Means and scales are learned from training data only.
 
-$$
-\hat t = \max(F/P, Q/B).
-$$
+The wave features use candidate tile geometries and the recorded number of streaming multiprocessors. They are available without executing an unseen case. They do not assert that cuBLAS selected one of those exact tiles. Kernel names captured by the diagnostic profiler are excluded from predictor inputs.
 
-The maximum represents a simplified overlap hypothesis: whichever resource term is larger determines the estimate. Fixing the offset to zero reduces the number of fitted parameters. It does not assert that launch overhead is physically zero.
+A missing SM count is explicitly represented according to the implementation's fallback policy, rather than silently assuming 108 SMs. Changing architecture can change algorithm selection, cache behavior, and effective coefficients in ways a wave proxy cannot repair.
 
-The fit uses positive parameters, three fixed starting points, and a robust log-error objective. If all calibration shapes activate only one branch of the maximum, the other rate is not identifiable from those observations. That condition is reported.
+## Units and interpretation
 
-## 3. Three-parameter Roofline
+Predictions use milliseconds. The conventional operation count is `F = 2*M*N*K`; `Q = bytes_per_element*(M*K + N*K + M*N)` is a logical tensor-byte proxy.
 
-$$
-\hat t = t_0 + \max(F/P, Q/B).
-$$
+Effective compute, bandwidth, and offset coefficients are regression parameters. They are not measured hardware peaks, actual DRAM traffic, or directly isolated CPU launch overhead. Positivity, numerical bounds, and prediction clipping protect the fitting procedure; they do not create prediction intervals.
 
-The offset can absorb effects the two resource terms do not describe. The fit records sensitivity rank, conditioning, proximity to numerical bounds, and variation among near-equivalent starting-point solutions.
+The predictor is evaluated separately for each environment, dtype and cache contract. No warm and rotating-buffer labels are silently mixed, and simulated observations cannot be mixed with CUDA measurements.
 
-**Fitted P, B, and t0 are effective regression coefficients.** They are not measured peak TFLOP/s, measured memory bandwidth, or a direct measurement of CPU submission overhead. A small fitted error can coexist with weakly constrained parameters. For example, if only the compute branch is active, many bandwidth values can produce nearly identical predictions.
+## Retrospective versus new evidence
 
-The model also cannot establish a real bottleneck merely by labeling its larger term. Such a hardware claim would require additional measurements under the same workload contract.
+Changing the criterion over the five previously fitted candidates is different from repeating hyperparameter search and refitting on a larger training pool. The review analysis keeps these comparisons separate.
 
-## 4. Shape-log Ridge
+Analysis of the historical six-session A100 snapshot is retrospective: those
+test outcomes informed design discussion. Original selected-model scores remain
+unchanged. The [completed v1.1.0 experiment](RESULTS.md) evaluates the revised
+workflow on its own declared splits. Those results have now been inspected to
+diagnose limitations; future model changes require new final evaluation cases
+for fresh generalization claims.
 
-The target is natural log latency. A linear model is fitted to 15 standardized features:
+## Observed limitations in the completed A100 experiment
 
-| Feature group | Features | Count |
-|---|---|---:|
-| Dimensions | `log2(M)`, `log2(N)`, `log2(K)` | 3 |
-| Work/data balance | `log2(F/Q)`, `log2(Q)` | 2 |
-| Aspect ratio | `log2(N/K)` | 1 |
-| Small-M behavior | `exp(-M/32)`, `exp(-M/128)` | 2 |
-| Alignment flags | Whether N and K are not divisible by 8 or 16 | 4 |
-| Padding proxies | `1 - D / (128 * ceil(D/128))`, for D = M, N, K | 3 |
+The residual KRR multiplies a zero-offset Roofline 2p baseline by a correction
+restricted to 0.25–4. On several small ordinary-test cases, the upper bound is
+active and prevents a sufficiently large prediction. The bound is part of the
+measured version, not a rule inferred from the test answers. An additive-overhead
+baseline or a different correction bound remains a future training-CV comparison.
 
-The 128-based features are fixed geometric proxies. The experiment does not measure or infer an actual 128-element tile choice from them.
-
-For standardized features z, the model is:
-
-$$
-\log \hat t = a + z^T\beta.
-$$
-
-Feature means and scales are computed from the calibration set alone and stored with the model. The centered log-target is fitted with an L2 penalty on coefficients; the intercept is not penalized. Development median APE chooses alpha from `0.1, 1, 10, 100`.
-
-Predicting in log space produces positive latency and gives relative differences a natural scale. The implementation clips log predictions to predeclared bounds extending a factor of 100 beyond the observed training-time range. Those bounds prevent extreme numerical output; they are not uncertainty intervals.
-
-## 5. Roofline residual KRR
-
-This model starts with the **two-parameter** Roofline prediction, `t_base`. It learns a correction to the ratio between measured and baseline time:
-
-$$
-r_i = \log(t_i / t_{\mathrm{base},i}), \qquad
-\hat t(x) = t_{\mathrm{base}}(x)\exp(\hat r(x)).
-$$
-
-The residual is multiplicative in time, not an additive number of milliseconds. A prediction of `exp(r) = 1.2`, for example, multiplies the baseline by 1.2.
-
-Five features describe each shape: `log2(M)`, `log2(N)`, `log2(K)`, and separate N/K non-multiple-of-16 flags. Training-only standardization is applied before computing RBF similarity:
-
-$$
-k(z,z') = \exp\left(-\frac{\lVert z-z'\rVert^2}{2\ell^2}\right).
-$$
-
-Kernel ridge regression solves `(G + alpha * I) w = r`, where G is the pairwise similarity matrix. Here **kernel** means a mathematical similarity function; it is unrelated to an executable CUDA kernel.
-
-The development search covers:
-
-- Alpha: `0.01, 0.1, 1`.
-- Length scale: `0.5, 1, 2, 4`.
-
-The correction is clipped to a multiplier between 1/4 and 4. Far from the training features, RBF similarities approach zero, so the residual correction approaches zero and the prediction approaches the Roofline baseline. Neither the fallback nor the multiplier bound guarantees accuracy outside the calibration domain.
-
-## Selection and serialization
-
-The family-specific hyperparameter searches and overall model choice use the same declared rule: development median APE, then development P90 APE, then fixed order. There is no calibration-plus-development refit after selection.
-
-Every model is a JSON-serializable payload containing parameters, feature transforms, calibration identity, and a content digest. A suite records all five models, the complete development scores, hyperparameter trials, and the selected model. Predictions for the held-out shapes are stored before their measurements are collected.
-
-For a newly collected native run, predictions can be computed on a CPU without GPU execution:
-
-```python
-import json
-from pathlib import Path
-from linear_perf.models import predict_model
-
-suite = json.loads(Path("runs/fp16_s01/model_suite.json").read_text())
-model = suite["models"][suite["selected_model_id"]]
-cases = [{"id": "example", "m": 48, "n": 1536, "k": 1024}]
-latency_ms = predict_model(model, cases, suite["dtype"])[0]
-print(f"Predicted latency: {latency_ms * 1000:.3f} us")
-```
-
-The published snapshot uses its dedicated verifier to preserve the separation between recorded artifact identities and publication packaging. The example above uses the native `model_suite.json` created by a fresh run of this release.
-
-## How to interpret errors
-
-For measured time t and predicted time p:
-
-$$
-\mathrm{APE} = 100\frac{|p-t|}{t}.
-$$
-
-Median APE describes the middle shape error, not the error of every shape. P90 and worst APE reveal tails. RMSE/MAE expose absolute time error; signed bias uses `prediction - observation`. Pairwise ordering measures whether the model orders shapes correctly, after excluding measured near-ties. A model can rank shapes well and still predict poor absolute latencies.
-
-The release also reports `sqrt(mean(log(p/t)^2))` and `exp(mean(abs(log(p/t))))`. The second is a geometric multiplicative error: 1 is exact; 2 denotes a factor-of-two geometric average error. It is not signed bias.
-
-All metrics are evaluated on distinct aggregated shape targets. Block ranges describe the observed timing spread; they are not calibrated prediction intervals. Model domain flags and bootstrap ranges have similarly limited meanings, described in the [protocol](PROTOCOL.md#8-evaluation-and-uncertainty).
+All N/K alignment indicators are constant zero in the training workload, while
+the separate irregular stress set introduces N+1 and K+1 dimensions. Features
+alone do not supply examples of the changed execution behavior. The stress
+results expose this missing training support; their poor errors are not explained
+by active correction clipping. Warm-reuse predictions for unseen N/K families
+also retain substantial errors. See [RESULTS.md](RESULTS.md) for the exact
+per-context metrics and failure examples. The predictor implementation has not
+been adjusted after inspecting these results.

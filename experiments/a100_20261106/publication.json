@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "protocol_version": "1.1.0",
+  "session_id": "fresh_20261106T065308_c5e789",
+  "recorded_date_utc": "2026-11-06",
+  "archive": {
+    "file": "results.zip",
+    "sha256": "a601e14bb3d1d2b661f06021432b461104850452ddcc1c695c55006db29374b1",
+    "bytes": 11255177,
+    "manifest_file_count": 1444
+  },
+  "measurement_source": {
+    "archive_member": "source_archive.zip",
+    "sha256": "1f748883a23d0e9706856493eb011eec88d5e3f8926fafd3874c5d23d2c8345a",
+    "scope": "Exact source archive retained by the completed measurement run; publication documentation and verification scripts are separate."
+  },
+  "exact_copies": {
+    "selected_model_metrics.csv": "run/selected_model_metrics.csv",
+    "metrics.csv": "run/primary/analysis/metrics.csv"
+  },
+  "completion": {
+    "status": "completed",
+    "required_stages_completed": true,
+    "all_requested_stages_completed": true,
+    "measurement_kind": "cuda_measured",
+    "measurement_quality_passed": false
+  },
+  "counts": {
+    "primary_shapes": 609,
+    "primary_rows": 2256,
+    "repeat_shapes": 77,
+    "repeat_rows": 280,
+    "selected_metric_rows": 12,
+    "all_candidate_metric_rows": 60
+  },
+  "review": "review.html",
+  "verification_command": "python scripts/verify_fresh_results.py",
+  "scope": "One A100 session with preallocated CUDA-graph GEMM timing. Quality flags are retained; no serving, arbitrary-GPU, or per-shape error guarantee.",
+  "path_normalization": "Only derived review metadata uses archive-relative paths. results.zip and its exact CSV copies are unchanged."
+}

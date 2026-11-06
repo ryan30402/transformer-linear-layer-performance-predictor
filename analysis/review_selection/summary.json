@@ -1,0 +1,127 @@
+{
+  "analysis_type": "retrospective_design_review_recomputation",
+  "bf16_roofline_3p_development_tail": [
+    {
+      "ape_gt_50_case_ids": "d05 d09 d10 d11 d12",
+      "ape_gt_50_count": 5,
+      "dtype": "bfloat16",
+      "irregular_ape_gt_50_case_ids": "d09 d10 d11 d12",
+      "irregular_ape_gt_50_count": 4,
+      "mae_ms": 0.014336929352276302,
+      "max_ape_pct": 73.63710183059314,
+      "mean_ape_pct": 30.087378409115036,
+      "median_ape_pct": 13.634845992358365,
+      "model_id": "roofline_3p",
+      "n": 12,
+      "n_fit": 24,
+      "p90_ape_pct": 69.80243037872232,
+      "rmse_ms": 0.02623608670554346,
+      "scope": "Criterion-only replay: candidate hyperparameters and fit remain unchanged.",
+      "session_id": "bf16_s01"
+    },
+    {
+      "ape_gt_50_case_ids": "d05 d09 d10 d11 d12",
+      "ape_gt_50_count": 5,
+      "dtype": "bfloat16",
+      "irregular_ape_gt_50_case_ids": "d09 d10 d11 d12",
+      "irregular_ape_gt_50_count": 4,
+      "mae_ms": 0.014350527365297844,
+      "max_ape_pct": 73.59711426371771,
+      "mean_ape_pct": 30.136004219021952,
+      "median_ape_pct": 13.465214489116972,
+      "model_id": "roofline_3p",
+      "n": 12,
+      "n_fit": 24,
+      "p90_ape_pct": 70.03802356209188,
+      "rmse_ms": 0.02645792879576969,
+      "scope": "Criterion-only replay: candidate hyperparameters and fit remain unchanged.",
+      "session_id": "bf16_s02"
+    },
+    {
+      "ape_gt_50_case_ids": "d05 d09 d10 d11 d12",
+      "ape_gt_50_count": 5,
+      "dtype": "bfloat16",
+      "irregular_ape_gt_50_case_ids": "d09 d10 d11 d12",
+      "irregular_ape_gt_50_count": 4,
+      "mae_ms": 0.014275499681887266,
+      "max_ape_pct": 73.47239330529685,
+      "mean_ape_pct": 29.989281257256277,
+      "median_ape_pct": 12.769019871414699,
+      "model_id": "roofline_3p",
+      "n": 12,
+      "n_fit": 24,
+      "p90_ape_pct": 70.00718581193652,
+      "rmse_ms": 0.026323528638797635,
+      "scope": "Criterion-only replay: candidate hyperparameters and fit remain unchanged.",
+      "session_id": "bf16_s03"
+    }
+  ],
+  "criterion_only_krr_selection_counts": {
+    "max_ape_pct": 6,
+    "mean_ape_pct": 6,
+    "median_ape_pct": 1,
+    "p90_ape_pct": 6
+  },
+  "cv_refit_selected_models": {
+    "bf16_s01": "roofline_residual_krr",
+    "bf16_s02": "roofline_residual_krr",
+    "bf16_s03": "roofline_residual_krr",
+    "fp16_s01": "roofline_residual_krr",
+    "fp16_s02": "roofline_residual_krr",
+    "fp16_s03": "roofline_residual_krr"
+  },
+  "gpu_operations_performed": 0,
+  "interpretation_limits": [
+    "Old test/challenge labels were already inspected before the modeling revision; scores describe known data.",
+    "Criterion-only comparisons reuse originally median-tuned candidates and do not retune their hyperparameters.",
+    "New grouped CV/refitting changes several design choices, so accuracy differences cannot be assigned to one cause.",
+    "CV winner scores are tuning scores; fold spread is not a confidence interval for deployment error.",
+    "Three sessions per dtype reuse the same shapes and are not six independent workload samples.",
+    "All historical data in this analysis use warm buffer reuse; no rotation-cache accuracy claim is made."
+  ],
+  "recorded_results_hash": "d7da41b3957ca571583dc00798a9c8b599cf370dcb70ff6a91c0d33d48aa9c85",
+  "recorded_results_unchanged": true,
+  "schema_version": 1,
+  "scope": "Retrospective analysis of previously published, already inspected test labels; no new held-out accuracy claim.",
+  "sessions": 6,
+  "source_paths": [
+    "results/a100/fp16_s01",
+    "results/a100/fp16_s02",
+    "results/a100/fp16_s03",
+    "results/a100/bf16_s01",
+    "results/a100/bf16_s02",
+    "results/a100/bf16_s03"
+  ],
+  "source_verification": {
+    "archived_numerical_witnesses_recomputed": 24,
+    "bytes_verified": 70445615,
+    "checks": 39708,
+    "distinct_shapes": 96,
+    "files_verified": 264,
+    "gpu_operations_performed": 0,
+    "model_refits_performed": 0,
+    "per_session_checks": {
+      "bf16_s01": 6006,
+      "bf16_s02": 6006,
+      "bf16_s03": 6006,
+      "fp16_s01": 6006,
+      "fp16_s02": 6006,
+      "fp16_s03": 6006
+    },
+    "primary_event_repeat_means": 15552,
+    "recorded_acquisition_audit_count_is_separate": true,
+    "scope": "Exported-file integrity and CPU recomputation of retained evidence; not independent GPU attestation or reconstruction of omitted original archive bytes.",
+    "selected_models": {
+      "bf16_s01": "roofline_3p",
+      "bf16_s02": "roofline_3p",
+      "bf16_s03": "roofline_3p",
+      "fp16_s01": "shape_log_ridge",
+      "fp16_s02": "shape_log_ridge",
+      "fp16_s03": "roofline_residual_krr"
+    },
+    "sessions": 6,
+    "shape_session_labels": 576,
+    "status": "passed",
+    "verification_kind": "publication_snapshot_cpu_verification"
+  }
+}

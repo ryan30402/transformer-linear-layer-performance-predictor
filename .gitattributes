@@ -4,3 +4,6 @@
 *.zip binary
 # Recorded evidence is checksummed byte for byte, including CSV line endings.
 results/** -text
+experiments/** -text
+# Recorded CSV files may use CRLF; retain those bytes and check other whitespace.
+experiments/**/*.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

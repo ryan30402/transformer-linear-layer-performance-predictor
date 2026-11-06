@@ -25,7 +25,7 @@ import zipfile
 
 
 TEMPLATE = Path(__file__).resolve().parents[1] / "release_tools" / "colab_launcher_template.py"
-ARCHIVE_ROOT = "transformer-linear-layer-performance-predictor-1.0.0/"
+ARCHIVE_ROOT = "transformer-linear-layer-performance-predictor-1.1.0/"
 
 
 def archive_bytes(entries):
@@ -38,12 +38,14 @@ def archive_bytes(entries):
     return handle.getvalue()
 
 
-def fixture_payload():
-    plan = json.dumps({"protocol_version": "1.0.0", "cases": [{"fixture_only": True}] * 104})
+def fixture_payload(*, additional_source=""):
+    plan = json.dumps({"protocol_version": "1.1.0", "cases": [
+        {"fixture_only": True, "split": split} for split in ("train", "test", "challenge", "stress")
+    ]})
     return archive_bytes([
-        (ARCHIVE_ROOT + "linear_perf/campaign.py", '"""Harmless syntax fixture; never executed."""\n'),
-        (ARCHIVE_ROOT + "configs/fp16_graph.json", plan),
-        (ARCHIVE_ROOT + "configs/bf16_graph.json", plan),
+        (ARCHIVE_ROOT + "linear_perf/cli.py", '"""Harmless syntax fixture; never executed."""\n' + additional_source),
+        (ARCHIVE_ROOT + "configs/workloads.json", plan),
+        (ARCHIVE_ROOT + "configs/workloads_smoke.json", plan),
         (ARCHIVE_ROOT + "requirements-analysis-lock.txt",
          "numpy==2.3.5\nscipy==1.17.0\nmatplotlib==3.10.8\n"),
     ])
@@ -82,7 +84,7 @@ class ReleaseToolsContracts(unittest.TestCase):
         destination = self.root / "source"
         result = self.launcher.safe_extract(self.raw, destination)
         self.assertEqual(result, destination.resolve())
-        source = destination / ARCHIVE_ROOT / "linear_perf" / "campaign.py"
+        source = destination / ARCHIVE_ROOT / "linear_perf" / "cli.py"
         original = source.read_bytes()
         with self.assertRaisesRegex(ValueError, "already exists"):
             self.launcher.safe_extract(self.raw, destination)
@@ -274,18 +276,52 @@ class ReleaseToolsContracts(unittest.TestCase):
                 state = json.loads(archive.read("launcher_status.json"))
             self.assertEqual(state["worker"], worker_result)
 
-    def result_payload(self, *, wrong_release=False, changed_source=False,
-                       corrupt_member=False, extra_unlisted=False):
-        source = self.raw + b"changed" if changed_source else self.raw
+    def test_run_forwards_both_precisions_and_selected_workload_without_cuda(self):
+        success = {"returncode": 0, "timed_out": False, "interrupted": False,
+                   "automatic_retries": 0, "elapsed_seconds": 0.1}
+        cases = (
+            ("standard", {}, "run", "workloads.json", ("float16", "bfloat16"), 7200),
+            ("smoke", {"profile": "smoke", "action": "collect", "dtypes": ("bfloat16",),
+                       "repeat_subset": True, "skip_profiles": True, "l2_cache_mib": 40.5,
+                       "max_wall_seconds": 300}, "collect", "workloads_smoke.json", ("bfloat16",), 300),
+        )
+        for name, options, action, config, dtypes, budget in cases:
+            with self.subTest(name=name), \
+                    patch.object(self.launcher, "ensure_dependencies", return_value={"fixture_only": True}), \
+                    patch.object(self.launcher, "worker", return_value=success) as worker, \
+                    contextlib.redirect_stdout(io.StringIO()):
+                result = self.launcher.run(session_id=name, simulate=True, base_directory=self.root, **options)
+            worker.assert_called_once()
+            command = worker.call_args.args[0]
+            self.assertEqual(command[:5], [sys.executable, "-u", "-m", "linear_perf", action])
+            self.assertEqual(Path(command[command.index("--config") + 1]).name, config)
+            start = command.index("--dtypes") + 1
+            self.assertEqual(tuple(command[start:start + len(dtypes)]), dtypes)
+            self.assertIn("--simulate", command)
+            self.assertEqual(command[command.index("--max-wall-seconds") + 1], str(budget))
+            self.assertEqual(worker.call_args.kwargs["timeout"], budget + 900)
+            self.assertEqual(result["status"], "worker_completed")
+            if name == "smoke":
+                self.assertIn("--repeat-subset", command)
+                self.assertIn("--skip-profiles", command)
+                self.assertEqual(command[command.index("--l2-cache-mib") + 1], "40.5")
+
+    def result_payload(self, *, wrong_source_hash=False, changed_source=False,
+                       corrupt_member=False, extra_unlisted=False, source_raw=None,
+                       wrong_launcher_hash=False, action="run", status="worker_completed"):
+        recorded_source = self.raw if source_raw is None else source_raw
+        recorded_hash = hashlib.sha256(recorded_source).hexdigest()
+        source = recorded_source + b"changed" if changed_source else recorded_source
         files = {
             "source_archive.zip": source,
-            "source_archive.sha256": (self.launcher.SOURCE_SHA256 + "\n").encode(),
-            "launcher_status.json": b'{"status":"worker_completed","action":"run","fixture_only":true}',
+            "source_archive.sha256": (recorded_hash + "\n").encode(),
+            "launcher_status.json": json.dumps({"status": status, "action": action, "fixture_only": True,
+                                                "source_sha256": "0" * 64 if wrong_launcher_hash else recorded_hash}).encode(),
             "run/status.json": b'{"fixture_only":true}',
             "run/manifest.json": b'{"fixture_only":true}',
         }
         inventory = {
-            "source_sha256": "0" * 64 if wrong_release else self.launcher.SOURCE_SHA256,
+            "source_sha256": "0" * 64 if wrong_source_hash else recorded_hash,
             "files": {name: hashlib.sha256(value).hexdigest() for name, value in files.items()},
         }
         if corrupt_member:
@@ -295,12 +331,14 @@ class ReleaseToolsContracts(unittest.TestCase):
         files["export_manifest.json"] = json.dumps(inventory).encode()
         return archive_bytes(files.items())
 
-    def test_review_checks_inventory_known_release_and_actual_source_before_worker(self):
+    def test_review_checks_inventory_and_each_inputs_own_source_before_worker(self):
         faults = (
-            ("different-release", {"wrong_release": True}, "different release"),
-            ("changed-source", {"changed_source": True}, "source archive differs"),
+            ("wrong-source-hash", {"wrong_source_hash": True}, "source archive checksum differs"),
+            ("changed-source", {"changed_source": True}, "source archive checksum differs"),
+            ("launcher-source-mismatch", {"wrong_launcher_hash": True}, "internally consistent"),
             ("wrong-checksum", {"corrupt_member": True}, "checksum mismatch"),
             ("unlisted-file", {"extra_unlisted": True}, "inventory differs"),
+            ("incomplete-run", {"status": "worker_failed_evidence_retained"}, "Only completed"),
         )
         valid = self.result_payload()
         for name, kwargs, error in faults:
@@ -310,7 +348,7 @@ class ReleaseToolsContracts(unittest.TestCase):
                     patch.object(self.launcher, "worker") as worker, \
                     contextlib.redirect_stdout(io.StringIO()):
                 result = self.launcher.review(
-                    uploads, review_mode="transfer", result_order=["first.zip", "second.zip"],
+                    uploads, review_mode="repeat", result_order=["first.zip", "second.zip"],
                     review_id=name, base_directory=self.root,
                 )
             self.assertEqual(result["status"], "review_failed_evidence_retained")
@@ -332,7 +370,7 @@ class ReleaseToolsContracts(unittest.TestCase):
                 patch.object(self.launcher, "worker", return_value=success) as worker, \
                 contextlib.redirect_stdout(io.StringIO()):
             result = self.launcher.review(
-                uploads, review_mode="transfer", transfer_mode="gpu",
+                uploads, review_mode="gpu",
                 result_order=["b.zip", "a.zip"], review_id="ordered", base_directory=self.root,
             )
         self.assertEqual(result["status"], "worker_completed")
@@ -340,7 +378,7 @@ class ReleaseToolsContracts(unittest.TestCase):
         command = worker.call_args.args[0]
         workspace = Path(result["workspace"])
         self.assertEqual(command[:5], [
-            sys.executable, "-u", "-m", "linear_perf.campaign", "transfer",
+            sys.executable, "-u", "-m", "linear_perf", "compare",
         ])
         self.assertEqual(Path(command[command.index("--source") + 1]),
                          workspace / "inputs/input_01/run")
@@ -348,7 +386,8 @@ class ReleaseToolsContracts(unittest.TestCase):
                          workspace / "inputs/input_02/run")
         self.assertEqual(worker.call_args.kwargs["source"],
                          workspace / "source" / ARCHIVE_ROOT.rstrip("/"))
-        self.assertEqual(worker.call_args.kwargs["timeout"], 600)
+        self.assertEqual(command[command.index("--mode") + 1], "gpu")
+        self.assertEqual(worker.call_args.kwargs["timeout"], 900)
         with zipfile.ZipFile(result["archive"]) as archive:
             status = json.loads(archive.read("launcher_status.json"))
         self.assertEqual(status["result_order"], ["b.zip", "a.zip"])
@@ -358,12 +397,37 @@ class ReleaseToolsContracts(unittest.TestCase):
         self.assertFalse(status["gpu_executed_by_review"])
         self.assertEqual(uploads, originals)
 
+    def test_review_analyzes_one_compatible_dataset_from_different_source_code(self):
+        other_source = fixture_payload(additional_source="SOURCE_FIXTURE = 'different code; never imported'\n")
+        self.assertNotEqual(hashlib.sha256(other_source).hexdigest(), self.launcher.SOURCE_SHA256)
+        uploads = {"previous.zip": self.result_payload(source_raw=other_source, action="collect")}
+        success = {"returncode": 0, "timed_out": False, "interrupted": False,
+                   "automatic_retries": 0, "elapsed_seconds": 0.1}
+        with patch.object(self.launcher, "ensure_dependencies", return_value={"fixture_only": True}), \
+                patch.object(self.launcher, "worker", return_value=success) as worker, \
+                contextlib.redirect_stdout(io.StringIO()):
+            result = self.launcher.review(uploads, review_mode="analyze", review_id="later-code", base_directory=self.root)
+        self.assertEqual(result["status"], "worker_completed")
+        worker.assert_called_once()
+        command = worker.call_args.args[0]
+        workspace = Path(result["workspace"])
+        self.assertEqual(command[:5], [sys.executable, "-u", "-m", "linear_perf", "analyze"])
+        self.assertEqual(Path(command[command.index("--dataset") + 1]), workspace / "inputs/input_01/run")
+        self.assertEqual(worker.call_args.kwargs["source"], workspace / "source" / ARCHIVE_ROOT.rstrip("/"))
+        self.assertNotIn("SOURCE_FIXTURE", (worker.call_args.kwargs["source"] / "linear_perf/cli.py").read_text())
+        with zipfile.ZipFile(result["archive"]) as archive:
+            state = json.loads(archive.read("launcher_status.json"))
+        self.assertEqual(state["inputs"][0]["source_sha256"], hashlib.sha256(other_source).hexdigest())
+        self.assertEqual(state["source_sha256"], self.launcher.SOURCE_SHA256)
+        self.assertFalse(state["gpu_executed_by_review"])
+
     def test_review_rejects_wrong_input_count_and_duplicate_order_before_workspace(self):
         uploads = {"a.zip": self.result_payload(), "b.zip": self.result_payload()}
-        for mode, order in (("study", None), ("transfer", ["a.zip", "a.zip"])):
+        for mode, order, inputs in (("analyze", None, uploads), ("repeat", ["a.zip", "a.zip"], uploads),
+                                    ("gpu", None, {"a.zip": uploads["a.zip"]})):
             with self.subTest(mode=mode), self.assertRaisesRegex(ValueError, "exactly"):
                 self.launcher.review(
-                    uploads, review_mode=mode, result_order=order,
+                    inputs, review_mode=mode, result_order=order,
                     review_id="bad-count", base_directory=self.root,
                 )
         self.assertFalse((self.root / "linear-perf_bad-count_workspace").exists())

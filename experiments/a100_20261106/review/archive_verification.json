@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "a601e14bb3d1d2b661f06021432b461104850452ddcc1c695c55006db29374b1",
+  "files_verified": 1444,
+  "source_sha256": "1f748883a23d0e9706856493eb011eec88d5e3f8926fafd3874c5d23d2c8345a",
+  "source_matches_delivered_release": true,
+  "extracted_to": "results.zip!/",
+  "uploaded_source_executed": false,
+  "publication_path_normalization": "Review-only local paths are archive-relative; original result ZIP bytes are unchanged."
+}

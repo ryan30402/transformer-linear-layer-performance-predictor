@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "passed": true,
+  "protocol_version": "1.1.0",
+  "dataset": "results.zip!/run/repeat/dataset",
+  "measurement_kind": "cuda_measured",
+  "measurement_rows": 280,
+  "distinct_shapes": 77,
+  "contexts": 4,
+  "manifest_hash": "4aae787b768fd8794709aa1bae64a1d3c2ad7835c9ff36b2103317a374ac2850",
+  "record_validation": {
+    "passed": true,
+    "complete": true,
+    "checks": 61547,
+    "measurement_kind": "cuda_measured",
+    "rows": 280,
+    "raw_visits": 840,
+    "control_visits": 72,
+    "selected_shapes": 77,
+    "scope": "Manifest, environment, coverage, event normalization, arithmetic checks, and aggregation; no new GPU execution"
+  },
+  "measurement_quality": {
+    "passed": false,
+    "flagged_rows": [],
+    "controls": [
+      {
+        "case_id": "control_large",
+        "dtype": "bfloat16",
+        "visits": 12,
+        "max_over_min": 1.0137347670934074,
+        "passed": true
+      },
+      {
+        "case_id": "control_large",
+        "dtype": "float16",
+        "visits": 12,
+        "max_over_min": 1.0159577207333848,
+        "passed": true
+      },
+      {
+        "case_id": "control_small",
+        "dtype": "bfloat16",
+        "visits": 12,
+        "max_over_min": 1.0166334597810613,
+        "passed": true
+      },
+      {
+        "case_id": "control_small",
+        "dtype": "float16",
+        "visits": 12,
+        "max_over_min": 1.2835672024658589,
+        "passed": false
+      },
+      {
+        "case_id": "control_weight",
+        "dtype": "bfloat16",
+        "visits": 12,
+        "max_over_min": 1.021089343718311,
+        "passed": true
+      },
+      {
+        "case_id": "control_weight",
+        "dtype": "float16",
+        "visits": 12,
+        "max_over_min": 1.01408234671376,
+        "passed": true
+      }
+    ],
+    "thresholds": {
+      "quality_cv_pct": 10.0,
+      "quality_visit_ratio": 1.2,
+      "quality_control_ratio": 1.2
+    },
+    "interpretation": "Descriptive declared thresholds; flags are retained, not sample deletion or certification"
+  },
+  "scope": "Dataset membership, raw event divisors, visit aggregation, numerical-check records, coverage and context; no new GPU work",
+  "freeze_before_measurement_required": false
+}

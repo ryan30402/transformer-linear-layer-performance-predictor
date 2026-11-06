@@ -30,6 +30,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Verify published measurement evidence
         run: python scripts/verify_published_results.py
+      - name: Verify the completed v1.1.0 A100 experiment
+        run: python scripts/verify_fresh_results.py
       - name: Build and verify the embedded Colab release
         run: |
           python release_tools/build_release.py --out dist

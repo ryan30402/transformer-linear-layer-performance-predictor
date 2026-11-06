@@ -26,4 +26,30 @@ The benchmark uses execution and measurement principles documented by PyTorch an
 
 ## Project evidence
 
-The external documents explain measurement concepts. Actual claims about this experiment come from the [published dataset](../results/README.md), [all-model metrics](../results/summary/model_metrics.csv), [quality records](../results/summary/quality_and_audits.csv), and executable source. Official documentation does not establish this project's measured accuracy or validate its generalization claims.
+The external documents explain measurement concepts. Current experiment claims
+come from the [completed A100 evidence](../experiments/a100_20261106/README.md),
+[selected-model metrics](../experiments/a100_20261106/selected_model_metrics.csv),
+[all-model metrics](../experiments/a100_20261106/metrics.csv), and raw quality,
+timing, profiling, and model records in its unchanged result archive. The
+[historical dataset](../results/README.md) and its
+[quality records](../results/summary/quality_and_audits.csv) remain separate.
+Official documentation does not establish this project's measured accuracy or
+validate its generalization claims.
+
+## Offline model selection and data boundaries
+
+[scikit-learn: Common pitfalls and data leakage](https://scikit-learn.org/stable/common_pitfalls.html) describes fitting transforms and selecting models without test information. This project adopts ordinary offline label isolation; labels do not have to be acquired after fitting.
+
+[scikit-learn: GroupKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html) describes disjoint groups across training/validation folds. This project implements its own deterministic family grouping and records every fold; it does not depend on scikit-learn.
+
+[scikit-learn: GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) documents refitting the selected configuration on all available training data. Here weighted mean APE is a declared project objective, not a universal industry requirement. CV tuning scores remain separate from held-out evaluation.
+
+## Cache-sensitive microbenchmarks
+
+[NVIDIA NVBench](https://github.com/NVIDIA/nvbench/blob/main/README.md) distinguishes measurement contexts including cache effects. The project's four-buffer rotation is an explicit comparison condition; it does not claim NVBench equivalence, guaranteed cold-cache execution, or realistic whole-model traffic.
+
+## Workload architecture sources
+
+Five public Hugging Face model configuration files are pinned by immutable commit and raw SHA256 in [model-source provenance](../configs/model_sources/provenance.json): Qwen2.5-0.5B, Qwen2.5-1.5B, Qwen2.5-3B, SmolLM2-1.7B and TinyLlama-1.1B-Chat-v1.0. The configuration snapshots supply architectural dimensions; synthetic shape frequencies are not claims about deployment traffic. Model weights are not included.
+
+The optional decoder validator follows the declared Llama/Qwen2 dense-decoder architecture and uses [PyTorch scaled dot-product attention](https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html). Its random weights and independently timed components do not establish accuracy of a pretrained language model or identify the automatically selected SDPA kernel.

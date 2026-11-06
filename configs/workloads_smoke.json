@@ -1,0 +1,1496 @@
+{
+  "schema_version": 2,
+  "protocol_version": "1.1.0",
+  "name": "model_config_smoke_workload",
+  "profile": "smoke",
+  "seed": 20261106,
+  "workflow": "collect_all_then_grouped_cv_refit_and_evaluate",
+  "dtypes": [
+    "float16",
+    "bfloat16"
+  ],
+  "cases": [
+    {
+      "id": "m1_n128_k896",
+      "m": 1,
+      "n": 128,
+      "k": 896,
+      "split": "train",
+      "family": "nk_128_896",
+      "weight": 0.9600000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 231424,
+      "provenance_ref": "nk_128_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m3_n128_k896",
+      "m": 3,
+      "n": 128,
+      "k": 896,
+      "split": "test",
+      "family": "nk_128_896",
+      "weight": 0.9600000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 235520,
+      "provenance_ref": "nk_128_896",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m16_n128_k896",
+      "m": 16,
+      "n": 128,
+      "k": 896,
+      "split": "train",
+      "family": "nk_128_896",
+      "weight": 0.9600000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 262144,
+      "provenance_ref": "nk_128_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m48_n128_k896",
+      "m": 48,
+      "n": 128,
+      "k": 896,
+      "split": "test",
+      "family": "nk_128_896",
+      "weight": 0.9600000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 327680,
+      "provenance_ref": "nk_128_896",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m256_n128_k896",
+      "m": 256,
+      "n": 128,
+      "k": 896,
+      "split": "train",
+      "family": "nk_128_896",
+      "weight": 0.9600000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 753664,
+      "provenance_ref": "nk_128_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m1_n256_k1536",
+      "m": 1,
+      "n": 256,
+      "k": 1536,
+      "split": "train",
+      "family": "nk_256_1536",
+      "weight": 1.12,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 790016,
+      "provenance_ref": "nk_256_1536",
+      "coverage": "training"
+    },
+    {
+      "id": "m3_n256_k1536",
+      "m": 3,
+      "n": 256,
+      "k": 1536,
+      "split": "test",
+      "family": "nk_256_1536",
+      "weight": 1.12,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 797184,
+      "provenance_ref": "nk_256_1536",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m16_n256_k1536",
+      "m": 16,
+      "n": 256,
+      "k": 1536,
+      "split": "train",
+      "family": "nk_256_1536",
+      "weight": 1.12,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 843776,
+      "provenance_ref": "nk_256_1536",
+      "coverage": "training"
+    },
+    {
+      "id": "m48_n256_k1536",
+      "m": 48,
+      "n": 256,
+      "k": 1536,
+      "split": "test",
+      "family": "nk_256_1536",
+      "weight": 1.12,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 958464,
+      "provenance_ref": "nk_256_1536",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m256_n256_k1536",
+      "m": 256,
+      "n": 256,
+      "k": 1536,
+      "split": "train",
+      "family": "nk_256_1536",
+      "weight": 1.12,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1703936,
+      "provenance_ref": "nk_256_1536",
+      "coverage": "training"
+    },
+    {
+      "id": "m1_n256_k2048",
+      "m": 1,
+      "n": 256,
+      "k": 2048,
+      "split": "challenge",
+      "family": "nk_256_2048",
+      "weight": 2.3200000000000003,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1053184,
+      "provenance_ref": "nk_256_2048",
+      "coverage": "wholly_unseen_NK_family"
+    },
+    {
+      "id": "m3_n256_k2048",
+      "m": 3,
+      "n": 256,
+      "k": 2048,
+      "split": "challenge",
+      "family": "nk_256_2048",
+      "weight": 2.3200000000000003,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1062400,
+      "provenance_ref": "nk_256_2048",
+      "coverage": "wholly_unseen_NK_family"
+    },
+    {
+      "id": "m16_n256_k2048",
+      "m": 16,
+      "n": 256,
+      "k": 2048,
+      "split": "challenge",
+      "family": "nk_256_2048",
+      "weight": 2.3200000000000003,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1122304,
+      "provenance_ref": "nk_256_2048",
+      "coverage": "wholly_unseen_NK_family"
+    },
+    {
+      "id": "m48_n256_k2048",
+      "m": 48,
+      "n": 256,
+      "k": 2048,
+      "split": "challenge",
+      "family": "nk_256_2048",
+      "weight": 2.3200000000000003,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1269760,
+      "provenance_ref": "nk_256_2048",
+      "coverage": "wholly_unseen_NK_family"
+    },
+    {
+      "id": "m256_n256_k2048",
+      "m": 256,
+      "n": 256,
+      "k": 2048,
+      "split": "challenge",
+      "family": "nk_256_2048",
+      "weight": 2.3200000000000003,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 2228224,
+      "provenance_ref": "nk_256_2048",
+      "coverage": "wholly_unseen_NK_family"
+    },
+    {
+      "id": "m1_n896_k896",
+      "m": 1,
+      "n": 896,
+      "k": 896,
+      "split": "train",
+      "family": "nk_896_896",
+      "weight": 1.4400000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1609216,
+      "provenance_ref": "nk_896_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m3_n896_k896",
+      "m": 3,
+      "n": 896,
+      "k": 896,
+      "split": "test",
+      "family": "nk_896_896",
+      "weight": 1.4400000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1616384,
+      "provenance_ref": "nk_896_896",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m16_n896_k896",
+      "m": 16,
+      "n": 896,
+      "k": 896,
+      "split": "train",
+      "family": "nk_896_896",
+      "weight": 1.4400000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1662976,
+      "provenance_ref": "nk_896_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m48_n896_k896",
+      "m": 48,
+      "n": 896,
+      "k": 896,
+      "split": "test",
+      "family": "nk_896_896",
+      "weight": 1.4400000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 1777664,
+      "provenance_ref": "nk_896_896",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m256_n896_k896",
+      "m": 256,
+      "n": 896,
+      "k": 896,
+      "split": "train",
+      "family": "nk_896_896",
+      "weight": 1.4400000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 2523136,
+      "provenance_ref": "nk_896_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m1_n1152_k896",
+      "m": 1,
+      "n": 1152,
+      "k": 896,
+      "split": "train",
+      "family": "nk_1152_896",
+      "weight": 0.4800000000000001,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 2068480,
+      "provenance_ref": "nk_1152_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m3_n1152_k896",
+      "m": 3,
+      "n": 1152,
+      "k": 896,
+      "split": "test",
+      "family": "nk_1152_896",
+      "weight": 0.4800000000000001,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 2076672,
+      "provenance_ref": "nk_1152_896",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m16_n1152_k896",
+      "m": 16,
+      "n": 1152,
+      "k": 896,
+      "split": "train",
+      "family": "nk_1152_896",
+      "weight": 0.4800000000000001,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 2129920,
+      "provenance_ref": "nk_1152_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m48_n1152_k896",
+      "m": 48,
+      "n": 1152,
+      "k": 896,
+      "split": "test",
+      "family": "nk_1152_896",
+      "weight": 0.4800000000000001,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 2260992,
+      "provenance_ref": "nk_1152_896",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m256_n1152_k896",
+      "m": 256,
+      "n": 1152,
+      "k": 896,
+      "split": "train",
+      "family": "nk_1152_896",
+      "weight": 0.4800000000000001,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 3112960,
+      "provenance_ref": "nk_1152_896",
+      "coverage": "training"
+    },
+    {
+      "id": "m1_n1536_k1536",
+      "m": 1,
+      "n": 1536,
+      "k": 1536,
+      "split": "train",
+      "family": "nk_1536_1536",
+      "weight": 1.6800000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 4724736,
+      "provenance_ref": "nk_1536_1536",
+      "coverage": "training"
+    },
+    {
+      "id": "m3_n1536_k1536",
+      "m": 3,
+      "n": 1536,
+      "k": 1536,
+      "split": "test",
+      "family": "nk_1536_1536",
+      "weight": 1.6800000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 4737024,
+      "provenance_ref": "nk_1536_1536",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m16_n1536_k1536",
+      "m": 16,
+      "n": 1536,
+      "k": 1536,
+      "split": "train",
+      "family": "nk_1536_1536",
+      "weight": 1.6800000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 4816896,
+      "provenance_ref": "nk_1536_1536",
+      "coverage": "training"
+    },
+    {
+      "id": "m48_n1536_k1536",
+      "m": 48,
+      "n": 1536,
+      "k": 1536,
+      "split": "test",
+      "family": "nk_1536_1536",
+      "weight": 1.6800000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 5013504,
+      "provenance_ref": "nk_1536_1536",
+      "training_m_range": [
+        1,
+        256
+      ],
+      "coverage": "unseen_M_inside_training_family_range"
+    },
+    {
+      "id": "m256_n1536_k1536",
+      "m": 256,
+      "n": 1536,
+      "k": 1536,
+      "split": "train",
+      "family": "nk_1536_1536",
+      "weight": 1.6800000000000002,
+      "m_sampling_probability": 0.2,
+      "origin": "pinned_model_architecture_config",
+      "regime": "decode_shaped",
+      "ideal_tensor_bytes": 6291456,
+      "provenance_ref": "nk_1536_1536",
+      "coverage": "training"
+    },
+    {
+      "id": "m7_n1153_k897",
+      "m": 7,
+      "n": 1153,
+      "k": 897,
+      "split": "stress",
+      "family": "nk_1153_897",
+      "weight": 1.0,
+      "origin": "artificial_irregular_stress",
+      "regime": "stress",
+      "ideal_tensor_bytes": 2097182,
+      "parent_family": "nk_1152_896",
+      "perturbation": {
+        "n_delta": 1,
+        "k_delta": 1
+      },
+      "coverage": "artificial_irregular_stress"
+    },
+    {
+      "id": "m7_n897_k897",
+      "m": 7,
+      "n": 897,
+      "k": 897,
+      "split": "stress",
+      "family": "nk_897_897",
+      "weight": 1.0,
+      "origin": "artificial_irregular_stress",
+      "regime": "stress",
+      "ideal_tensor_bytes": 1634334,
+      "parent_family": "nk_896_896",
+      "perturbation": {
+        "n_delta": 1,
+        "k_delta": 1
+      },
+      "coverage": "artificial_irregular_stress"
+    }
+  ],
+  "measurement": {
+    "visits": 2,
+    "repeats": 3,
+    "warmup_min_seconds": 0.05,
+    "target_replay_ms": 2.0,
+    "min_operations": 1,
+    "max_operations": 256,
+    "max_wall_seconds": 600,
+    "rotation_enabled": true,
+    "rotation_buffers": 4,
+    "rotation_l2_multiple": 2.0,
+    "max_case_bytes": 536870912,
+    "memory_fraction": 0.65,
+    "profile": true
+  },
+  "source_metadata": [
+    {
+      "id": "qwen2_5_0_5b",
+      "repository": "Qwen/Qwen2.5-0.5B",
+      "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+      "file": "qwen2_5_0_5b.json",
+      "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+      "bytes": 681,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B/raw/b937cc073b55e980e6f21d5f8b7a77818efcf0eb/config.json",
+      "spec": {
+        "hidden_size": 896,
+        "intermediate_size": 4864,
+        "num_attention_heads": 14,
+        "num_hidden_layers": 24,
+        "vocab_size": 151936,
+        "num_key_value_heads": 2,
+        "head_dim": 64,
+        "id": "qwen2_5_0_5b",
+        "model_type": "qwen2",
+        "max_position_embeddings": 32768,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "tie_word_embeddings": true,
+        "hidden_act": "silu",
+        "attention_bias": true
+      }
+    },
+    {
+      "id": "qwen2_5_1_5b",
+      "repository": "Qwen/Qwen2.5-1.5B",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "file": "qwen2_5_1_5b.json",
+      "sha256": "0e8c8aa86468aba09c9d32157ff4bc2301c7e6c50e4398960425b2ea71e66f77",
+      "bytes": 684,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/8faed761d45a263340a0528343f099c05c9a4323/config.json",
+      "spec": {
+        "hidden_size": 1536,
+        "intermediate_size": 8960,
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "vocab_size": 151936,
+        "num_key_value_heads": 2,
+        "head_dim": 128,
+        "id": "qwen2_5_1_5b",
+        "model_type": "qwen2",
+        "max_position_embeddings": 131072,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "tie_word_embeddings": true,
+        "hidden_act": "silu",
+        "attention_bias": true
+      }
+    },
+    {
+      "id": "qwen2_5_3b",
+      "repository": "Qwen/Qwen2.5-3B",
+      "revision": "a895be0c08c468bdcd02a1eb4fd87d437bbc1c73",
+      "file": "qwen2_5_3b.json",
+      "sha256": "27467e2fc311a7656c09a43ae9c3d408211e1f212bbddbc93c8596a06423826f",
+      "bytes": 683,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B/raw/a895be0c08c468bdcd02a1eb4fd87d437bbc1c73/config.json",
+      "spec": {
+        "hidden_size": 2048,
+        "intermediate_size": 11008,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 36,
+        "vocab_size": 151936,
+        "num_key_value_heads": 2,
+        "head_dim": 128,
+        "id": "qwen2_5_3b",
+        "model_type": "qwen2",
+        "max_position_embeddings": 32768,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "tie_word_embeddings": true,
+        "hidden_act": "silu",
+        "attention_bias": true
+      }
+    },
+    {
+      "id": "smollm2_1_7b",
+      "repository": "HuggingFaceTB/SmolLM2-1.7B",
+      "revision": "4fa12cab4f5f53670b05125fb9d2873af587d231",
+      "file": "smollm2_1_7b.json",
+      "sha256": "33397f6af8090f7290f27ce6fb1cd23a95fd0915a5c648dfd10b6002aaf7fc48",
+      "bytes": 635,
+      "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B/raw/4fa12cab4f5f53670b05125fb9d2873af587d231/config.json",
+      "spec": {
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "num_attention_heads": 32,
+        "num_hidden_layers": 24,
+        "vocab_size": 49152,
+        "num_key_value_heads": 32,
+        "head_dim": 64,
+        "id": "smollm2_1_7b",
+        "model_type": "llama",
+        "max_position_embeddings": 8192,
+        "rms_norm_eps": 1e-05,
+        "rope_theta": 130000,
+        "tie_word_embeddings": true,
+        "hidden_act": "silu",
+        "attention_bias": false
+      }
+    },
+    {
+      "id": "tinyllama_1_1b",
+      "repository": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "revision": "26d45f26ea2159eee86ccb80db170f755c1b3d95",
+      "file": "tinyllama_1_1b.json",
+      "sha256": "486bedda3a6988332e60d9638a09ca4b260d34ebcf1b19e22cf3b140b63d8fe9",
+      "bytes": 608,
+      "url": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0/raw/26d45f26ea2159eee86ccb80db170f755c1b3d95/config.json",
+      "spec": {
+        "hidden_size": 2048,
+        "intermediate_size": 5632,
+        "num_attention_heads": 32,
+        "num_hidden_layers": 22,
+        "vocab_size": 32000,
+        "num_key_value_heads": 4,
+        "head_dim": 64,
+        "id": "tinyllama_1_1b",
+        "model_type": "llama",
+        "max_position_embeddings": 2048,
+        "rms_norm_eps": 1e-05,
+        "rope_theta": 10000.0,
+        "tie_word_embeddings": false,
+        "hidden_act": "silu",
+        "attention_bias": false
+      }
+    }
+  ],
+  "families": {
+    "nk_128_896": {
+      "n": 128,
+      "k": 896,
+      "provenance": [
+        {
+          "model_id": "qwen2_5_0_5b",
+          "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+          "layout": "separate_projections",
+          "operation": "k",
+          "occurrences_per_model_pass": 24,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.4000000000000004
+        },
+        {
+          "model_id": "qwen2_5_0_5b",
+          "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+          "layout": "separate_projections",
+          "operation": "v",
+          "occurrences_per_model_pass": 24,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.4000000000000004
+        }
+      ],
+      "weighted_occurrences_per_mixture_pass": 4.800000000000001,
+      "challenge_family": false,
+      "training_m_values_after_budget_exclusions": [
+        1,
+        16,
+        256
+      ]
+    },
+    "nk_256_1536": {
+      "n": 256,
+      "k": 1536,
+      "provenance": [
+        {
+          "model_id": "qwen2_5_1_5b",
+          "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+          "layout": "separate_projections",
+          "operation": "k",
+          "occurrences_per_model_pass": 28,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.8000000000000003
+        },
+        {
+          "model_id": "qwen2_5_1_5b",
+          "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+          "layout": "separate_projections",
+          "operation": "v",
+          "occurrences_per_model_pass": 28,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.8000000000000003
+        }
+      ],
+      "weighted_occurrences_per_mixture_pass": 5.6000000000000005,
+      "challenge_family": false,
+      "training_m_values_after_budget_exclusions": [
+        1,
+        16,
+        256
+      ]
+    },
+    "nk_256_2048": {
+      "n": 256,
+      "k": 2048,
+      "provenance": [
+        {
+          "model_id": "qwen2_5_3b",
+          "revision": "a895be0c08c468bdcd02a1eb4fd87d437bbc1c73",
+          "layout": "separate_projections",
+          "operation": "k",
+          "occurrences_per_model_pass": 36,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 3.6
+        },
+        {
+          "model_id": "qwen2_5_3b",
+          "revision": "a895be0c08c468bdcd02a1eb4fd87d437bbc1c73",
+          "layout": "separate_projections",
+          "operation": "v",
+          "occurrences_per_model_pass": 36,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 3.6
+        },
+        {
+          "model_id": "tinyllama_1_1b",
+          "revision": "26d45f26ea2159eee86ccb80db170f755c1b3d95",
+          "layout": "separate_projections",
+          "operation": "k",
+          "occurrences_per_model_pass": 22,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.2
+        },
+        {
+          "model_id": "tinyllama_1_1b",
+          "revision": "26d45f26ea2159eee86ccb80db170f755c1b3d95",
+          "layout": "separate_projections",
+          "operation": "v",
+          "occurrences_per_model_pass": 22,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.2
+        }
+      ],
+      "weighted_occurrences_per_mixture_pass": 11.600000000000001,
+      "challenge_family": true,
+      "training_m_values_after_budget_exclusions": []
+    },
+    "nk_896_896": {
+      "n": 896,
+      "k": 896,
+      "provenance": [
+        {
+          "model_id": "qwen2_5_0_5b",
+          "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+          "layout": "separate_projections",
+          "operation": "q",
+          "occurrences_per_model_pass": 24,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.4000000000000004
+        },
+        {
+          "model_id": "qwen2_5_0_5b",
+          "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+          "layout": "separate_projections",
+          "operation": "o",
+          "occurrences_per_model_pass": 24,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.4000000000000004
+        },
+        {
+          "model_id": "qwen2_5_0_5b",
+          "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+          "layout": "fused_qkv_and_gate_up",
+          "operation": "o",
+          "occurrences_per_model_pass": 24,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.4000000000000004
+        }
+      ],
+      "weighted_occurrences_per_mixture_pass": 7.200000000000001,
+      "challenge_family": false,
+      "training_m_values_after_budget_exclusions": [
+        1,
+        16,
+        256
+      ]
+    },
+    "nk_1152_896": {
+      "n": 1152,
+      "k": 896,
+      "provenance": [
+        {
+          "model_id": "qwen2_5_0_5b",
+          "revision": "b937cc073b55e980e6f21d5f8b7a77818efcf0eb",
+          "layout": "fused_qkv_and_gate_up",
+          "operation": "qkv",
+          "occurrences_per_model_pass": 24,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.4000000000000004
+        }
+      ],
+      "weighted_occurrences_per_mixture_pass": 2.4000000000000004,
+      "challenge_family": false,
+      "training_m_values_after_budget_exclusions": [
+        1,
+        16,
+        256
+      ]
+    },
+    "nk_1536_1536": {
+      "n": 1536,
+      "k": 1536,
+      "provenance": [
+        {
+          "model_id": "qwen2_5_1_5b",
+          "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+          "layout": "separate_projections",
+          "operation": "q",
+          "occurrences_per_model_pass": 28,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.8000000000000003
+        },
+        {
+          "model_id": "qwen2_5_1_5b",
+          "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+          "layout": "separate_projections",
+          "operation": "o",
+          "occurrences_per_model_pass": 28,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.8000000000000003
+        },
+        {
+          "model_id": "qwen2_5_1_5b",
+          "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+          "layout": "fused_qkv_and_gate_up",
+          "operation": "o",
+          "occurrences_per_model_pass": 28,
+          "model_mixture_probability": 0.2,
+          "layout_probability": 0.5,
+          "weighted_occurrences": 2.8000000000000003
+        }
+      ],
+      "weighted_occurrences_per_mixture_pass": 8.4,
+      "challenge_family": false,
+      "training_m_values_after_budget_exclusions": [
+        1,
+        16,
+        256
+      ]
+    }
+  },
+  "counts": {
+    "unique_shapes_per_dtype": 32,
+    "by_split": {
+      "train": 15,
+      "test": 10,
+      "challenge": 5,
+      "stress": 2
+    },
+    "model_config_families": 6,
+    "challenge_families": 1,
+    "planning_exclusions": 0
+  },
+  "excluded_cases": [],
+  "previously_exposed_shapes": [
+    [
+      1,
+      1024,
+      768
+    ],
+    [
+      1,
+      1024,
+      1024
+    ],
+    [
+      1,
+      1536,
+      1024
+    ],
+    [
+      1,
+      1537,
+      1025
+    ],
+    [
+      1,
+      4096,
+      2048
+    ],
+    [
+      1,
+      4096,
+      4096
+    ],
+    [
+      1,
+      4097,
+      2049
+    ],
+    [
+      1,
+      8192,
+      6144
+    ],
+    [
+      2,
+      1024,
+      768
+    ],
+    [
+      2,
+      1536,
+      1024
+    ],
+    [
+      2,
+      1537,
+      1025
+    ],
+    [
+      2,
+      4096,
+      2048
+    ],
+    [
+      2,
+      4097,
+      2049
+    ],
+    [
+      2,
+      8192,
+      6144
+    ],
+    [
+      3,
+      1024,
+      768
+    ],
+    [
+      3,
+      1536,
+      1024
+    ],
+    [
+      3,
+      1537,
+      1025
+    ],
+    [
+      3,
+      4096,
+      2048
+    ],
+    [
+      3,
+      4097,
+      2049
+    ],
+    [
+      3,
+      8192,
+      6144
+    ],
+    [
+      4,
+      1024,
+      1024
+    ],
+    [
+      5,
+      2048,
+      1536
+    ],
+    [
+      5,
+      2049,
+      1537
+    ],
+    [
+      5,
+      6144,
+      4096
+    ],
+    [
+      5,
+      6145,
+      4097
+    ],
+    [
+      7,
+      1023,
+      1025
+    ],
+    [
+      8,
+      1024,
+      768
+    ],
+    [
+      8,
+      1536,
+      1024
+    ],
+    [
+      8,
+      1537,
+      1025
+    ],
+    [
+      8,
+      4096,
+      2048
+    ],
+    [
+      8,
+      4096,
+      4096
+    ],
+    [
+      8,
+      4097,
+      2049
+    ],
+    [
+      8,
+      8192,
+      6144
+    ],
+    [
+      16,
+      1024,
+      768
+    ],
+    [
+      16,
+      1536,
+      1024
+    ],
+    [
+      16,
+      1537,
+      1025
+    ],
+    [
+      16,
+      4096,
+      2048
+    ],
+    [
+      16,
+      4097,
+      2049
+    ],
+    [
+      16,
+      8192,
+      6144
+    ],
+    [
+      32,
+      1024,
+      768
+    ],
+    [
+      32,
+      1536,
+      1024
+    ],
+    [
+      32,
+      1537,
+      1025
+    ],
+    [
+      32,
+      4096,
+      2048
+    ],
+    [
+      32,
+      4097,
+      2049
+    ],
+    [
+      32,
+      8192,
+      6144
+    ],
+    [
+      48,
+      1024,
+      768
+    ],
+    [
+      48,
+      1536,
+      1024
+    ],
+    [
+      48,
+      1537,
+      1025
+    ],
+    [
+      48,
+      4096,
+      2048
+    ],
+    [
+      48,
+      4097,
+      2049
+    ],
+    [
+      48,
+      8192,
+      6144
+    ],
+    [
+      64,
+      4096,
+      1024
+    ],
+    [
+      96,
+      1024,
+      768
+    ],
+    [
+      96,
+      1536,
+      1024
+    ],
+    [
+      96,
+      1537,
+      1025
+    ],
+    [
+      96,
+      4096,
+      2048
+    ],
+    [
+      96,
+      4097,
+      2049
+    ],
+    [
+      96,
+      8192,
+      6144
+    ],
+    [
+      128,
+      1024,
+      768
+    ],
+    [
+      128,
+      1536,
+      1024
+    ],
+    [
+      128,
+      1537,
+      1025
+    ],
+    [
+      128,
+      4096,
+      2048
+    ],
+    [
+      128,
+      4097,
+      2049
+    ],
+    [
+      128,
+      8192,
+      6144
+    ],
+    [
+      192,
+      2048,
+      1536
+    ],
+    [
+      192,
+      2049,
+      1537
+    ],
+    [
+      192,
+      6144,
+      4096
+    ],
+    [
+      192,
+      6145,
+      4097
+    ],
+    [
+      256,
+      1024,
+      768
+    ],
+    [
+      256,
+      1536,
+      1024
+    ],
+    [
+      256,
+      1537,
+      1025
+    ],
+    [
+      256,
+      4096,
+      2048
+    ],
+    [
+      256,
+      4097,
+      2049
+    ],
+    [
+      256,
+      8192,
+      6144
+    ],
+    [
+      384,
+      1024,
+      768
+    ],
+    [
+      384,
+      1536,
+      1024
+    ],
+    [
+      384,
+      1537,
+      1025
+    ],
+    [
+      384,
+      4096,
+      2048
+    ],
+    [
+      384,
+      4097,
+      2049
+    ],
+    [
+      384,
+      8192,
+      6144
+    ],
+    [
+      768,
+      1024,
+      768
+    ],
+    [
+      768,
+      1536,
+      1024
+    ],
+    [
+      768,
+      1537,
+      1025
+    ],
+    [
+      768,
+      4096,
+      2048
+    ],
+    [
+      768,
+      4097,
+      2049
+    ],
+    [
+      768,
+      8192,
+      6144
+    ],
+    [
+      1024,
+      1024,
+      768
+    ],
+    [
+      1024,
+      1536,
+      1024
+    ],
+    [
+      1024,
+      1537,
+      1025
+    ],
+    [
+      1024,
+      4096,
+      2048
+    ],
+    [
+      1024,
+      4097,
+      2049
+    ],
+    [
+      1024,
+      8192,
+      2048
+    ],
+    [
+      1024,
+      8192,
+      6144
+    ],
+    [
+      1025,
+      8193,
+      2049
+    ],
+    [
+      1152,
+      2048,
+      1536
+    ],
+    [
+      1152,
+      2049,
+      1537
+    ],
+    [
+      1152,
+      6144,
+      4096
+    ],
+    [
+      1152,
+      6145,
+      4097
+    ],
+    [
+      1536,
+      1024,
+      768
+    ],
+    [
+      1536,
+      1536,
+      1024
+    ],
+    [
+      1536,
+      1537,
+      1025
+    ],
+    [
+      1536,
+      4096,
+      2048
+    ],
+    [
+      1536,
+      4097,
+      2049
+    ],
+    [
+      1536,
+      8192,
+      6144
+    ]
+  ],
+  "split_policy": {
+    "train_m": [
+      1,
+      16,
+      256
+    ],
+    "test_m": [
+      3,
+      48
+    ],
+    "challenge_assignment": "shape-only seeded hash of eligible (N,K) families; all their M values are held out",
+    "challenge_families": [
+      "nk_256_2048"
+    ],
+    "test": "new M values in (N,K) families represented in training",
+    "test_range": "Per-case coverage distinguishes interpolation from extrapolation after per-family memory exclusions",
+    "stress": "artificial +1 changes to N and K; separate from model selection and ordinary test",
+    "grouped_cv_key": [
+      "n",
+      "k"
+    ],
+    "all_labels_may_be_collected_before_fitting": true,
+    "test_challenge_stress_used_for_selection": false,
+    "source_baseline_exclusion": "all 104 already-published baseline shapes are excluded from new test/challenge/stress"
+  },
+  "weight_policy": {
+    "interpretation": "Architectural operation occurrences under a declared synthetic workload mixture; not observed serving traffic",
+    "model_probability": "uniform over the five pinned model configurations",
+    "layout_probability": {
+      "separate_projections": 0.5,
+      "fused_qkv_and_gate_up": 0.5
+    },
+    "m_probability": "uniform over the profile's combined train/test M grid before budget exclusions",
+    "case_weight": "sum(model_probability * layout_probability * operation_occurrences) / number_of_M_values",
+    "deduplication": "Shared (M,N,K) operations aggregate their weights into a single case and split",
+    "stress_weight": "uniform, reported separately; no architectural frequency interpretation",
+    "budget_exclusions": "Remaining weights are normalized only when computing each reported metric; excluded shapes remain listed"
+  },
+  "scope": {
+    "operation": "Y[M,N] = X[M,K] @ W[N,K].T; preallocated output; no bias/activation in the GEMM target",
+    "fused_layout": "A separate synthetic alternative concatenates Q/K/V and gate/up output dimensions; it does not prove a deployed framework uses that fusion",
+    "m_interpretation": "M is the number of rows in one GEMM, not a unique batch/sequence pairing; decode-shaped and prefill-shaped are coverage labels",
+    "lm_head": "All-token vocabulary projection sweep; actual serving may project only selected token positions",
+    "context_length": "GEMM row sweeps are shape experiments and may exceed a source model's native context; the decoder-layer validator enforces context limits",
+    "budget": "512 MiB bounds ideal input/weight/output tensors only. Runtime checks include free memory, references and rotated buffers and record skips without shrinking model dimensions",
+    "runtime": "Adaptive graph work and a wall-time budget bound the run; no fixed GPU runtime or accuracy is promised",
+    "smoke": "The smoke profile checks software plumbing and is not representative performance evidence"
+  }
+}

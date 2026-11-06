@@ -1,130 +1,195 @@
-# Results: Six A100 Sessions
+# Results: A100 Experiment — v1.1.0
 
-The first release includes six measured sessions: FP16 and BF16 across three recorded A100 devices. The data support two distinct findings: the primary timing labels were consistent across these sessions, and model selection on the small development set did not reliably choose the lowest held-out-error candidate.
+The **6 November 2026** experiment completed the requested primary collection, model selection/refit, held-out evaluation, predetermined repeat, and repeat comparison. The selected models achieve **7.71%–10.32% weighted mean absolute percentage error on ordinary held-out tests**, with larger errors on warm unseen-family challenges and irregular dimensions. Timing-quality flags remain part of the result.
 
-All percentages below are absolute percentage errors unless stated otherwise. Figures are rounded for readability; the [summary CSVs](../results/summary/) retain full precision.
+[Evidence guide](../experiments/a100_20261106/README.md) · [Complete original results ZIP](../experiments/a100_20261106/results.zip) · [Selected-model metrics](../experiments/a100_20261106/selected_model_metrics.csv) · [All-candidate metrics](../experiments/a100_20261106/metrics.csv) · [Detailed HTML review](../experiments/a100_20261106/review.html)
 
-## 1. Evidence and environment
+Earlier six-session results remain in [BASELINE_RESULTS.md](BASELINE_RESULTS.md).
 
-| Item | Recorded scope |
+The archive is the source for raw samples, predictions, environment records, fitted models, traces, and the exact source snapshot. Paths shown below are relative to that archive. Download and extract it, then open `run/report.html` for the original combined report. The separate HTML review contains offline recomputations and diagnostic findings; download it to open locally.
+
+## 1. Run scope and completion
+
+| Item | Recorded result |
 |---|---|
-| GPU model | NVIDIA A100-SXM4-40GB |
-| Device identities | Three distinct recorded UUIDs |
-| Sessions | Three FP16 and three BF16; each same-number pair shares a UUID |
-| Shape set | The same 96 modeling/acquisition shapes in every session, plus eight diagnostics |
-| Main splits | 24 calibration, 12 development, 24 test, 12 challenge |
-| Acquisition pool | 24 labels per session |
-| Python / PyTorch | 3.12.13 / 2.11.0+cu128 |
-| CUDA runtime / driver | 12.8 / 580.82.07 |
-| Primary target | Warm-reuse graph replay event time divided by 50 GEMMs |
+| Session | `fresh_20261106T065308_c5e789` |
+| Protocol version | `1.1.0` |
+| GPU | NVIDIA A100-SXM4-40GB, 108 SMs, 40 MiB recorded L2 |
+| Python / PyTorch | 3.13.16 / 2.11.0+cu130 |
+| CUDA runtime / driver | 13.0 / 580.82.07 |
+| Precisions | FP16 and BF16, interleaved in a seeded schedule |
+| Primary workload | 609 distinct shapes: 311 train, 134 test, 118 challenge, 46 stress |
+| Primary observations | 2,256 aggregate rows, 6,768 raw visits, 378 control visits |
+| Repeat workload | 77 predetermined shapes; 280 aggregate rows, 840 raw visits, 72 control visits |
+| Worker outcome | Exit code 0; no timeout, interruption, or automatic retry |
+| Worker elapsed time | 2,336.36 seconds, approximately 38 minutes 56 seconds |
+| Requested stages | All completed |
+| Optional decoder layer | Not requested |
+| Overall timing-quality flag | `false`; exceptions are retained and described below |
 
-The precision order was FP16 before BF16 within each pair. The experiment does not randomize dtype order or control every clock, power, temperature, and concurrent-load effect. Three recorded device identities also do not represent a broad sample of all A100 hardware or cloud runtimes.
+Source records: `launcher_status.json`, `run/summary.json`, and `run/{primary,repeat}/dataset/environments.json`.
 
-Per-session source records and publication checksums are indexed in the [dataset guide](../results/README.md).
+The target is CUDA-event elapsed time per preallocated `torch.mm(X, W.T, out=Y)` inside a repeated CUDA Graph. The event interval includes GPU reads/writes and visible launch/inter-kernel gaps, divided by the actual number of captured GEMMs. Allocation, host-device transfers, capture, warmup, numerical checks, profiling, fitting, and backup copying are outside this interval. These labels do not measure kernel-only time or full Transformer/serving latency.
 
-## 2. Official development-selected results
+Warm reuse has 609 rows per precision in primary and 77 in repeat. Four-buffer rotation has 519 and 63 respectively. All 180 primary and 28 repeat skipped precision/cache variants are deliberate `weight_exceeds_declared_L2_multiple` decisions: the weight matrix exceeds twice the recorded L2 size, or 80 MiB. Their warm measurements remain present; no memory-guard skips are recorded. Rotation does not prove cache eviction or HBM traffic.
 
-Each model family fits only the 24 calibration labels. Development scores select hyperparameters and the official model. The table retains the choice made before held-out collection.
+## 2. Evaluation design
 
-| Session | Selected model | Dev median | Test median | Test P90 | Challenge median | Challenge P90 |
-|---|---|---:|---:|---:|---:|---:|
-| FP16 s01 | Shape-log Ridge | 13.72% | 25.66% | 79.30% | 31.96% | 76.45% |
-| FP16 s02 | Shape-log Ridge | 14.12% | 26.53% | 78.97% | 31.75% | 76.51% |
-| FP16 s03 | Roofline + residual KRR | 13.96% | 17.18% | 37.09% | 21.17% | 37.56% |
-| BF16 s01 | Roofline, three parameters | 13.63% | 48.28% | 60.59% | 51.83% | 71.28% |
-| BF16 s02 | Roofline, three parameters | 13.47% | 48.50% | 60.54% | 51.63% | 71.40% |
-| BF16 s03 | Roofline, three parameters | 12.77% | 48.35% | 59.85% | 51.64% | 71.38% |
+All primary splits were measured before fitting. Model selection uses six training-only cross-validation folds grouped by `(N,K)` family, with feature scaling fitted inside each fold. The selected configuration is then refitted on all eligible training rows: 266 per rotating context and 311 per warm context. Test, challenge, stress, repeat, and profiler outputs are excluded from model selection and fitting.
 
-Sources: [selected pipeline](../results/summary/selected_pipeline.csv), [all model metrics](../results/summary/model_metrics.csv).
+The four contexts each evaluate 19 configurations across five model families. All select `roofline_residual_krr` by weighted mean out-of-fold APE, with weighted P90 as the tie-break. CV scores are selection evidence rather than independent test estimates.
 
-The BF16 selection is a clear failure of development-set selection to generalize to these held-out shapes: development median error is about 13%, while test median error is about 48%. For FP16 s03, residual KRR beats Ridge on development by only **0.1143 percentage points**. That small margin changes the selected family.
+| Split | Question |
+|---|---|
+| Ordinary test | Can the predictor handle unseen M values in `(N,K)` families represented in training? |
+| Challenge | Can it generalize to complete `(N,K)` families absent from training? |
+| Stress | What happens when N and K are each changed by +1 to create irregular dimensions? |
 
-The different M values and family coverage make an unrepresentative development set a plausible explanation, but the measurements do not isolate a single cause. Changing the selector after reading these results would be a new design decision requiring new untouched evaluation data.
+Most ordinary-test cases lie within the M range observed for their family. Two warm-only vocabulary cases are M extrapolations after memory-budget exclusions: `m192_n151936_k1536` has a training-family maximum M of 128, and `m768_n151936_k896` has a maximum of 512. Their errors are 1.05%–5.79% across precisions, but together they carry only about 0.053% of ordinary-test weight. They do not establish broad extrapolation accuracy.
 
-## 3. All registered candidate models
+Source records: `run/workload_manifest.json`, `run/primary/analysis/summary.json`, and `run/primary/analysis/group_*/model_suite.json`.
 
-The ranges below are the minimum and maximum of **three per-session median APE values**, not confidence intervals or a pooled estimate. All five model families were registered and frozen before each session's held-out evaluation.
+## 3. Selected-model prediction errors
 
-| Dtype | Candidate | Test median range | Challenge median range | Selected sessions |
-|---|---|---:|---:|---:|
-| FP16 | FLOP-only | 59.77-60.08% | 67.63-67.80% | 0/3 |
-| FP16 | Roofline, two parameters | 54.06-54.28% | 54.46-55.66% | 0/3 |
-| FP16 | Roofline, three parameters | 21.78-22.36% | 32.44-32.74% | 0/3 |
-| FP16 | Shape-log Ridge | 25.66-26.53% | 31.75-31.96% | 2/3 |
-| FP16 | Roofline + residual KRR | 16.56-17.18% | 21.00-21.17% | 1/3 |
-| BF16 | FLOP-only | 54.99-55.74% | 61.96-63.27% | 0/3 |
-| BF16 | Roofline, two parameters | 57.36-57.57% | 59.65-59.78% | 0/3 |
-| BF16 | Roofline, three parameters | 48.28-48.50% | 51.63-51.83% | 3/3 |
-| BF16 | Shape-log Ridge | 24.93-25.32% | 40.56-40.69% | 0/3 |
-| BF16 | Roofline + residual KRR | 16.44-16.75% | 24.25-24.30% | 0/3 |
+Per-case absolute percentage error is `100 * abs(predicted - measured) / measured`. The weighted mean uses declared architectural-operation weights under a synthetic model/layout/M mixture. It is not a runtime-weighted error, WAPE, or an estimate of actual production traffic. Stress has uniform weights. The mean, median, P90, and worst-case columns below are unweighted across cases.
 
-Source: [model_metrics.csv](../results/summary/model_metrics.csv).
+| Split | Context | n | Weighted mean % | Mean % | Median % | P90 % | Worst % |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| test | FP16 / rotating | 113 | 8.56 | 8.97 | 4.68 | 20.87 | 70.29 |
+| test | FP16 / warm | 134 | 10.32 | 9.98 | 5.96 | 23.14 | 74.70 |
+| test | BF16 / rotating | 113 | 7.71 | 8.33 | 3.30 | 21.17 | 76.95 |
+| test | BF16 / warm | 134 | 9.64 | 9.59 | 5.06 | 22.99 | 79.90 |
+| challenge | FP16 / rotating | 100 | 9.53 | 9.80 | 5.31 | 26.81 | 47.71 |
+| challenge | FP16 / warm | 118 | 29.15 | 25.04 | 16.61 | 65.19 | 90.86 |
+| challenge | BF16 / rotating | 100 | 6.26 | 5.85 | 3.60 | 11.50 | 38.80 |
+| challenge | BF16 / warm | 118 | 28.97 | 24.85 | 12.31 | 72.23 | 94.00 |
+| stress | FP16 / rotating | 40 | 49.47 | 49.47 | 60.39 | 79.05 | 83.95 |
+| stress | FP16 / warm | 46 | 53.94 | 53.94 | 62.37 | 79.39 | 85.26 |
+| stress | BF16 / rotating | 40 | 53.93 | 53.93 | 66.05 | 86.43 | 91.89 |
+| stress | BF16 / warm | 46 | 57.31 | 57.31 | 65.76 | 85.72 | 92.48 |
 
-Residual KRR has the lowest test median APE among these candidates in all six sessions. That is a descriptive result of this registered comparison; it does not make KRR the official selected pipeline in five sessions where development chose something else.
+![Prediction error by evaluation scope](../experiments/a100_20261106/accuracy_by_scope.png)
 
-KRR also does not dominate every metric. For example, BF16 s01 challenge RMSE is approximately **152.02 us for KRR** and **99.64 us for Ridge**, despite KRR's lower median APE. A good typical relative error can coexist with costly absolute errors on larger shapes. Full per-case predictions and tail metrics should accompany any accuracy claim.
+Every eligible observation remains in the metrics, including the quality-flagged rows. These are point estimates from one primary hardware collection; no calibrated per-shape prediction interval is provided. The precision/cache contexts have their own fitted models and eligible cohorts, so differences between columns do not isolate a causal cache effect.
 
-## 4. Measurement quality
+Sources: [selected-model CSV](../experiments/a100_20261106/selected_model_metrics.csv) and `run/primary/analysis/predictions.csv` in the archive.
 
-Every recorded session passed its **5,468 internal audit checks** and its declared timing gates. Those checks cover integrity, aggregation, coverage, numerical witnesses, model decisions, and chronology. The count is not a number of independent GPU experiments or a third-party certification.
+## 4. Same-run baseline comparisons
 
-| Session | Maximum within-visit CV | Maximum block-median ratio | Maximum control ratio |
-|---|---:|---:|---:|
-| FP16 s01 | 3.03% | 1.0652 | 1.0808 |
-| FP16 s02 | 3.25% | 1.0896 | 1.0349 |
-| FP16 s03 | 3.63% | 1.0349 | 1.0516 |
-| BF16 s01 | 2.18% | 1.0327 | 1.0415 |
-| BF16 s02 | 3.23% | 1.0241 | 1.0521 |
-| BF16 s03 | 2.03% | 1.0639 | 1.1724 |
+Ordinary-test **weighted mean APE (%)**:
 
-Source: [quality_and_audits.csv](../results/summary/quality_and_audits.csv). Ratio columns are maximum divided by minimum; the declared limits are 1.2. The within-visit CV limit is 10%.
+| Context | FLOP-only | Roofline 2p | Roofline 3p | Shape Ridge | Selected KRR |
+| --- | --- | --- | --- | --- | --- |
+| FP16 / rotating | 28.95 | 30.28 | 9.43 | 11.47 | 8.56 |
+| FP16 / warm | 22.23 | 34.57 | 14.78 | 17.23 | 10.32 |
+| BF16 / rotating | 29.80 | 30.84 | 9.10 | 14.59 | 7.71 |
+| BF16 / warm | 23.54 | 34.82 | 13.78 | 19.18 | 9.64 |
 
-### BF16 s03 control qualification
+The CV-selected KRR has the lowest ordinary-test weighted mean error among the five candidates in every context. Relative to the fitted three-parameter Roofline comparator, its prediction error falls by 9.23%, 30.15%, 15.26%, and 30.06% in the table's context order. These are reductions in **prediction error**, not matrix-multiplication speedups.
 
-Control `x03` spans **19.865-23.290 us**, a maximum/minimum ratio of **1.172428**, or **17.24% relative to the minimum**. It passes the 1.2 gate but remains a visible timing qualification. No observations were removed or rescaled, and no causal explanation is established.
+The selected model does not win every held-out comparison. On warm challenge, FLOP-only has 17.75% FP16 and 18.58% BF16 weighted mean error, below selected KRR at 29.15% and 28.97%. On warm stress, shape-log Ridge has 50.80% and 55.19%, below KRR at 53.94% and 57.31%. These comparisons remain descriptive: the model selected using training CV has not been replaced after seeing held-out results.
 
-Across the three rounds, the largest per-shape maximum/minimum ratio among the 96 primary/pool targets was **1.02717 for FP16** and **1.01933 for BF16**, corresponding to spans of 2.72% and 1.93% relative to the minimum. This supports consistency of those aggregate labels in this dataset. It does not contradict the larger control excursion, which samples a different shape repeatedly within a session. See [cross-round spread](../results/summary/cross_round_latency_spread.csv).
+Source: [all-candidate metrics](../experiments/a100_20261106/metrics.csv). The earlier six-session experiment used a different workload and protocol; its raw error values are not used to quantify improvement in this experiment.
 
-## 5. Frozen-source transfer
+## 5. Timing-quality qualifications
 
-The first session of each dtype is the declared source. Its already-fitted model is applied unchanged to the same registered shapes measured in later sessions; the source is not chosen by test score.
+The declared checks require within-visit CV at most 10%, between-visit maximum/minimum at most 1.20, and control maximum/minimum at most 1.20. The global quality flag requires every row and control group to pass.
 
-| Source model | Target | Test median APE | Challenge median APE |
-|---|---|---:|---:|
-| FP16 s01 Ridge | FP16 s02 | 26.51% | 31.98% |
-| FP16 s01 Ridge | FP16 s03 | 26.25% | 31.86% |
-| BF16 s01 three-parameter Roofline | BF16 s02 | 48.37% | 51.75% |
-| BF16 s01 three-parameter Roofline | BF16 s03 | 48.67% | 51.78% |
+| Stage | Aggregate rows | Flagged rows | Visits over the CV threshold | Failing control groups |
+|---|---:|---:|---:|---:|
+| Primary | 2,256 | 6 (0.266%) | 0 / 6,768 | 0 / 6 |
+| Repeat | 280 | 0 | 0 / 840 | 1 / 6 |
 
-Source: [frozen_selected_transfer.csv](../results/summary/frozen_selected_transfer.csv).
+All six primary flags occur under warm reuse and reflect differences between visits, rather than high variation among the nine samples inside a visit:
 
-The errors transfer consistently, including the large BF16 errors. Stability is not the same as accuracy. The [frozen KRR candidate transfer](../results/summary/frozen_krr_candidate_transfer.csv) is retained as a separate registered-candidate analysis, without replacing the source model selected by development.
+| Case | Precision | Split | Visit medians (us) | Max/min |
+| --- | --- | --- | --- | --- |
+| m1_n1536_k8960 | BF16 | challenge | 25.910, 31.005, 25.669 | 1.2079 |
+| m1_n1536_k8960 | FP16 | challenge | 25.583, 30.996, 25.361 | 1.2222 |
+| m16_n2049_k5633 | FP16 | stress | 67.686, 55.068, 71.095 | 1.2910 |
+| m1_n2048_k2048 | FP16 | train | 9.904, 10.448, 8.632 | 1.2104 |
+| m1_n2048_k5632 | BF16 | train | 25.209, 20.513, 20.365 | 1.2379 |
+| m1_n2048_k5632 | FP16 | train | 25.095, 20.183, 20.031 | 1.2528 |
 
-This is same-model hardware transfer among the recorded A100 devices and sessions. It does not establish transfer to an H100, another GPU architecture, another runtime, or another timing contract.
+Three flags belong to training, two to challenge, and one to stress. Ordinary-test rows have no direct quality flags, but the three flagged training rows may influence fitted models. Maximum within-visit CV is 1.81% in primary and 3.37% in repeat. None of the six flagged primary rows appears in the predetermined repeat subset, so that repeat does not resolve their instability.
 
-## 6. Uncertainty in model comparisons
+The repeat control failure is FP16 `control_small`: its first observation is 6.287875 us, and the minimum of its 12 observations is 4.898750 us, giving a maximum/minimum ratio of 1.283567. The other five repeat control groups pass. These are descriptive project thresholds, not a benchmark certification. No flagged rows were removed and no threshold was relaxed to change the outcome.
 
-The reported comparison resamples N/K families in paired fashion, with 1,000 resamples. For FP16 s03, selected KRR minus three-parameter Roofline gives:
+Source records: `run/{primary,repeat}/dataset/quality.json`, `raw_visits.jsonl`, `measurements.jsonl`, and `controls.jsonl`.
 
-| Split | Observed median-APE difference | Descriptive 95% percentile range |
-|---|---:|---:|
-| Test | -5.18 percentage points | -33.62 to +3.56 |
-| Challenge | -11.27 percentage points | -48.23 to +2.53 |
+## 6. Same-session repeat comparison
 
-Source: [`fp16_s03/results.json`](../results/a100/fp16_s03/results.json), `selected_vs_roofline_3p` in each split's evaluation.
+The subset was chosen from shapes without using latencies or prediction errors. The repeat records the same physical GPU UUID and matching software contexts, and applies the unchanged primary models without refitting. Absolute change is `100 * abs(repeat - primary) / primary`.
 
-Negative favors KRR, but both ranges cross zero. The observed gains do not establish a uniform or broadly generalizable advantage. The few families, shared shape structure, and session effects constrain inference. These ranges are not prediction intervals for a new shape.
+| Context | Pairs | Median absolute change % | P90 % | Maximum % | Pairs above 10% |
+| --- | --- | --- | --- | --- | --- |
+| FP16 / rotating | 63 | 1.34 | 4.93 | 12.39 | 3 |
+| FP16 / warm | 77 | 1.18 | 5.47 | 27.87 | 4 |
+| BF16 / rotating | 63 | 1.41 | 4.80 | 12.13 | 1 |
+| BF16 / warm | 77 | 1.61 | 5.14 | 28.19 | 2 |
 
-## 7. Acquisition and batching
+Typical paired agreement is approximately 1%–2%, with real exceptions. Warm `m1_n8192_k2048` changes from 19.501 to 24.936 us for FP16 (+27.87%) and from 19.412 to 24.883 us for BF16 (+28.19%). Each stage is internally stable for that shape. Within-stage stability therefore does not guarantee agreement between stages.
 
-The release preserves every heuristic/random acquisition result at 2, 4, 8, and 12 revealed labels across ten seeds. This is an **offline label-revelation experiment** over a fully measured 24-shape pool. The [all-budget table](../results/summary/acquisition_all_budgets.csv) supports comparison without choosing a favorable test seed. It does not measure GPU collection time saved by a deployed adaptive sampler.
+Its later profiles retain the same kernel names and launch geometry between primary and repeat, but profiled kernel durations move in the opposite direction from the unprofiled labels. The separate profiles and coarse boundary telemetry do not establish a cause. Cache state, clocks, and execution-state effects remain hypotheses.
 
-A separate offline batching experiment compares 64 GEMMs with M = 16 against one GEMM with M = 1024, with N = K = 1024 and equal total arithmetic work. Recorded total-work time ratios range from **25.57x to 26.72x** across sessions. The [batching data](../results/summary/offline_batching.csv) preserve both times.
+This is a subset measured later in the same session, not a cross-day or cross-device replication. Source records: `run/repeat_comparison/summary.json`, `comparison_*_repeat.csv`, and the primary/repeat datasets.
 
-That ratio describes the controlled offline workload. It does not include request arrivals, queueing, batching delay, model execution outside this GEMM, or service-level constraints, so it is not an end-to-end LLM serving speedup.
+## 7. Observed model limitations
 
-## 8. Conclusions supported by this release
+### Small matrices and the residual-correction bound
 
-The benchmark retains evidence that can be checked on a CPU: raw timing samples, aggregation, frozen predictions, model choices, and small numerical witnesses. The six-session experiment exposes a practical modeling limitation: an accurate development score can coexist with poor held-out generalization, even when measurement variation is modest.
+The selected KRR multiplies a zero-overhead two-parameter Roofline baseline by a learned correction clipped to the range 0.25–4. The upper bound is active for 8, 10, 7, and 9 ordinary-test cases in the four contexts above. The worst ordinary-test cases concentrate in the narrow N=128, K=896 family and pass their timing-quality checks.
 
-Residual KRR is a promising candidate under the measured contract. The evidence does not establish a universally reliable selector, calibrated per-shape prediction intervals, cross-architecture accuracy, an observed hardware bottleneck, or full-model inference acceleration. Future work should preserve this baseline and evaluate changes on new untouched shapes, additional environments, and separately specified application workloads.
+For BF16 warm `M=3, N=128, K=896`:
+
+| Quantity | Value |
+|---|---:|
+| Roofline baseline | 0.293261 us |
+| Raw learned correction multiplier | 16.229 |
+| Applied multiplier after clipping | 4 |
+| Final prediction | 1.173044 us |
+| Measured target | 5.836000 us |
+| APE | 79.90% |
+
+The bound directly limits this prediction. Removing it is not a validated improvement: a future revision should compare overhead-aware baselines and correction policies using training data and evaluate on new final-test cases. The published predictions remain unchanged.
+
+### Irregular dimensions are outside training support
+
+The N/K alignment indicators are constant zero in the training set. Stress uses N+1 and K+1, so the model has no irregular training examples from which to learn the measured slowdown. Stress corrections do not actively hit the clipping bound; relaxing that bound alone does not address the stress failure.
+
+For BF16 warm `M=256, N=2049, K=11009`, the prediction is 68.082 us versus a 904.875 us target, or 92.48% APE, with passing timing-quality checks. The observation establishes a modeling limitation; it does not by itself identify a hardware bottleneck or prove whether Tensor Cores were used.
+
+### Warm unseen-family predictions
+
+Warm challenge error is about 29% weighted mean, with large overpredictions in some unseen families. Restricting the comparison to the same 100 shapes available in rotating contexts still gives 29.36% FP16 and 29.18% BF16 warm error. The additional warm-only cases therefore do not explain the gap by themselves. Targets and fitted models still differ between cache contexts, so this is not a controlled causal attribution.
+
+These diagnoses use an inspected evaluation set. Future revisions may use these cases for development/regression analysis while reserving new cases for final assessment. All labels may still be collected before fitting; the train/selection/evaluation boundary must remain explicit.
+
+Source records: `run/primary/analysis/predictions.csv`, saved model suites, primary measurement records, and `linear_perf/selection.py` in the embedded source snapshot. Detailed calculations are in the [HTML review](../experiments/a100_20261106/review.html).
+
+## 8. Arithmetic, profiling, archive, and backup checks
+
+Offline validation found no inconsistency in the retained raw-event divisors, medians, quality flags, model associations, or published metrics. Every one of 72,522 retained event intervals, including controls, matches its recorded elapsed time divided by captured GEMM count. All 5,510 saved candidate predictions and 60 metric groups were recomputed; the 12 selected summaries agree with the original CSV. This is consistency/replay verification, not new GPU execution.
+
+All 39,812 recorded before/after per-buffer arithmetic checks, including repeated controls and profiles, satisfy their stored limits. These are repeated checks, not independent input problems. The reference is FP32 IEEE-mode `torch.mm` on the same already-represented FP16/BF16 inputs; it is not a float64 oracle. Output/reference matrices are not archived, so offline validation cannot independently recompute their products.
+
+There are 1,218 primary and 154 repeat profiling captures, all with CUDA kernel events. Each capture is warm reuse and occurs after timing; rotating variants do not receive their own traces. Some GEMMs use two kernels, including reduction paths, which is why normalization uses GEMM count rather than kernel-event count. Kernel names and durations are excluded from predictor inputs. Hardware counters, measured cache-hit rates, and Tensor Core utilization are unavailable.
+
+All 1,444 manifest-listed files in the original archive passed SHA-256 verification. The exact result archive and embedded source hashes are:
+
+```text
+Results ZIP: a601e14bb3d1d2b661f06021432b461104850452ddcc1c695c55006db29374b1
+Source ZIP:  1f748883a23d0e9706856493eb011eec88d5e3f8926fafd3874c5d23d2c8345a
+```
+
+Fifteen checkpoint receipts record successful copy/readback verification, totaling 30.458 seconds. Their timestamps overlap none of the 8,058 raw-visit/control measurement envelopes. This supports exclusion of backup-copy time from those envelopes; indirect effects on later hardware state remain unproven. The final complete ZIP's Drive-copy outcome is reported outside the ZIP, so these receipts do not independently establish that final file's current remote presence.
+
+Sources: `export_manifest.json`, `run/checkpoints.jsonl`, raw datasets, profiler traces, and [validation scope](VALIDATION.md).
+
+## 9. What this experiment supports
+
+The experiment provides a reproducible record of conditional A100 GEMM latency prediction, training-only model selection, same-session repeat agreement, and concrete failure cases. Ordinary-test accuracy is stronger than warm unseen-family and irregular-shape generalization. Measurement quality, prediction accuracy, and stage completion remain separate findings.
+
+Further work can evaluate overhead-aware prediction, correction bounds, irregular training coverage, controlled follow-up of timing exceptions, and new final-test families. Cross-architecture transfer, hardware-counter explanations, calibrated prediction intervals, and optional decoder-layer or serving-level validation require their own evidence.
+
+The [six-session baseline results](BASELINE_RESULTS.md), original [`results/` snapshot](../results/README.md), and [retrospective selection analysis](../analysis/review_selection/README.md) remain separate, unchanged evidence. They are not inputs to the fresh experiment.

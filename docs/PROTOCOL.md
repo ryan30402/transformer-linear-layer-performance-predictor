@@ -1,179 +1,118 @@
-# Measurement and Evaluation Protocol
+# Dataset Collection and Evaluation Protocol
 
-This document defines the v1.0.0 experiment. The executable plan is in [`linear_perf/protocol.py`](../linear_perf/protocol.py), with separate [FP16](../configs/fp16_graph.json) and [BF16](../configs/bf16_graph.json) configurations. Recorded outcomes are reported separately in [RESULTS.md](RESULTS.md).
+This document describes protocol 1.1.0. The first-release measurement snapshot retains its original [baseline protocol](BASELINE_PROTOCOL.md) and verifier. Historical labels and model decisions are not rewritten.
 
-## 1. Prediction target
+## 1. Offline data workflow
 
-For a fixed GPU, software stack, dtype, layout, and execution policy, estimate the device time of:
+1. Build a workload manifest from pinned public model configurations. Assign train, test, challenge, and irregular stress roles using shapes only.
+2. Collect all declared splits and precision/cache contexts. No predictor is fitted during this stage.
+3. Pass only training rows to family-grouped cross-validation. Fit preprocessing on each training fold, tune hyperparameters, and select the model.
+4. Refit each model family's chosen configuration using every training row.
+5. Evaluate the already available test, challenge, and stress labels. Report all candidates and preserve the selected model.
 
-```python
-torch.mm(X, W_T, out=Y)
-# X is contiguous [M, K]; W is contiguous [N, K].
-# W_T = W.t() is prepared before timing; Y is contiguous [M, N].
-```
+The held-out boundary is a data-use boundary, not an acquisition-time boundary. Test labels may have been measured before fitting. They must not influence feature selection, hyperparameters, the model family, or reporting choices. The software does not create a one-way held-out claim marker or require model hashes to predate test measurement.
 
-Inputs and outputs are preallocated. Execution uses inference mode with autocast disabled. Inputs are generated from normal distributions; X is scaled by `1 / sqrt(K)` before casting to the target dtype. Main measurements reuse the same input, weight, and output addresses.
+Changes informed by the published baseline are development decisions. Re-evaluating them on the same known labels is retrospective analysis. New generalization claims require a new evaluation set.
 
-The timer surrounds a CUDA Graph replay containing 50 GEMMs. The recorded event duration is divided by 50 to form one sample. This includes the GPU's input, weight, and output accesses and any replay/inter-kernel gaps inside the event interval. It excludes allocation, host-device transfers, capture, reference computation, and service queues.
+## 2. Workload construction
 
-This workload omits bias, activation, attention, residual connections, and full-model scheduling. A matching matrix shape alone does not establish that an application has the same cache state or execution cost.
+`linear_perf/workloads.py` derives GEMM dimensions from pinned model configuration files. It records hidden/intermediate widths, attention and key/value heads, vocabulary size, operation counts, and the source revision and checksum.
 
-## 2. Measurement hierarchy
+The manifest separates:
 
-| Level | Definition | How it is used |
-|---|---|---|
-| Captured operation | One GEMM inside the graph | 50 operations share a replay interval |
-| Replay sample | Event elapsed time divided by 50 | Nine samples are retained for each visit |
-| Block visit | One scheduled measurement of a shape | Its label is the median of nine samples |
-| Shape target | Three block visits of the same shape | Median of the three block medians |
-| Session | One collection under a recorded environment | Its own calibration, selection, and held-out evaluation |
+- New M values within training N/K families (`test`).
+- Entire held-out N/K families (`challenge`).
+- Irregular dimensions (`stress`), excluded from model selection and reported separately.
 
-The 50 operations in a replay are not 50 independent experiments. Replays and blocks within a session also do not create independent GPU sessions.
+Training M values cover small decode-sized rows and larger prefill-sized rows. The shape plan is not a runtime trace. Operation-occurrence weights and the declared M grid are a controlled evaluation distribution; they are not production request frequencies. Shared shapes are deduplicated before splitting, and previously published shapes are excluded from new held-out membership.
 
-### Fixed measurement settings
+The resource guard may exclude a full-vocabulary projection or a large prefill case. Exclusions retain the original dimensions and reason. The generator does not shrink a published model to make a case fit.
 
-| Setting | Value |
-|---|---|
-| Execution / cache policy | `cuda_graph` / `warm_reuse` |
-| Eager warmup | 20 calls |
-| GEMMs per captured graph | 50 |
-| Replay samples per visit | 9 |
-| Minimum graph warmup | At least 5 replays and 250 ms of elapsed wall time |
-| Warmup cap | 4,096 replays |
-| Blocks | 3, with a seeded shuffle in each block |
-| Aggregation | Median of block medians |
-| Control shapes | `x01`, `x03`, `x06` |
-| Control schedule | Stage boundaries and after every eight work visits |
-| Telemetry | Visit-boundary snapshots, at most once per second |
-| Main campaign deadline | 1,800 seconds, enforced cooperatively |
+## 3. Measurement target
 
-Warmup has a fixed stopping rule; the code does not warm up until a favorable quality score appears. The duration is wall time, not a measurement of GPU busy time or proof of steady clocks. Budget, cap, and deadline failures are preserved.
+The primary operator is preallocated `torch.mm(X, W.T, out=Y)`, with represented FP16 or BF16 inputs, inference mode, and a recorded precision policy. CUDA events surround a graph replay and the elapsed time is divided by the actual captured GEMM count.
 
-CUDA event timing and graph replay follow the execution principles described in [PyTorch's CUDA documentation](REFERENCES.md#execution-and-timing). The values in the table are this project's declared design choices.
+Input/weight/output GPU accesses and replay gaps inside the interval are included. Allocation, CPU/GPU transfers, graph capture, correctness computation, and request queues are excluded. This is a GEMM-level target, not an isolated hardware-counter measurement or a full-model response time.
 
-## 3. Shapes and data permissions
+Each case has multiple timed visits within one collection. Within-visit event means and visit medians are retained separately. The complete dataset does not require three repeated full collection campaigns. A deterministic shape-only 12.5 percent subset can be collected in another session to assess repeatability.
 
-There are **104 unique registered `(M, N, K)` triples**: 96 modeling/acquisition shapes and eight diagnostics.
+## 4. Adaptive replay and cache policies
 
-| Role | IDs | Count | Permitted use |
-|---|---|---:|---|
-| Calibration | `c01`-`c24` | 24 | Fit all five main model families |
-| Development | `d01`-`d12` | 12 | Select hyperparameters, model family, and acquisition checkpoints |
-| Test | `t01`-`t24` | 24 | Evaluate frozen predictions |
-| Challenge | `h01`-`h12` | 12 | Evaluate frozen predictions on held-out `(N, K)` families |
-| Acquisition pool | `a01`-`a24` | 24 | Reveal labels to offline acquisition policies under fixed budgets |
-| Diagnostic | `x01`-`x08` | 8 | Timing controls and separate diagnostics only |
+A bounded pilot estimates how many GEMMs are needed for the configured replay interval. The final count has explicit minimum/maximum bounds and is saved alongside the raw elapsed times. This reduces excessive repetition for large GEMMs while keeping very short intervals measurable.
 
-Diagnostic rows use `split="candidate"` for transport, but their role excludes them from fitting, selection, and acquisition. Code must consult the registered role; filtering by `split` alone is insufficient.
+Warmup uses a declared elapsed-time and replay-count rule with a cap. Adaptation uses pilot duration, not model error or a preferred benchmark result. Quality warnings remain visible.
 
-### Family coverage
+`warm_reuse` repeatedly uses one buffer set. `rotating_buffers` cycles through multiple sets and forms a separate dataset/model context. Rotation is eligible for the declared small-weight-to-L2 regime, subject to memory limits. It is not a guarantee of cold cache or complete L2 eviction. The operation count covers whole buffer cycles.
 
-Calibration, development, test, and acquisition use these six `(N, K)` families:
+The collector obtains L2 capacity from supported runtime/driver metadata. An explicit configured override is recorded. If capacity is unavailable, the rotation policy is marked unavailable rather than guessing a GPU model's cache size.
 
-```text
-(1024, 768)   (1536, 1024)   (4096, 2048)
-(8192, 6144)  (1537, 1025)   (4097, 2049)
-```
+## 5. Precision ordering, hardware and correctness
 
-| Split | M values in each family |
-|---|---|
-| Calibration | 1, 16, 128, 1024 |
-| Development | 8, 256 |
-| Test | 3, 48, 384, 1536 |
-| Acquisition pool | 2, 32, 96, 768 |
+The schedule interleaves FP16 and BF16 in a seeded order instead of collecting all FP16 before all BF16. Both rows retain their actual device/environment identity. Each dtype/cache context is fitted independently.
 
-The test cases introduce new M values within known families. M = 1536 exceeds the calibration maximum, so part of the test is extrapolation rather than interpolation.
+GPU model, UUID where available, SM count, software stack, math policy, resource decisions, controls, and coarse telemetry are retained. No claim of locked clocks, absent interference, or hardware counters is made unless actually measured.
 
-Challenge uses four separate families, each with M = 5, 192, 1152:
+Correctness checks are outside the event interval and use the same represented inputs. A precision capability failure is explicit. There is no automatic fallback from BF16 to FP16, from GPU to CPU, or from real measurement to simulation.
 
-```text
-(2048, 1536)  (6144, 4096)  (2049, 1537)  (6145, 4097)
-```
+## 6. Profiling and geometric features
 
-These four families are absent from calibration, development, and the acquisition pool. Regular and irregular dimensions appear on both sides of the split. Reports group shapes by M range, family, and whether N/K are multiples of 16. Those are geometric features, not observations of Tensor Core use or actual kernel tile dimensions.
+The all-case profiling phase is separate from primary timing. Torch traces record kernel names and execution events for the warm-reuse contract. Missing profiler capability is a recorded status; profiler durations do not replace training labels.
 
-## 4. Quality and correctness
+Predictive features use shapes and known hardware metadata. Candidate tile sizes produce wave-utilization proxies. Parsed kernel names, actual measured tile choices, and profiler timings are diagnostic evidence, not mandatory inputs for an unseen prediction. A kernel name is not a hardware-counter proof.
 
-The declared timing conditions are:
+## 7. Evaluation
 
-- Within-visit coefficient of variation at most 10%.
-- Maximum/minimum block-median ratio at most 1.2.
-- Maximum/minimum repeated-control median ratio at most 1.2.
+The primary selection objective is out-of-fold weighted mean APE, with P90 APE and fixed candidate order used for ties. N/K families do not cross training/validation fold boundaries. All eligible training data are used for final refitting.
 
-These are descriptive engineering gates, not statistical significance tests or NVIDIA/MLPerf certification criteria. Timing warnings are retained and qualify conclusions. They do not trigger sample deletion, favorable-pass selection, threshold changes, or automatic retries. Numerical failures, non-finite values, invalid provenance, resource failures, incomplete evidence, and held-out isolation violations stop the run.
+Reports also show unweighted errors, median and P90/worst APE, absolute-time errors, signed errors, and per-shape predictions where provided. A cross-validation tuning score is not an unbiased estimate of the selected model's future performance. Test and challenge results serve that separate role.
 
-Each main case is checked against an IEEE FP32 reference computed from the same already-represented FP16/BF16 inputs. Correctness checking occurs outside the timing interval. The environment records precision policy, including reduction settings. This checks the stated matrix operation, not the accuracy of a downstream language model.
+Cache contexts and hardware identities are not silently pooled. A cross-GPU analysis uses a fixed source model with target hardware metadata and no target-label refitting, and is labeled as transfer. Repeated measurements of known shapes test repeatability, not new-shape generalization.
 
-Four small numerical witnesses use zero, identity, alternating-sign, and seeded-random patterns. The measured inputs, output, and FP32 reference are saved as NPZ arrays. A CPU audit recomputes a reference in FP64 and verifies shape, representability, tolerances, patterns, and hashes. These witnesses make those saved cases independently inspectable; they do not preserve every large output matrix or attest execution on a particular physical device.
+## 8. Separate experiments
 
-## 5. Separate diagnostics
+The original two-parameter-Roofline acquisition experiment remains historical appendix evidence. It is not a mandatory stage in the new pipeline and is not evidence that active sampling saves GPU time for the revised selector.
 
-Diagnostic measurements are excluded from all model labels.
+The decoder-layer experiment measures a random-weight block and its standalone components. A composition of predicted GEMM costs plus independently measured non-GEMM costs is a hybrid estimate. It is compared with the separately measured whole block. It is not a fully predicted LLM, a serving benchmark, or a measurement of pretrained task quality.
 
-| Diagnostic | Design | Interpretation boundary |
-|---|---|---|
-| Execution/replay sensitivity | Eight diagnostic shapes, eager/graph execution, 25/50/100 operations, two passes | Reveals sensitivity to execution contract and replay size; does not isolate every launch-overhead cause |
-| Graph profiling | Warmed graph replay for `x02` and `x06` | Inspect execution paths and timelines; never substitute profiler durations for primary labels |
-| Working-set rotation | `x02` and `x03`, one/four buffer sets, two passes | Changes reuse patterns; is not a cache flush |
-| Numerical witnesses | Four small deterministic input patterns | Supports CPU rechecking of stored outputs |
+## 9. Validation boundaries
 
-Telemetry is a coarse snapshot outside the event interval. It cannot establish the clock or temperature of each microsecond-scale replay. The release contains no measured DRAM or SM performance counters. Unavailable profiler information is recorded as unavailable.
+CPU tests and simulated runs validate software. A GPU run is needed to validate CUDA execution, cache effects, hardware support, and the revised predictor's empirical accuracy. Historical data can verify calculations and guide design but cannot establish prospective improvement for a method chosen after examining those data.
 
-## 6. Fit, select, freeze, evaluate
+The current standard manifest has 609 shapes per dtype: 311 train, 134 ordinary test, 118 family challenge and 46 irregular stress. Planning exclusions are explicit. Two ordinary-test vocabulary projections exceed their own surviving training M range after memory exclusions; per-case coverage metadata identifies them. Ordinary test therefore means unseen M in a known N/K family, not guaranteed interpolation in every case.
 
-All five main models use the same 24 calibration targets. Development labels select ridge/KRR hyperparameters and the official model; they are not added to the final training set. The selection rule is lowest development median APE, then development P90 APE, then fixed model order.
+## Complete fresh experiment orchestration
 
-```mermaid
-flowchart TD
-    P["Fixed plan and environment"] --> C["Calibration and development"]
-    C --> M["Five models and selection"]
-    C --> A["Offline acquisition checkpoints"]
-    M --> F["Freeze models and predictions"]
-    A --> F
-    F --> H["Collect test and challenge"]
-    H --> R["Report all results and audit"]
-```
+The default Colab entry point executes primary collection and analysis, a deterministic 12.5% repeat, and a CPU comparison in one workflow. It uses no previous timing datasets or fitted predictors. Primary collection completes all splits before train-only modeling. The repeat reuses the exact workload manifest and selected source models; its labels never trigger refitting. A combined report links raw data, model evaluations and stage-specific quality qualifications. Each collection has its recorded wall-time budget. An unrestricted default total-GEMM-call counter avoids terminating large valid grids at an arbitrary fixed operation count; explicit operation caps remain supported, while time, per-graph, warmup and memory bounds still apply.
 
-The freeze stores concrete per-case predictions, model payloads, and acquisition checkpoints before held-out collection begins. The run records chronology and a held-out claim marker. An interrupted or failed run must remain inspectable; deleting its marker and rerunning to select a better outcome would violate the protocol.
+A complete default result requires primary, repeat and comparison to complete. Timing-quality qualifications are reported independently. Required-stage failures retain completed evidence and a failed/interrupted experiment status. An explicitly requested optional layer stage that cannot complete is not silently marked successful.
 
-Reporting all registered model scores after evaluation is useful, but it does not authorize replacing the official selection. Future changes informed by these published outcomes need a new untouched evaluation set to support a fresh prospective accuracy claim.
+## Durable checkpoint boundaries
 
-## 7. Offline acquisition experiment
+The Colab entry point keeps active datasets on local VM storage and requires a
+verified initial copy in the selected Google Drive directory before GPU
+collection. Evidence snapshots are then created synchronously after each full
+timing visit, after timing completes and before profiler capture starts, after
+validated collection, and after major experiment stages. The final result ZIP is
+also copied and verified. Existing session folders and published files are not
+overwritten.
 
-Acquisition compares a nearest-shape heuristic with uniform random selection without replacement. Both use the same two-parameter Roofline baseline, the same measured pool, and the same development set.
+Each snapshot is first compressed locally, copied to a unique temporary name in
+the backup directory, flushed, read back and checked with SHA256. The final ZIP
+and its checksum receipt are published only after successful copy verification.
+These checks confirm bytes read from the mounted filesystem; they do not attest
+the storage provider's internal replication or guarantee protection for work
+completed after the most recent verified snapshot.
 
-The full 24-label pool is collected first. During policy replay, unrevealed labels remain hidden from the selector. A round reveals two labels; checkpoints are at 2, 4, 8, and 12 acquired labels for each of ten declared seeds. The heuristic targets the development shape with the largest error and chooses unused candidates nearby in L1 distance over `log2(M, N, K)`.
+No backup compression or upload runs concurrently with a CUDA event timing
+interval. Checkpoint start/end times, outcome and duration are retained in
+`run/checkpoints.jsonl`. Backup pauses count toward the collection wall-time
+budget and may alter temperature or clocks before the next case. Declared
+warmup, controls, telemetry and timing-quality qualifications still apply; the
+implementation does not claim that checkpoint pauses have zero hardware effect.
 
-A trial model is accepted only when development median APE strictly improves. Otherwise the current model is retained. Acquired labels remain available to later trial fits even when an individual update is rejected. Every checkpoint is frozen before held-out evaluation, and all budgets/seeds are reported.
-
-The seeds describe policy variation over a shared measured pool. They are not independent hardware runs. Because the full pool was collected, the experiment does not demonstrate a reduction in actual GPU collection time.
-
-## 8. Evaluation and uncertainty
-
-The unit of prediction evaluation is one distinct shape target. Reports include median, mean, P90, and worst APE; MAE and RMSE; signed bias; log errors; pairwise ordering; and per-shape predictions with observed block ranges. P90 APE is a percentile of shape prediction errors, not a percentile of request latency.
-
-Pairwise ordering excludes measured near-ties within 1%; this does not incorporate every source of timing uncertainty. Shape-domain warnings flag axis extrapolation, unseen N/K families, and distance from the calibration set. They are diagnostics, not calibrated probabilities of failure.
-
-The selected model is compared with the three-parameter Roofline baseline using 1,000 paired resamples of N/K-family clusters. The reported middle 95% percentile range is descriptive. Six test families and four challenge families provide limited evidence; the interval is neither a prediction interval nor guaranteed population coverage. Repeated event samples are not resampled as if they were independent GPU sessions.
-
-## 9. Session, precision, and transfer boundaries
-
-A three-session study reports separately fitted results and transfers the first supplied session's frozen models to the other two. Source selection is fixed by input order. Repeating the registered shapes tests session stability, not new-shape generalization.
-
-An explicit transfer analysis supports zero, four, or eight target calibration labels. Four/eight labels are selected by a shape-only farthest-point order. Each frozen source model gets at most one multiplicative scale:
-
-$$
-s = \exp\left(\frac{1}{n}\sum_i \log\frac{t_i}{\hat t_i}\right).
-$$
-
-Target development/test labels do not select this scale or the source model. The mode must declare whether hardware is allowed to differ. The bundled evidence evaluates one GPU model; the existence of a cross-GPU analysis command is not cross-architecture validation.
-
-FP16 and BF16 retain separate plans, labels, and models. A precision comparison requires a matching recorded physical GPU identity and compatible software/measurement policies. It reports FP16 time divided by BF16 time. Sequential dtype runs still permit runtime-order and state confounding.
-
-## 10. Evidence identities
-
-Each native run records a full plan hash, a measurement-contract signature, an environment identity, a session ID, and source/dependency identities. These serve different purposes: a matching timer signature does not make two environments interchangeable, and a new session name does not prove a new GPU.
-
-Raw blocks, schedules, aggregates, controls, models, and frozen predictions are retained. Audits recompute coverage, internal hashes, aggregation, quality conditions, metrics, acquisition decisions, numerical witnesses, and freeze/collection chronology. A content hash establishes byte consistency, not a third-party attestation.
-
-The bundled public snapshot has its own checksums and verifier. See [Reproducibility](REPRODUCIBILITY.md#published-evidence-and-source-provenance) for the distinction between recorded evidence identities and the source identity of this release.
+Checkpoint archives preserve the recorded state. A snapshot taken before
+profiling or finalization can contain complete timing records while its dataset
+is still incomplete under the full validation contract. Recovery never rewrites
+that status, silently completes missing stages, or merges measurements from a
+replacement GPU/runtime. The separate download notebook can retrieve existing
+archives without the original Python variables. See [COLAB_RECOVERY.md](COLAB_RECOVERY.md).

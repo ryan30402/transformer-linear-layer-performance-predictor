@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "passed": true,
+  "protocol_version": "1.1.0",
+  "dataset": "results.zip!/run/primary/dataset",
+  "measurement_kind": "cuda_measured",
+  "measurement_rows": 2256,
+  "distinct_shapes": 609,
+  "contexts": 4,
+  "manifest_hash": "4aae787b768fd8794709aa1bae64a1d3c2ad7835c9ff36b2103317a374ac2850",
+  "record_validation": {
+    "passed": true,
+    "complete": true,
+    "checks": 486647,
+    "measurement_kind": "cuda_measured",
+    "rows": 2256,
+    "raw_visits": 6768,
+    "control_visits": 378,
+    "selected_shapes": 609,
+    "scope": "Manifest, environment, coverage, event normalization, arithmetic checks, and aggregation; no new GPU execution"
+  },
+  "measurement_quality": {
+    "passed": false,
+    "flagged_rows": [
+      {
+        "case_id": "m1_n1536_k8960",
+        "dtype": "bfloat16",
+        "cache_policy": "warm_reuse",
+        "max_within_visit_cv_pct": 0.35005354235976394,
+        "max_over_min_visit_median": 1.207871966313125,
+        "passed": false
+      },
+      {
+        "case_id": "m1_n1536_k8960",
+        "dtype": "float16",
+        "cache_policy": "warm_reuse",
+        "max_within_visit_cv_pct": 0.3940460122406436,
+        "max_over_min_visit_median": 1.2222222222222223,
+        "passed": false
+      },
+      {
+        "case_id": "m16_n2049_k5633",
+        "dtype": "float16",
+        "cache_policy": "warm_reuse",
+        "max_within_visit_cv_pct": 0.11504467431484999,
+        "max_over_min_visit_median": 1.2910271952365653,
+        "passed": false
+      },
+      {
+        "case_id": "m1_n2048_k2048",
+        "dtype": "float16",
+        "cache_policy": "warm_reuse",
+        "max_within_visit_cv_pct": 0.14383280809478816,
+        "max_over_min_visit_median": 1.2104101462833006,
+        "passed": false
+      },
+      {
+        "case_id": "m1_n2048_k5632",
+        "dtype": "bfloat16",
+        "cache_policy": "warm_reuse",
+        "max_within_visit_cv_pct": 0.24781647615334257,
+        "max_over_min_visit_median": 1.237895102386552,
+        "passed": false
+      },
+      {
+        "case_id": "m1_n2048_k5632",
+        "dtype": "float16",
+        "cache_policy": "warm_reuse",
+        "max_within_visit_cv_pct": 0.27809925470804414,
+        "max_over_min_visit_median": 1.252848212384393,
+        "passed": false
+      }
+    ],
+    "controls": [
+      {
+        "case_id": "control_large",
+        "dtype": "bfloat16",
+        "visits": 63,
+        "max_over_min": 1.0232668999637924,
+        "passed": true
+      },
+      {
+        "case_id": "control_large",
+        "dtype": "float16",
+        "visits": 63,
+        "max_over_min": 1.0248864244943974,
+        "passed": true
+      },
+      {
+        "case_id": "control_small",
+        "dtype": "bfloat16",
+        "visits": 63,
+        "max_over_min": 1.07364689651411,
+        "passed": true
+      },
+      {
+        "case_id": "control_small",
+        "dtype": "float16",
+        "visits": 63,
+        "max_over_min": 1.0631579699822058,
+        "passed": true
+      },
+      {
+        "case_id": "control_weight",
+        "dtype": "bfloat16",
+        "visits": 63,
+        "max_over_min": 1.0861957474821147,
+        "passed": true
+      },
+      {
+        "case_id": "control_weight",
+        "dtype": "float16",
+        "visits": 63,
+        "max_over_min": 1.0842329333314464,
+        "passed": true
+      }
+    ],
+    "thresholds": {
+      "quality_cv_pct": 10.0,
+      "quality_visit_ratio": 1.2,
+      "quality_control_ratio": 1.2
+    },
+    "interpretation": "Descriptive declared thresholds; flags are retained, not sample deletion or certification"
+  },
+  "scope": "Dataset membership, raw event divisors, visit aggregation, numerical-check records, coverage and context; no new GPU work",
+  "freeze_before_measurement_required": false
+}
